@@ -2,10 +2,11 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject private var publisher: AuthPublisher
+    @EnvironmentObject private var authService: AuthService
     @State private var email = ""
     @State private var password = ""
     @State private var showRegisterView = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,7 +19,7 @@ struct LoginView: View {
             forgotPassword
             Spacer()
             PlainButton(title: Strings.letsGo) {
-                Task { try await publisher.logIn(email: "", password: "") }
+                Task { try await authService.logIn(email: "", password: "") }
             }
             .fontWeight(.heavy)
         }
@@ -26,8 +27,11 @@ struct LoginView: View {
         .fullScreenCover(isPresented: $showRegisterView) {
             RegisterView()
         }
+        .overlay(alignment: .topLeading) {
+            closeButton
+        }
     }
-    
+
     private var forgotPassword: some View {
         VStack {
             HStack {
@@ -46,6 +50,18 @@ struct LoginView: View {
                     }
             }
         }
+    }
+
+    private var closeButton: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "xmark")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(.gray)
+        }
+        .padding()
     }
 }
 

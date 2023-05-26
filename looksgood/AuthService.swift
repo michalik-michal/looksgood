@@ -4,7 +4,7 @@ import FirebaseFirestoreSwift
 
 // Main Actor publishes changes on the main thread
 @MainActor
-class AuthPublisher: ObservableObject {
+class AuthService: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
     

@@ -4,7 +4,7 @@ import Firebase
 @main
 struct looksgoodApp: App {
 
-    @StateObject private var authPublisher = AuthPublisher()
+    @StateObject private var authService = AuthService()
     
     init() {
         FirebaseApp.configure()
@@ -13,7 +13,7 @@ struct looksgoodApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(authPublisher)
+                .environmentObject(authService)
         }
     }
 }

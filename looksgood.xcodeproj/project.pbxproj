@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94622A1F7CA20001B07E /* HomeView.swift */; };
+		6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */; };
+		6B9D946E2A1F846D0001B07E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D946D2A1F846D0001B07E /* MapView.swift */; };
+		6B9D94702A1F84910001B07E /* MapPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D946F2A1F84910001B07E /* MapPublisher.swift */; };
+		6B9D94732A1F877F0001B07E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94722A1F877F0001B07E /* Color+Extension.swift */; };
+		6B9D94752A1F87B50001B07E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94742A1F87B50001B07E /* View+Extension.swift */; };
+		6B9D94782A1F8BFA0001B07E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6B9D94772A1F8BFA0001B07E /* Lottie */; };
+		6B9D947B2A1F8C460001B07E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D947A2A1F8C460001B07E /* LottieView.swift */; };
+		6B9D94802A1F8D300001B07E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D947F2A1F8D300001B07E /* LoginView.swift */; };
+		6B9D94862A1F8ECF0001B07E /* bunchOfFood.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D94852A1F8ECF0001B07E /* bunchOfFood.json */; };
+		6B9D948A2A1F900C0001B07E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94892A1F900C0001B07E /* CustomTextField.swift */; };
+		6B9D948D2A1FC98A0001B07E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D948C2A1FC98A0001B07E /* RegisterView.swift */; };
+		6B9D948F2A1FC9DE0001B07E /* phone.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D948E2A1FC9DE0001B07E /* phone.json */; };
+		6B9D94922A1FCA7F0001B07E /* PlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94912A1FCA7F0001B07E /* PlainButton.swift */; };
+		6B9D94942A1FCDA90001B07E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94932A1FCDA90001B07E /* String+Extension.swift */; };
+		6B9D94972A1FCEEB0001B07E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94962A1FCEEB0001B07E /* UserModel.swift */; };
+		6B9D94992A1FCF3F0001B07E /* RestaurantOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94982A1FCF3F0001B07E /* RestaurantOwnerModel.swift */; };
+		6B9D949B2A1FD0430001B07E /* RegisterPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D949A2A1FD0430001B07E /* RegisterPublisher.swift */; };
 		6BA3E08B2A1F4E9C008A034E /* looksgoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3E08A2A1F4E9C008A034E /* looksgoodApp.swift */; };
 		6BA3E08D2A1F4E9C008A034E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3E08C2A1F4E9C008A034E /* ContentView.swift */; };
 		6BA3E08F2A1F4E9D008A034E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA3E08E2A1F4E9D008A034E /* Assets.xcassets */; };
@@ -34,6 +52,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B9D94622A1F7CA20001B07E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePublisher.swift; sourceTree = "<group>"; };
+		6B9D946D2A1F846D0001B07E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6B9D946F2A1F84910001B07E /* MapPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPublisher.swift; sourceTree = "<group>"; };
+		6B9D94722A1F877F0001B07E /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		6B9D94742A1F87B50001B07E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		6B9D947A2A1F8C460001B07E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		6B9D947F2A1F8D300001B07E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6B9D94852A1F8ECF0001B07E /* bunchOfFood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bunchOfFood.json; sourceTree = "<group>"; };
+		6B9D94892A1F900C0001B07E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		6B9D948C2A1FC98A0001B07E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		6B9D948E2A1FC9DE0001B07E /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
+		6B9D94912A1FCA7F0001B07E /* PlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButton.swift; sourceTree = "<group>"; };
+		6B9D94932A1FCDA90001B07E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		6B9D94962A1FCEEB0001B07E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		6B9D94982A1FCF3F0001B07E /* RestaurantOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOwnerModel.swift; sourceTree = "<group>"; };
+		6B9D949A2A1FD0430001B07E /* RegisterPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPublisher.swift; sourceTree = "<group>"; };
 		6BA3E0872A1F4E9C008A034E /* looksgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = looksgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA3E08A2A1F4E9C008A034E /* looksgoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = looksgoodApp.swift; sourceTree = "<group>"; };
 		6BA3E08C2A1F4E9C008A034E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9D94782A1F8BFA0001B07E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +107,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B9D94642A1F7CF60001B07E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */,
+				6B9D94622A1F7CA20001B07E /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6B9D94672A1F84170001B07E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94952A1FCEDF0001B07E /* Models */,
+				6B9D94712A1F87730001B07E /* Extensions */,
+				6B9D94692A1F84360001B07E /* Service */,
+				6B9D94682A1F842B0001B07E /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6B9D94682A1F842B0001B07E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94872A1F8FF20001B07E /* Common */,
+				6B9D947D2A1F8D180001B07E /* Authentication */,
+				6B9D94792A1F8C0C0001B07E /* Lottie */,
+				6B9D946C2A1F84640001B07E /* Map */,
+				6B9D94642A1F7CF60001B07E /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6B9D94692A1F84360001B07E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6B9D946C2A1F84640001B07E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D946F2A1F84910001B07E /* MapPublisher.swift */,
+				6B9D946D2A1F846D0001B07E /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6B9D94712A1F87730001B07E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94722A1F877F0001B07E /* Color+Extension.swift */,
+				6B9D94742A1F87B50001B07E /* View+Extension.swift */,
+				6B9D94932A1FCDA90001B07E /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B9D94792A1F8C0C0001B07E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D947A2A1F8C460001B07E /* LottieView.swift */,
+				6B9D947C2A1F8C4D0001B07E /* LottieFiles */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		6B9D947C2A1F8C4D0001B07E /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D948E2A1FC9DE0001B07E /* phone.json */,
+				6B9D94852A1F8ECF0001B07E /* bunchOfFood.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
+		6B9D947D2A1F8D180001B07E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D948B2A1FC9740001B07E /* Register */,
+				6B9D947E2A1F8D260001B07E /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		6B9D947E2A1F8D260001B07E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D947F2A1F8D300001B07E /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6B9D94872A1F8FF20001B07E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94902A1FCA750001B07E /* Buttons */,
+				6B9D94882A1F8FFB0001B07E /* TextFields */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6B9D94882A1F8FFB0001B07E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94892A1F900C0001B07E /* CustomTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		6B9D948B2A1FC9740001B07E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D949A2A1FD0430001B07E /* RegisterPublisher.swift */,
+				6B9D948C2A1FC98A0001B07E /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		6B9D94902A1FCA750001B07E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94912A1FCA7F0001B07E /* PlainButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		6B9D94952A1FCEDF0001B07E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B9D94962A1FCEEB0001B07E /* UserModel.swift */,
+				6B9D94982A1FCF3F0001B07E /* RestaurantOwnerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6BA3E07E2A1F4E9C008A034E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +266,7 @@
 		6BA3E0892A1F4E9C008A034E /* looksgood */ = {
 			isa = PBXGroup;
 			children = (
+				6B9D94672A1F84170001B07E /* Sources */,
 				6BA3E08A2A1F4E9C008A034E /* looksgoodApp.swift */,
 				6BA3E08C2A1F4E9C008A034E /* ContentView.swift */,
 				6BA3E08E2A1F4E9D008A034E /* Assets.xcassets */,
@@ -143,6 +316,9 @@
 			dependencies = (
 			);
 			name = looksgood;
+			packageProductDependencies = (
+				6B9D94772A1F8BFA0001B07E /* Lottie */,
+			);
 			productName = looksgood;
 			productReference = 6BA3E0872A1F4E9C008A034E /* looksgood.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +391,9 @@
 				Base,
 			);
 			mainGroup = 6BA3E07E2A1F4E9C008A034E;
+			packageReferences = (
+				6B9D94762A1F8BFA0001B07E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 6BA3E0882A1F4E9C008A034E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +410,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9D948F2A1FC9DE0001B07E /* phone.json in Resources */,
+				6B9D94862A1F8ECF0001B07E /* bunchOfFood.json in Resources */,
 				6BA3E0922A1F4E9D008A034E /* Preview Assets.xcassets in Resources */,
 				6BA3E08F2A1F4E9D008A034E /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +438,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
+				6B9D949B2A1FD0430001B07E /* RegisterPublisher.swift in Sources */,
+				6B9D948A2A1F900C0001B07E /* CustomTextField.swift in Sources */,
+				6B9D94732A1F877F0001B07E /* Color+Extension.swift in Sources */,
+				6B9D947B2A1F8C460001B07E /* LottieView.swift in Sources */,
+				6B9D94752A1F87B50001B07E /* View+Extension.swift in Sources */,
+				6B9D948D2A1FC98A0001B07E /* RegisterView.swift in Sources */,
+				6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */,
+				6B9D946E2A1F846D0001B07E /* MapView.swift in Sources */,
+				6B9D94942A1FCDA90001B07E /* String+Extension.swift in Sources */,
+				6B9D94702A1F84910001B07E /* MapPublisher.swift in Sources */,
+				6B9D94992A1FCF3F0001B07E /* RestaurantOwnerModel.swift in Sources */,
 				6BA3E08D2A1F4E9C008A034E /* ContentView.swift in Sources */,
+				6B9D94802A1F8D300001B07E /* LoginView.swift in Sources */,
 				6BA3E08B2A1F4E9C008A034E /* looksgoodApp.swift in Sources */,
+				6B9D94972A1FCEEB0001B07E /* UserModel.swift in Sources */,
+				6B9D94922A1FCA7F0001B07E /* PlainButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +616,13 @@
 				DEVELOPMENT_TEAM = 3P5872A6DS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For optimal experience, enable your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +647,13 @@
 				DEVELOPMENT_TEAM = 3P5872A6DS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For optimal experience, enable your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,6 +783,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B9D94762A1F8BFA0001B07E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B9D94772A1F8BFA0001B07E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B9D94762A1F8BFA0001B07E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6BA3E07F2A1F4E9C008A034E /* Project object */;
 }

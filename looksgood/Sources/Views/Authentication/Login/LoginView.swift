@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @EnvironmentObject private var publisher: AuthPublisher
     @State private var email = ""
     @State private var password = ""
     @State private var showRegisterView = false
@@ -17,7 +18,7 @@ struct LoginView: View {
             forgotPassword
             Spacer()
             PlainButton(title: Strings.letsGo) {
-                // Log in
+                Task { try await publisher.logIn(email: "", password: "") }
             }
             .fontWeight(.heavy)
         }

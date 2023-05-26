@@ -1,7 +1,7 @@
 import Foundation
 
-struct User {
+struct User: Identifiable, Codable {
+    var id: String
     var email: String
-    var password: String
     var username: String
 }

@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct RegisterView: View {
     
     @ObservedObject private var publisher = RegisterPublisher()

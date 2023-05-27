@@ -15,7 +15,7 @@ struct MapSearchField: View {
                 .resizable()
                 .frame(width: 15, height: 15)
                 .foregroundColor(.gray)
-                .padding(.trailing)
+                .padding(.horizontal, 10)
                 .onTapGesture {
                     showProfileView.toggle()
                 }
@@ -25,7 +25,7 @@ struct MapSearchField: View {
         .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.3), radius: 20, y: 5)
         .fullScreenCover(isPresented: $showProfileView) {
-            LoginView()
+            NavigationModalBarView(showModal: $showProfileView, content: ProfileView())
         }
     }
 }

@@ -4,4 +4,10 @@ struct User: Identifiable, Codable {
     var id: String
     var email: String
     var username: String
+    var accountType: AccountType
+}
+
+enum AccountType: String, Codable {
+    case user
+    case restaurantOwner
 }

@@ -9,9 +9,10 @@ struct PlainButton: View {
         Button(action: action) {
             Text(title)
                 .foregroundColor(.black)
+                .frame(height: 50)
+                .frame(maxWidth: .infinity)
         }
         .frame(maxWidth: .infinity)
-        .padding()
         .overlay {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(lineWidth: 1)

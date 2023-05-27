@@ -19,28 +19,31 @@ struct LoginView: View {
             forgotPassword
             Spacer()
             PlainButton(title: Strings.letsGo) {
-                Task { try await authService.logIn(email: "", password: "") }
+                Task { try await authService.logIn(email: email, password: password) }
+                if authService.currentUser != nil && authService.userSession != nil {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .fontWeight(.heavy)
         }
         .padding(.horizontal)
-        .fullScreenCover(isPresented: $showRegisterView) {
-            RegisterView()
-        }
-        .overlay(alignment: .topLeading) {
-            closeButton
+        .onChange(of: authService.didRegisterUSer) { didRegisterUSer in
+            if didRegisterUSer {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 
     private var forgotPassword: some View {
         VStack {
             HStack {
-                Text(Strings.createAccount)
-                    .font(.callout.bold())
-                    .foregroundColor(.gray)
-                    .onTapGesture {
-                        showRegisterView.toggle()
-                    }
+                NavigationLink {
+                    AccountTypeView()
+                } label: {
+                    Text(Strings.createAccount)
+                        .font(.callout.bold())
+                        .foregroundColor(.gray)
+                }
                 Spacer()
                 Text(Strings.forgotPassword)
                     .font(.footnote)
@@ -50,18 +53,6 @@ struct LoginView: View {
                     }
             }
         }
-    }
-
-    private var closeButton: some View {
-        Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
-            Image(systemName: "xmark")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.gray)
-        }
-        .padding()
     }
 }
 

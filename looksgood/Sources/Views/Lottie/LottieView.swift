@@ -10,6 +10,7 @@ struct LottieView: UIViewRepresentable {
     enum animationType: String {
         case bunchOfFood
         case phone
+        case confirmingOrder
     }
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {

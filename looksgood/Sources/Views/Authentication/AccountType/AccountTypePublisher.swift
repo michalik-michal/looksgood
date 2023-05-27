@@ -1,11 +1,6 @@
-import SwiftUI
+import Foundation
 
-class RegisterPublisher: ObservableObject {
-
-    @Published var email = ""
-    @Published var username = ""
-    @Published var password = ""
-    
+class AccountTypePublisher: ObservableObject {
     
     func convertUserType(_ accountType: AccountType) -> String {
         switch accountType {
@@ -15,4 +10,5 @@ class RegisterPublisher: ObservableObject {
             return Strings.restaurantOwner
         }
     }
+    
 }

@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 final class Strings {
     static let hello = "Hello"
@@ -13,4 +13,10 @@ final class Strings {
     static let email = "Email"
     static let password = "Password"
     static let username = "Username"
+    static let profile = "Profile"
+    static let logOut = "Logout"
+    static let areYouSure = "Are you sure?"
+    static let accountSettings = "Account settings"
+    static let deleteAccount = "Delete account"
+    static let deleteAccountConfirmation = "Are you sure? Your account will be gone forever."
 }

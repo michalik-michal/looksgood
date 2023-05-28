@@ -11,6 +11,7 @@ struct LottieView: UIViewRepresentable {
         case bunchOfFood
         case phone
         case confirmingOrder
+        case hello
     }
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {

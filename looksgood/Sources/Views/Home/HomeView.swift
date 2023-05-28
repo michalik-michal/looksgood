@@ -15,6 +15,7 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
+            .zIndex(10)
         }
     }
 }

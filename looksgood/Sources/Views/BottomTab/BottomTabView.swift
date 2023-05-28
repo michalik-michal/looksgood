@@ -6,7 +6,7 @@ struct BottomTabView: View {
     @EnvironmentObject private var authService: AuthService
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor(Color.whiteBlack)
     }
     
     var body: some View {
@@ -24,7 +24,7 @@ struct BottomTabView: View {
                             Image(systemName: "map")
                             Text("Map")
                         }.tag(0)
-                    Text("Restaurant")
+                    RestaurantPanelView()
                         .onAppear {
                             self.selectedIndex = 1
                         }
@@ -34,7 +34,7 @@ struct BottomTabView: View {
                         }.tag(1)
                 }
                 .zIndex(20)
-                .foregroundColor(.black)
+                .accentColor(.blackWhite)
             }
         } else {
             HomeView()

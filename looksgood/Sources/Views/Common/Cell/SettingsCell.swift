@@ -16,6 +16,7 @@ struct SettingsCell: View {
                 .padding(.horizontal)
                 Divider()
             }
+            .foregroundColor(.blackWhite)
         }
     }
 

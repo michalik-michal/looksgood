@@ -14,6 +14,7 @@ struct LoginView: View {
                 .frame(width: 350, height: 350)
             Text(Strings.login)
                 .font(.title.bold())
+                .foregroundColor(.blackWhite)
             CustomTextField(imageName: "envelope", placeholderText: Strings.email, text: $email)
             CustomTextField(imageName: "lock", placeholderText: Strings.password, isSecureField: true, text: $password)
             forgotPassword

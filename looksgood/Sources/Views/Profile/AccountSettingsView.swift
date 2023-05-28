@@ -13,6 +13,7 @@ struct AccountSettingsView: View {
             Text(Strings.accountSettings)
                 .font(.largeTitle.bold())
                 .padding(.horizontal)
+                .foregroundColor(.blackWhite)
             Divider()
             ScrollView {
                 VStack {

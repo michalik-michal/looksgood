@@ -18,7 +18,7 @@ struct PlainLabel: View {
     var body: some View {
         if alignment == .center {
             Text(title)
-                .foregroundColor(.black)
+                .foregroundColor(.blackWhite)
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
                 .contentShape(Rectangle())
@@ -30,7 +30,7 @@ struct PlainLabel: View {
         } else {
             HStack {
                 Text(title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.blackWhite)
                     .frame(height: 50)
                     .contentShape(Rectangle())
                     .padding(.horizontal)
@@ -39,7 +39,7 @@ struct PlainLabel: View {
             .overlay {
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(lineWidth: 1)
-                    .foregroundColor(.black)
+                    .foregroundColor(.blackWhite)
             }
         }
     }

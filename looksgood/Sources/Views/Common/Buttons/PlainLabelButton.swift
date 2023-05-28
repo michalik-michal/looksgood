@@ -7,14 +7,14 @@ struct PlainLabelButton: View {
     
     var body: some View {
         Text(title)
-            .foregroundColor(.black)
+            .foregroundColor(.blackWhite)
             .frame(height: 50)
             .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
             .overlay {
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(lineWidth: 1)
-                    .foregroundColor(.black)
+                    .foregroundColor(.blackWhite)
             }
             .onTapGesture(perform: action)
     }

@@ -12,6 +12,7 @@ struct ProfileView: View {
                     Text(Strings.profile)
                         .font(.largeTitle.bold())
                         .padding(.horizontal)
+                        .foregroundColor(.blackWhite)
                     Divider()
                     ScrollView {
                         VStack(alignment: .leading) {

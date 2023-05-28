@@ -19,4 +19,5 @@ final class Strings {
     static let accountSettings = "Account settings"
     static let deleteAccount = "Delete account"
     static let deleteAccountConfirmation = "Are you sure? Your account will be gone forever."
+    static let startAddingRestaurant = "Start adding your restaurant"
 }

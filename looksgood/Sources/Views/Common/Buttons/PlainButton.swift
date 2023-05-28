@@ -8,7 +8,7 @@ struct PlainButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .foregroundColor(.black)
+                .foregroundColor(.blackWhite)
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
         }
@@ -16,7 +16,7 @@ struct PlainButton: View {
         .overlay {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(lineWidth: 1)
-                .foregroundColor(.black)
+                .foregroundColor(.blackWhite)
         }
     }
 }

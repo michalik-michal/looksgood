@@ -4,12 +4,18 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var searchText = ""
+    @EnvironmentObject private var locationManager: LocationManager
     
     var body: some View {
         ZStack {
-            MapView()
-                .zIndex(-10)
-                .ignoresSafeArea()
+            VStack {
+                GoogleMapsView()
+                    .zIndex(-10)
+                    .ignoresSafeArea()
+                    .onAppear {
+                        locationManager.shouldUpdateLocation = false
+                    }
+            }
             VStack {
                 MapSearchField(text: $searchText)
                 Spacer()

@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import GoogleMaps
 
 struct MapView: View {
 

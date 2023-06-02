@@ -1,0 +1,6 @@
+framework module Pods_looksgood_looksgoodUITests {
+  umbrella header "Pods-looksgood-looksgoodUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

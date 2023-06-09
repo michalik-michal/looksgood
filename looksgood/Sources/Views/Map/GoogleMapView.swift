@@ -1,7 +1,6 @@
 import SwiftUI
 import GoogleMaps
 
-
 struct CustomMarker {
     var lat: Double
     var long: Double
@@ -54,8 +53,6 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         mapView.animate(toZoom: 15.0)
         let markers = parent.locationManager.customMarkers
         let tappedMarker = markers.filter { $0.long == marker.position.longitude && $0.lat == marker.position.latitude }
-        print("xdd")
-        print(tappedMarker)
 
         return true
     }

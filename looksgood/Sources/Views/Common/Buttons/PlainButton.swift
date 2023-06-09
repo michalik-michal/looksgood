@@ -12,6 +12,7 @@ struct PlainButton: View {
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
         }
+        .background(Color.whiteBlack)
         .frame(maxWidth: .infinity)
         .overlay {
             RoundedRectangle(cornerRadius: 8)

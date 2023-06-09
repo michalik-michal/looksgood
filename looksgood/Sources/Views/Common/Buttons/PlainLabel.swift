@@ -25,7 +25,7 @@ struct PlainLabel: View {
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(lineWidth: 1)
-                        .foregroundColor(.black)
+                        .foregroundColor(.blackWhite)
                 }
         } else {
             HStack {

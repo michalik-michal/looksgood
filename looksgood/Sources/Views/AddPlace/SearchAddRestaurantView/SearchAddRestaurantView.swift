@@ -28,7 +28,7 @@ struct SearchAddRestaurantView: View {
             }
             Spacer()
             NavigationLink {
-                AddRestaurantView(place: selectedPlace ?? SearchedPlace(id: "", name: ""))
+                AddPlaceView(place: selectedPlace ?? SearchedPlace(id: "", name: ""))
                     .backNavigationButton()
             } label: {
                 PlainLabel(title: Strings.next)

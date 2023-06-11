@@ -6,8 +6,3 @@ struct User: Identifiable, Codable {
     var username: String
     var accountType: AccountType
 }
-
-enum AccountType: String, Codable {
-    case user
-    case restaurantOwner
-}

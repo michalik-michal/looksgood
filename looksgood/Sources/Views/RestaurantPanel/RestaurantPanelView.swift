@@ -49,7 +49,7 @@ struct RestaurantPanelView: View {
             .padding(.horizontal)
             .fullScreenCover(isPresented: $showAddManuallyView) {
                 NavigationModalBarView(showModal: $showAddManuallyView,
-                                       content: AddRestaurantView(showRatingField: false))
+                                       content: AddPlaceView(showRatingField: false))
             }
             .fullScreenCover(isPresented: $showAddWithGoogle) {
                 NavigationModalBarView(showModal: $showAddWithGoogle,

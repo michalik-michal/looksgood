@@ -3,6 +3,7 @@ import SwiftUI
 struct RestaurantPanelView: View {
     
     @ObservedObject private var placesManager = PlacesService()
+    @EnvironmentObject private var appState: AppState
     @State private var showAddManuallyView = false
     @State private var showAddWithGoogle = false
     @State private var selectedMethod: AddRestauranMethod?
@@ -54,6 +55,14 @@ struct RestaurantPanelView: View {
             .fullScreenCover(isPresented: $showAddWithGoogle) {
                 NavigationModalBarView(showModal: $showAddWithGoogle,
                                        content: SearchAddRestaurantView())
+            }
+            .onChange(of: appState.didUploadPlace) { didUpload in
+                if didUpload {
+                    showAddWithGoogle = false
+                    showAddManuallyView = false
+                    appState.didUploadPlace = false
+                    appState.didUploadPlace = false
+                }
             }
         }
     }

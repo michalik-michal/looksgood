@@ -6,6 +6,7 @@ struct AddPlaceView: View {
     @State private var name: String = ""
     @State private var address: String = ""
     @State private var googleMapsURL: String = ""
+    @State private var googleMapsID: String = ""
     @State private var long: String = ""
     @State private var lat: String = ""
     @State private var rating: String = ""
@@ -16,6 +17,7 @@ struct AddPlaceView: View {
     @State private var showInfoSheet = false
     @State private var selectedCategory: PlaceCategoriesEnum?
     @EnvironmentObject private var placesService: PlacesService
+    @EnvironmentObject private var appState: AppState
     @ObservedObject private var addRestaurantPublisher = AddPlacePublisher()
     
     init(place: SearchedPlace = SearchedPlace(id: "", name: ""),
@@ -61,14 +63,14 @@ struct AddPlaceView: View {
             updatePlaceDetails()
         }
         .onDisappear {
-            placesService.fetchedPlace = Place(name: "")
+            placesService.fetchedPlace = Place(name: "", placeCategory: .restaurant)
         }
         .onChange(of: placesService.fetchedPlace) { _ in
             updatePlaceDetails()
         }
         .overlay(alignment: .bottom) {
             PlainButton(title: Strings.done) {
-                //
+                uploadPlace()
             }
             .padding()
         }
@@ -92,11 +94,28 @@ struct AddPlaceView: View {
         name = searchedPlace.name
         address = place.address ?? ""
         googleMapsURL = place.googleMapsURL ?? ""
+        googleMapsID = searchedPlace.id
         long = place.long ?? ""
         lat = place.lat ?? ""
         rating = place.rating ?? ""
         phoneNumber = place.phoneNumber?.description ?? ""
         website = place.website?.description ?? ""
+    }
+    
+    private func uploadPlace() {
+        Task { try await PlaceService().uploadPlace(place: Place(id: id,
+                                                             name: name,
+                                                             address: address,
+                                                             googleMapsURL: googleMapsURL,
+                                                             googleMapsID: googleMapsID,
+                                                             long: long,
+                                                             lat: lat,
+                                                             rating: rating,
+                                                             phoneNumber: phoneNumber,
+                                                             website: website,
+                                                             openingHours: [],
+                                                             placeCategory: selectedCategory ?? .restaurant)) }
+        appState.didUploadPlace = true
     }
 }
 

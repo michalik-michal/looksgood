@@ -3,7 +3,7 @@ import GooglePlaces
 class PlacesService: NSObject, ObservableObject {
     
     @Published var searchResults: [GMSAutocompletePrediction] = []
-    @Published var fetchedPlace = Place(name: "")
+    @Published var fetchedPlace = Place(name: "", placeCategory: .restaurant)
     let placesClient = GMSPlacesClient.shared()
 
     

@@ -9,6 +9,7 @@ class PlaceService: ObservableObject {
                     "name": place.name,
                     "address": place.address ?? "",
                     "googleMapsURL": place.googleMapsURL ?? "",
+                    "googleMapsID": place.googleMapsID ?? "",
                     "long": place.long ?? "",
                     "lat": place.lat ?? "",
                     "phoneNumber": place.phoneNumber ?? "",

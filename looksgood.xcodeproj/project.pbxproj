@@ -47,6 +47,7 @@
 		6B90DE2D2A34C0B40093DBA7 /* AddPlacePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE2C2A34C0B40093DBA7 /* AddPlacePublisher.swift */; };
 		6B90DE2F2A35B6380093DBA7 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE2E2A35B6380093DBA7 /* PlaceService.swift */; };
 		6B90DE322A35BB630093DBA7 /* CategoryNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE312A35BB630093DBA7 /* CategoryNameConverter.swift */; };
+		6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */; };
 		6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94622A1F7CA20001B07E /* HomeView.swift */; };
 		6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */; };
 		6B9D94732A1F877F0001B07E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94722A1F877F0001B07E /* Color+Extension.swift */; };
@@ -137,6 +138,7 @@
 		6B90DE2C2A34C0B40093DBA7 /* AddPlacePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlacePublisher.swift; sourceTree = "<group>"; };
 		6B90DE2E2A35B6380093DBA7 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
 		6B90DE312A35BB630093DBA7 /* CategoryNameConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameConverter.swift; sourceTree = "<group>"; };
+		6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		6B9D94622A1F7CA20001B07E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePublisher.swift; sourceTree = "<group>"; };
 		6B9D94722A1F877F0001B07E /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				6B9D94932A1FCDA90001B07E /* String+Extension.swift */,
 				6B40B45F2A21078B004E4A21 /* UINavigationController+Extension.swift */,
 				6B8604F82A2B9C360095B796 /* App+Impact.swift */,
+				6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				6B40B4602A21078B004E4A21 /* UINavigationController+Extension.swift in Sources */,
 				6B90DE2F2A35B6380093DBA7 /* PlaceService.swift in Sources */,
 				6BA3E08D2A1F4E9C008A034E /* ContentView.swift in Sources */,
+				6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */,
 				6B9D94802A1F8D300001B07E /* LoginView.swift in Sources */,
 				6B40B45B2A20E83B004E4A21 /* MapSearchField.swift in Sources */,
 				6BA3E08B2A1F4E9C008A034E /* looksgoodApp.swift in Sources */,

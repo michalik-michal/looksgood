@@ -1,24 +1,18 @@
 import SwiftUI
 
 struct AddPlaceView: View {
-    
-    @State private var id: String = ""
-    @State private var name: String = ""
-    @State private var address: String = ""
-    @State private var googleMapsURL: String = ""
-    @State private var googleMapsID: String = ""
-    @State private var long: String = ""
-    @State private var lat: String = ""
-    @State private var rating: String = ""
-    @State private var phoneNumber: String = ""
-    @State private var website: String = ""
-    @State private var showRatingField: Bool
-    @State private var searchedPlace: SearchedPlace
-    @State private var showInfoSheet = false
-    @State private var selectedCategory: PlaceCategoriesEnum?
+
     @EnvironmentObject private var placesService: PlacesService
     @EnvironmentObject private var appState: AppState
     @ObservedObject private var addRestaurantPublisher = AddPlacePublisher()
+
+    @State private var place = Place(name: "",
+                                     placeCategory: .restaurant)
+    @State private var rating: String = ""
+    @State private var searchedPlace: SearchedPlace
+    @State private var showRatingField: Bool
+    @State private var showInfoSheet = false
+    @State private var selectedCategory: PlaceCategoriesEnum?
     
     init(place: SearchedPlace = SearchedPlace(id: "", name: ""),
          showRatingField: Bool = true) {
@@ -30,14 +24,26 @@ struct AddPlaceView: View {
         ScrollView {
             VStack(spacing: 15) {
                 VStack(spacing: 15) {
-                    CustomTextField(imageName: "house", placeholderText: "Place name", text: $name)
-                    CustomTextField(imageName: "mappin", placeholderText: "Adcress", text: $address)
-                    CustomTextField(imageName: "map", placeholderText: "GoogleMaps Link (recommended)", text: $googleMapsURL)
-                    CustomTextField(imageName: "phone", placeholderText: "Phone number", text: $phoneNumber)
+                    CustomTextField(imageName: "house",
+                                    placeholderText: "Place name",
+                                    text: $place.name)
+                    CustomTextField(imageName: "mappin",
+                                    placeholderText: "Adcress",
+                                    text: $place.address.safe(""))
+                    CustomTextField(imageName: "map",
+                                    placeholderText: "GoogleMaps Link (recommended)",
+                                    text: $place.googleMapsURL.safe(""))
+                    CustomTextField(imageName: "phone",
+                                    placeholderText: "Phone number",
+                                    text: $place.phoneNumber.safe(""))
                         .keyboardType(.numberPad)
-                    CustomTextField(imageName: "globe", placeholderText: "Website", text: $website)
+                    CustomTextField(imageName: "globe",
+                                    placeholderText: "Website",
+                                    text: $place.website.safe(""))
                     if showRatingField {
-                        CustomTextField(imageName: "star", placeholderText: "Stars", text: $rating)
+                        CustomTextField(imageName: "star",
+                                        placeholderText: "Stars",
+                                        text: $rating)
                             .disabled(true)
                     }
                 }
@@ -89,32 +95,22 @@ struct AddPlaceView: View {
     }
 
     private func updatePlaceDetails() {
-        let place = placesService.fetchedPlace
-        id = place.id ?? ""
-        name = searchedPlace.name
-        address = place.address ?? ""
-        googleMapsURL = place.googleMapsURL ?? ""
-        googleMapsID = searchedPlace.id
-        long = place.long ?? ""
-        lat = place.lat ?? ""
-        rating = place.rating ?? ""
-        phoneNumber = place.phoneNumber?.description ?? ""
-        website = place.website?.description ?? ""
+        let fetchedPlace = placesService.fetchedPlace
+        place.id = fetchedPlace.id ?? ""
+        place.name = searchedPlace.name
+        place.address = fetchedPlace.address ?? ""
+        place.googleMapsURL = fetchedPlace.googleMapsURL ?? ""
+        place.googleMapsID = searchedPlace.id
+        place.long = fetchedPlace.long ?? ""
+        place.lat = fetchedPlace.lat ?? ""
+        place.rating = fetchedPlace.rating ?? ""
+        place.phoneNumber = fetchedPlace.phoneNumber?.description ?? ""
+        place.website = fetchedPlace.website?.description ?? ""
     }
     
     private func uploadPlace() {
-        Task { try await PlaceService().uploadPlace(place: Place(id: id,
-                                                             name: name,
-                                                             address: address,
-                                                             googleMapsURL: googleMapsURL,
-                                                             googleMapsID: googleMapsID,
-                                                             long: long,
-                                                             lat: lat,
-                                                             rating: rating,
-                                                             phoneNumber: phoneNumber,
-                                                             website: website,
-                                                             openingHours: [],
-                                                             placeCategory: selectedCategory ?? .restaurant)) }
+        place.placeCategory = selectedCategory ?? .restaurant
+        Task { try await PlaceService().uploadPlace(place: place) }
         appState.didUploadPlace = true
     }
 }

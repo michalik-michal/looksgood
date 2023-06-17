@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RestaurantCategoryPicker: View {
+struct PlaceCategoryPicker: View {
     
     let categories = PlaceCategories()
     @Binding var selectedCategory: PlaceCategoriesEnum?
@@ -25,8 +25,8 @@ struct RestaurantCategoryPicker: View {
     }
 }
 
-struct RestaurantCategoryPicker_Previews: PreviewProvider {
+struct PlaceCategoryPicker_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCategoryPicker(selectedCategory: .constant(.drinks))
+        PlaceCategoryPicker(selectedCategory: .constant(.drinks))
     }
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SearchRestaurantCell: View {
+struct SearchPlaceCell: View {
     
     var id: String
     var title: String
@@ -22,6 +22,6 @@ struct SearchRestaurantCell: View {
 
 struct SearchRestaurantCell_Previews: PreviewProvider {
     static var previews: some View {
-        SearchRestaurantCell(id: "", title: "Pizza Paolo", address: "Kryspinow")
+        SearchPlaceCell(id: "", title: "Pizza Paolo", address: "Kryspinow")
     }
 }

@@ -5,4 +5,5 @@ struct User: Identifiable, Codable {
     var email: String
     var username: String
     var accountType: AccountType
+    var places: String?
 }

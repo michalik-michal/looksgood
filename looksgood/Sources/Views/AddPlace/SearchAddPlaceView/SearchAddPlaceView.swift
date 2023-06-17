@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SearchAddRestaurantView: View {
+struct SearchAddPlaceView: View {
     
     @State private var searchText = ""
     @State private var selectedPlace: SearchedPlace?
@@ -12,7 +12,7 @@ struct SearchAddRestaurantView: View {
             ScrollView {
                 VStack {
                     ForEach(placesManager.searchResults, id: \.self) { place in
-                        SearchRestaurantCell(id: place.placeID,
+                        SearchPlaceCell(id: place.placeID,
                                              title: place.attributedPrimaryText.string,
                                              address: place.attributedSecondaryText?.string ?? "")
                         .onTapGesture {
@@ -43,8 +43,8 @@ struct SearchAddRestaurantView: View {
     }
 }
 
-struct SearchAddRestaurantView_Previews: PreviewProvider {
+struct SearchAddPlaceView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchAddRestaurantView()
+        SearchAddPlaceView()
     }
 }

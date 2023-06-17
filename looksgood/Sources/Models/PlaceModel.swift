@@ -1,6 +1,6 @@
 import Foundation
 
-struct Place: Equatable, Identifiable {
+struct Place: Equatable, Identifiable, Decodable {
     var id: String?
     var name: String
     var address: String?

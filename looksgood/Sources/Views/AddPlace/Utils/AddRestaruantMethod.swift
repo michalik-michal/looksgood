@@ -1,6 +1,6 @@
 import Foundation
 
-enum AddRestauranMethod: String {
+enum AddPlaceMethod: String {
     case googleMaps = "Google Maps"
     case manual = "Manual"
 }

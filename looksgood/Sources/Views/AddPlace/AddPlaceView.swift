@@ -3,6 +3,7 @@ import SwiftUI
 struct AddPlaceView: View {
 
     @EnvironmentObject private var placesService: PlacesService
+    @EnvironmentObject private var placeService: PlaceService
     @EnvironmentObject private var appState: AppState
     @ObservedObject private var addRestaurantPublisher = AddPlacePublisher()
 
@@ -60,12 +61,13 @@ struct AddPlaceView: View {
                         }
                 }
                 .padding(.horizontal)
-                RestaurantCategoryPicker(selectedCategory: $selectedCategory)
-                    .padding(.horizontal, 3)
+                PlaceCategoryPicker(selectedCategory: $selectedCategory)
             }
         }
         .onAppear {
-            placesService.fetchPlaceDetails(searchedPlace.id)
+            if searchedPlace.id != "" {
+                placesService.fetchPlaceDetails(searchedPlace.id)
+            }
             updatePlaceDetails()
         }
         .onDisappear {
@@ -110,7 +112,7 @@ struct AddPlaceView: View {
     
     private func uploadPlace() {
         place.placeCategory = selectedCategory ?? .restaurant
-        Task { try await PlaceService().uploadPlace(place: place) }
+        Task { try await placeService.uploadPlace(place: place) }
         appState.didUploadPlace = true
     }
 }

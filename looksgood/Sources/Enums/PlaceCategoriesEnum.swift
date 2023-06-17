@@ -1,6 +1,6 @@
 import Foundation
 
-enum PlaceCategoriesEnum: String {
+enum PlaceCategoriesEnum: String, Decodable {
     case cafe
     case foodTruck
     case restaurant

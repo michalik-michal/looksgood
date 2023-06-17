@@ -6,7 +6,6 @@ class PlacesService: NSObject, ObservableObject {
     @Published var fetchedPlace = Place(name: "", placeCategory: .restaurant)
     let placesClient = GMSPlacesClient.shared()
 
-    
     func searchPlace(query: String) {
         let autocompleteFilter = GMSAutocompleteFilter()
         autocompleteFilter.types = ["restaurant", "cafe", "bar", "meal_takeaway", "meal_delivery"]

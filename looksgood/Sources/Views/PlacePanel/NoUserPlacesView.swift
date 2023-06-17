@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct RestaurantPanelView: View {
-    
+struct NoUserPlacesView: View {
+
     @ObservedObject private var placesManager = PlacesService()
     @EnvironmentObject private var appState: AppState
     @State private var showAddManuallyView = false
     @State private var showAddWithGoogle = false
-    @State private var selectedMethod: AddRestauranMethod?
-    
+    @State private var selectedMethod: AddPlaceMethod?
+
     var body: some View {
         NavigationView {
             VStack() {
@@ -54,7 +54,7 @@ struct RestaurantPanelView: View {
             }
             .fullScreenCover(isPresented: $showAddWithGoogle) {
                 NavigationModalBarView(showModal: $showAddWithGoogle,
-                                       content: SearchAddRestaurantView())
+                                       content: SearchAddPlaceView())
             }
             .onChange(of: appState.didUploadPlace) { didUpload in
                 if didUpload {
@@ -68,8 +68,8 @@ struct RestaurantPanelView: View {
     }
 }
 
-struct RestaurantPanelView_Previews: PreviewProvider {
+struct NoUserPlacesView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantPanelView()
+        NoUserPlacesView()
     }
 }

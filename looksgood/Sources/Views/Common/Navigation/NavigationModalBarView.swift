@@ -13,7 +13,7 @@ struct NavigationModalBarView<Content>: View where Content: View {
                         Button(action: {
                             showModal = false
                         }, label: {
-                            Image(systemName: "xmark")
+                            SystemImage(.xmark)
                                 .frame(width: 24, height: 24, alignment: .center)
                                 .foregroundColor(.gray)
                         })

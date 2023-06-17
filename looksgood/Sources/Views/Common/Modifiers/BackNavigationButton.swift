@@ -12,8 +12,7 @@ struct BackNavigationButton: ViewModifier {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Image(systemName: "chevron.left")
-                            .resizable()
+                        SystemImage(.chevronLeft)
                             .scaledToFit()
                             .frame(width: 24, height: 24)
                             .foregroundColor(.gray)

@@ -3,6 +3,8 @@ import FirebaseStorage
 
 class PlaceService: ObservableObject {
     
+    @Published var usersPlace: Place?
+    
     func uploadPlace(place: Place) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let data = ["uid": uid,
@@ -21,6 +23,17 @@ class PlaceService: ObservableObject {
         } catch {
             print("Failed to upload place with error \(error.localizedDescription)")
         }
+    }
+    
+    func fetchUserPlace() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("places")
+            .whereField("uid", isEqualTo: uid)
+            .addSnapshotListener { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                let places = documents.compactMap({try? $0.data(as: Place.self)})
+                self.usersPlace = places.last
+            }
     }
 }
 

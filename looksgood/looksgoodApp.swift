@@ -8,6 +8,9 @@ struct looksgoodApp: App {
 
     @StateObject private var authService = AuthService()
     @StateObject private var locationManager = LocationManager()
+    @StateObject private var placesService = PlacesService()
+    @StateObject private var placeService = PlaceService()
+    @StateObject private var appState = AppState()
     
     init() {
         FirebaseApp.configure()
@@ -20,6 +23,9 @@ struct looksgoodApp: App {
             ContentView()
                 .environmentObject(authService)
                 .environmentObject(locationManager)
+                .environmentObject(placesService)
+                .environmentObject(appState)
+                .environmentObject(placeService)
         }
     }
 }

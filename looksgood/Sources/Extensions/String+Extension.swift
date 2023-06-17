@@ -20,4 +20,10 @@ final class Strings {
     static let deleteAccount = "Delete account"
     static let deleteAccountConfirmation = "Are you sure? Your account will be gone forever."
     static let startAddingRestaurant = "Start adding your restaurant"
+    static let done = "Done"
+    static let or = "or"
+    static let next = "Next"
+    static let categoryInfo = "This will appear as main place category associated with your place. You can change it later in the settings."
+    static let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    static let addImages = "Add images of your place."
 }

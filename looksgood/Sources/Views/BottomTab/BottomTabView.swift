@@ -21,15 +21,15 @@ struct BottomTabView: View {
                             self.selectedIndex = 0
                         }
                         .tabItem {
-                            Image(systemName: "map")
+                            SystemImage(.map)
                             Text("Map")
                         }.tag(0)
-                    RestaurantPanelView()
+                    PlacePanelView()
                         .onAppear {
                             self.selectedIndex = 1
                         }
                         .tabItem {
-                            Image(systemName: "house")
+                            SystemImage(.house)
                             Text("Panel")
                         }.tag(1)
                 }

@@ -4,5 +4,6 @@ import Foundation
 class AppState: ObservableObject {
     
     @Published var pickedMarker: CustomMarker?
+    @Published var didUploadPlace = false
     
 }

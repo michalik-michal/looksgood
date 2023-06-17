@@ -5,7 +5,6 @@ struct AccountTypeView: View {
     @State private var selectedType: AccountType?
     @ObservedObject private var publisher = AccountTypePublisher()
     @Environment(\.presentationMode) var presentationMode
-    let impact = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         VStack() {
@@ -17,14 +16,14 @@ struct AccountTypeView: View {
                 Spacer()
             }
             PlainLabelButton(title: Strings.restaurantOwner) {
-                impact.impactOccurred()
+                Impact().makeImpact(.medium)
                 selectedType = .restaurantOwner
             }
             .fontWeight(selectedType == .restaurantOwner ? .bold : .regular)
-            Text("or")
+            Text(Strings.or)
                 .font(.title3.bold())
             PlainLabelButton(title: Strings.user) {
-                impact.impactOccurred()
+                Impact().makeImpact(.medium)
                 selectedType = .user
             }
             .fontWeight(selectedType == .user ? .bold : .regular)
@@ -33,12 +32,10 @@ struct AccountTypeView: View {
                 NavigationLink {
                     RegisterView(accountType: account)
                 } label: {
-                    PlainLabel(title: "Next")
+                    PlainLabel(title: Strings.next)
                 }
                 .fontWeight(.heavy)
             }
-         //   .opacity(selectedType == "" ? 0.0 : 1.0)
-            
         }
         .padding(.horizontal)
         .backNavigationButton()

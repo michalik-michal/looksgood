@@ -4,6 +4,7 @@ struct OwnerPlaceView: View {
     
     @EnvironmentObject private var placeService: PlaceService
     @State private var showCategorySheet = false
+    @State private var showAddMenuItem = false
     
     var body: some View {
          ScrollView(showsIndicators: false) {
@@ -26,6 +27,10 @@ struct OwnerPlaceView: View {
                                  PlainLabel(title: place.website ?? "Add website",
                                             alignment: .leading,
                                             image: Image(systemName: "globe"))
+                                 Divider()
+                                 PlainButton(title: "Add menu item", image: Image(systemName: "plus")) {
+                                     showAddMenuItem.toggle()
+                                 }
                              }
                          }
                          .padding(.horizontal)
@@ -34,12 +39,9 @@ struct OwnerPlaceView: View {
                  }
              }
          }
-         .toolbar {
-             ToolbarItem(placement: .navigationBarTrailing) {
-                 Button("Edit") {
-                     print("")
-                 }
-             }
+         .sheet(isPresented: $showAddMenuItem) {
+             AddMenuItemSheet(isShowing: $showAddMenuItem)
+                 .presentationDetents([.height(600)])
          }
      }
     

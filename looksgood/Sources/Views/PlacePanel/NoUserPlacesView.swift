@@ -2,7 +2,6 @@ import SwiftUI
 
 struct NoUserPlacesView: View {
 
-    @ObservedObject private var placesManager = PlacesService()
     @EnvironmentObject private var appState: AppState
     @State private var showAddManuallyView = false
     @State private var showAddWithGoogle = false

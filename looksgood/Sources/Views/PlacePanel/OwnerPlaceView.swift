@@ -1,61 +1,121 @@
 import SwiftUI
+import PhotosUI
 
 struct OwnerPlaceView: View {
     
     @EnvironmentObject private var placeService: PlaceService
+    @Namespace var animation
     @State private var showCategorySheet = false
-    @State private var showAddMenuItem = false
+    @State private var tabViewHeight = 0.0
+    @State private var showSelectedImage = false
     
     var body: some View {
-         ScrollView(showsIndicators: false) {
-             VStack(alignment: .leading) {
-                 if let place = placeService.usersPlace {
-                     if false {
-                         ImageView(image: "restaurant", height: 180)
-                     } else {
-                         addImages
-                     }
-                     VStack {
-                         VStack {
-                             titleStack
-                             adressStack
-                             secondaryStack
-                             VStack(spacing: 10) {
-                                 PlainLabel(title: place.phoneNumber ?? "Add phone number",
-                                            alignment: .leading,
-                                            image: Image(systemName: "phone"))
-                                 PlainLabel(title: place.website ?? "Add website",
-                                            alignment: .leading,
-                                            image: Image(systemName: "globe"))
-                                 Divider()
-                                 PlainButton(title: "Add menu item", image: Image(systemName: "plus")) {
-                                     showAddMenuItem.toggle()
-                                 }
-                             }
-                         }
-                         .padding(.horizontal)
-                         Spacer()
-                     }
-                 }
-             }
-         }
-         .sheet(isPresented: $showAddMenuItem) {
-             AddMenuItemSheet(isShowing: $showAddMenuItem)
-                 .presentationDetents([.height(600)])
-         }
-     }
-    
-    private var addImages: some View {
-        VStack {
-            Image(systemName: "plus")
-                .resizable()
-                .frame(width: 25, height: 25)
-            Text(Strings.addImages)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    if let place = placeService.usersPlace {
+                        if false {
+                            ImageView(imageName: "restaurant", height: 180)
+                        } else {
+                            addImage()
+                        }
+                        VStack {
+                            VStack {
+                                titleStack
+                                adressStack
+                                secondaryStack
+                                VStack(spacing: 10) {
+                                    PlainLabel(title: place.phoneNumber ?? "Add phone number",
+                                               alignment: .leading,
+                                               image: Image(systemName: "phone"))
+                                    PlainLabel(title: place.website ?? "Add website",
+                                               alignment: .leading,
+                                               image: Image(systemName: "globe"))
+                                    NavigationLink {
+                                        MenuView()
+                                            .backNavigationButton()
+                                    } label: {
+                                        PlainLabel(title: "Menu",
+                                                   alignment: .leading,
+                                                   image: Image(systemName: "book"))
+                                    }
+                                    
+                                }
+                            }
+                            .padding(.horizontal)
+                            Spacer()
+                        }
+                    }
+                }
+            }
         }
+        .onChange(of: placeService.imageState) { newValue in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                showSelectedImage = true
+            }
+        }
+        .sheet(isPresented: $showSelectedImage) {
+            uploadPhotoSheet
+        }
+    }
+
+    private func addImage() -> some View {
+        PhotosPicker(selection: $placeService.selectedPlaceImage,
+                     matching: .any(of: [.images,
+                                         .screenshots,
+                                         .not(.videos)])) {
+                                             if placeService.selectedPlaceImage == nil {
+                                                 VStack {
+                                                     Image(systemName: "plus")
+                                                         .resizable()
+                                                         .frame(width: 25, height: 25)
+                                                     Text(Strings.addImages)
+                                                 }
+                                                 .foregroundColor(.blackWhite)
+                                                 .frame(maxWidth: .infinity)
+                                                 .frame(height: 180)
+                                                 .background(Color(.systemGray6))
+                                             } else {
+                                                 Text("Photo added")
+                                                     .foregroundColor(.blackWhite)
+                                                     .frame(maxWidth: .infinity)
+                                                     .frame(height: 180)
+                                                     .background(Color(.systemGray6))
+                                                     .cornerRadius(12)
+                                             }
+                                         }
+    }
+
+    private var uploadPhotoSheet: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Upload")
+                    .onTapGesture {
+                        //TODO: - Upload image
+                        showSelectedImage = false
+                    }
+            }
+            Spacer()
+            switch placeService.imageState {
+            case .success(let image):
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 180)
+                    .clipped()
+                    .cornerRadius(12)
+            default:
+                Text("Unable to preview photo")
+            }
+            Spacer()
+        }
+        .presentationDetents([.height(300)])
         .foregroundColor(.blackWhite)
-        .frame(maxWidth: .infinity)
-        .frame(height: 180)
-        .background(Color(.systemGray6))
+        .padding()
+        .onDisappear {
+            placeService.selectedPlaceImage = nil
+        }
     }
      
      private var titleStack: some View {

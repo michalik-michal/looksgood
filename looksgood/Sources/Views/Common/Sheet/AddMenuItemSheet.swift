@@ -7,12 +7,12 @@ struct AddMenuItemSheet: View {
     @Binding var isShowing: Bool
     @State private var showCategoryStack = false
     @State private var selectedCurrency: Currency = .ZŁ
-    @State private var selectedCategories: [String] = []
-    @State private var selectedCategoryToAdd: FoodCategory?
+    @State private var selectedCategory: FoodCategory?
     @State private var ingredients: [String]  = []
     @State private var menuItem = MenuItem(placeID: "",
                                            title: "",
                                            price: "",
+                                           category: .All,
                                            description: "")
     
     var body: some View {
@@ -31,7 +31,8 @@ struct AddMenuItemSheet: View {
             PlainButton(title: Strings.done) {
                 Task {
                     menuItem.price = "\(menuItem.price) \(selectedCurrency.rawValue)"
-                    try await menuItem.image = service.uploadPhoto()
+                    menuItem.category = selectedCategory ?? .All
+                    try await menuItem.imageURL = service.uploadPhoto()
                     try await service.uploadMenuItem(menuItem: menuItem)
                     isShowing = false
                 }
@@ -40,14 +41,17 @@ struct AddMenuItemSheet: View {
         }
         .foregroundColor(.blackWhite)
         .padding()
+        .onDisappear {
+            service.selectedMenuImage = nil
+        }
     }
 
     private func addImage() -> some View {
-        PhotosPicker(selection: $service.selectedItem,
+        PhotosPicker(selection: $service.selectedMenuImage,
                      matching: .any(of: [.images,
                                          .screenshots,
                                          .not(.videos)])) {
-                                             if service.selectedItem == nil {
+                                             if service.selectedMenuImage == nil {
                                                  VStack {
                                                      Image(systemName: "plus")
                                                          .resizable()
@@ -60,12 +64,22 @@ struct AddMenuItemSheet: View {
                                                  .background(Color(.systemGray6))
                                                  .cornerRadius(12)
                                              } else {
-                                                 Text("Photo added")
-                                                     .foregroundColor(.blackWhite)
-                                                     .frame(maxWidth: .infinity)
-                                                     .frame(height: 180)
-                                                     .background(Color(.systemGray6))
-                                                     .cornerRadius(12)
+                                                 switch service.imageState {
+                                                 case .success(let image):
+                                                     image
+                                                         .resizable()
+                                                         .aspectRatio(contentMode: .fill)
+                                                         .frame(height: 180)
+                                                         .clipped()
+                                                         .cornerRadius(12)
+                                                 default:
+                                                     Text("Unable to preview photo")
+                                                         .foregroundColor(.blackWhite)
+                                                         .frame(maxWidth: .infinity)
+                                                         .frame(height: 180)
+                                                         .background(Color(.systemGray6))
+                                                         .cornerRadius(12)
+                                                 }
                                              }
                                          }
     }
@@ -93,9 +107,9 @@ struct AddMenuItemSheet: View {
     private var selectedCategoriesStack: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                if selectedCategories.isEmpty {
+                if selectedCategory == nil {
                     HStack {
-                        Text("Add category")
+                        Text("Select category")
                         SystemImage(.plus)
                             .frame(width: 15, height: 15)
                     }
@@ -109,11 +123,7 @@ struct AddMenuItemSheet: View {
                             .padding(1)
                     }
                 } else {
-                    ForEach(selectedCategories, id: \.self) { title in
-                        FoodCategoryCell(title: title)
-                    }
-                    SystemImage(.plus)
-                        .frame(width: 15, height: 15)
+                    FoodCategoryCell(title: selectedCategory?.rawValue ?? "")
                         .onTapGesture {
                             showCategoryStack.toggle()
                         }
@@ -128,29 +138,14 @@ struct AddMenuItemSheet: View {
                 HStack {
                     ForEach(FoodCategory.allCases, id: \.self) { category in
                         FoodCategoryCell(title: category.rawValue)
-                            .bold(category == selectedCategoryToAdd)
                             .onTapGesture {
-                                selectedCategoryToAdd = category
+                                selectedCategory = category
+                                showCategoryStack = false
                             }
                     }
                 }
             }
             .hide(if: !showCategoryStack)
-            HStack {
-                Text("Add")
-                    .padding(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.blackWhite, lineWidth: 1)
-                    }
-                Spacer()
-            }
-            .hide(if: selectedCategoryToAdd == nil)
-            .onTapGesture {
-                selectedCategories.append(selectedCategoryToAdd?.rawValue ?? "")
-                selectedCategoryToAdd = nil
-                showCategoryStack = false
-            }
         }
     }
 }
@@ -158,5 +153,6 @@ struct AddMenuItemSheet: View {
 struct AddMenuItemSheet_Previews: PreviewProvider {
     static var previews: some View {
         AddMenuItemSheet(isShowing: .constant(true))
+            .environmentObject(PlaceService())
     }
 }

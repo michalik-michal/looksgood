@@ -34,6 +34,7 @@ struct MenuItemCell: View {
                 .font(.title2.bold())
                 .padding()
         }
+        .contentShape(Rectangle())
     }
 }
 

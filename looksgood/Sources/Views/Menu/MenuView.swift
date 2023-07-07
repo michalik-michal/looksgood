@@ -18,12 +18,17 @@ struct MenuView: View {
                             ScrollView(showsIndicators: false) {
                                 VStack(spacing: 0) {
                                     ForEach(menuItems, id: \.title) { item in
-                                        if category == .All {
-                                            MenuItemCell(menuItem: item)
-                                        } else if item.category == category {
-                                            MenuItemCell(menuItem: item)
+                                        NavigationLink {
+                                            MenuItemDetailsView(menuItem: item)
+                                                .backNavigationButton()
+                                        } label: {
+                                            if category == .All {
+                                                MenuItemCell(menuItem: item)
+                                            } else if item.category == category {
+                                                MenuItemCell(menuItem: item)
+                                            }
                                         }
-                                        
+                                        .buttonStyle(FullOpacity())
                                     }
                                 }
                             }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsCell: View {
-    
+
     var image: String
     var title: String
 
@@ -17,6 +17,7 @@ struct SettingsCell: View {
                 Divider()
             }
             .foregroundColor(.blackWhite)
+            .contentShape(Rectangle())
         }
     }
 

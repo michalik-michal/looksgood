@@ -14,8 +14,16 @@ struct OwnerPlaceView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
                     if let place = placeService.usersPlace {
-                        if false {
-                            ImageView(imageName: "restaurant", height: 180)
+                        if let imageURL = placeService.usersPlace?.imageURL {
+                            AsyncImage(url: URL(string: imageURL)) { image in
+                                image
+                                    .resizable()
+                                    .frame(height: 180)
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: UIScreen.main.bounds.width,
+                                           height: 180)
+                            }
                         } else {
                             addImage()
                         }
@@ -60,30 +68,37 @@ struct OwnerPlaceView: View {
     }
 
     private func addImage() -> some View {
-        PhotosPicker(selection: $placeService.selectedPlaceImage,
-                     matching: .any(of: [.images,
-                                         .screenshots,
-                                         .not(.videos)])) {
-                                             if placeService.selectedPlaceImage == nil {
-                                                 VStack {
-                                                     Image(systemName: "plus")
-                                                         .resizable()
-                                                         .frame(width: 25, height: 25)
-                                                     Text(Strings.addImages)
-                                                 }
-                                                 .foregroundColor(.blackWhite)
-                                                 .frame(maxWidth: .infinity)
-                                                 .frame(height: 180)
-                                                 .background(Color(.systemGray6))
-                                             } else {
-                                                 Text("Photo added")
+        AsyncImage(url: URL(string: placeService.usersPlace?.address ?? "")) { image in
+            image
+                .resizable()
+                .frame(height: 180)
+        } placeholder: {
+            PhotosPicker(selection: $placeService.selectedPlaceImage,
+                         matching: .any(of: [.images,
+                                             .screenshots,
+                                             .not(.videos)])) {
+                                                 if placeService.selectedPlaceImage == nil {
+                                                     VStack {
+                                                         Image(systemName: "plus")
+                                                             .resizable()
+                                                             .frame(width: 25, height: 25)
+                                                         Text(Strings.addImages)
+                                                     }
                                                      .foregroundColor(.blackWhite)
                                                      .frame(maxWidth: .infinity)
                                                      .frame(height: 180)
                                                      .background(Color(.systemGray6))
-                                                     .cornerRadius(12)
+                                                 } else {
+                                                     Text("Photo added")
+                                                         .foregroundColor(.blackWhite)
+                                                         .frame(maxWidth: .infinity)
+                                                         .frame(height: 180)
+                                                         .background(Color(.systemGray6))
+                                                         .cornerRadius(12)
+                                                 }
                                              }
-                                         }
+        }
+
     }
 
     private var uploadPhotoSheet: some View {
@@ -92,8 +107,12 @@ struct OwnerPlaceView: View {
                 Spacer()
                 Text("Upload")
                     .onTapGesture {
-                        //TODO: - Upload image
-                        showSelectedImage = false
+                        Task {
+                            if let placeDocumentID = placeService.usersPlace?.documentID {
+                                try await placeService.uploadPlacePhoto(placeDocumentID)
+                                showSelectedImage = false
+                            }
+                        }
                     }
             }
             Spacer()

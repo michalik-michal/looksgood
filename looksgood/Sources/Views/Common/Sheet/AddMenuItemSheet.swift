@@ -32,7 +32,7 @@ struct AddMenuItemSheet: View {
                 Task {
                     menuItem.price = "\(menuItem.price) \(selectedCurrency.rawValue)"
                     menuItem.category = selectedCategory ?? .All
-                    try await menuItem.imageURL = service.uploadPhoto()
+                    try await menuItem.imageURL = service.uploadmenuItemPhoto()
                     try await service.uploadMenuItem(menuItem: menuItem)
                     isShowing = false
                 }

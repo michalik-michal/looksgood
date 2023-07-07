@@ -1,6 +1,11 @@
 import Foundation
+import Firebase
+import FirebaseFirestoreSwift
 
 struct Place: Equatable, Identifiable, Decodable {
+    
+    @DocumentID var documentID: String?
+
     var id: String?
     var name: String
     var address: String?
@@ -12,5 +17,6 @@ struct Place: Equatable, Identifiable, Decodable {
     var phoneNumber: String?
     var website: String?
     var openingHours: [String]?
+    var imageURL: String?
     var placeCategory: PlaceCategoriesEnum
 }

@@ -38,6 +38,7 @@ struct PlainLabel: View {
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
                 .contentShape(Rectangle())
+                .lineLimit(1)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(lineWidth: 1)
@@ -52,6 +53,7 @@ struct PlainLabel: View {
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
                 .contentShape(Rectangle())
+                .lineLimit(1)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(lineWidth: 1)
@@ -65,6 +67,7 @@ struct PlainLabel: View {
                     .foregroundColor(.blackWhite)
                     .frame(height: 50)
                     .contentShape(Rectangle())
+                    .lineLimit(1)
                 Spacer()
             }
             .padding(.horizontal)

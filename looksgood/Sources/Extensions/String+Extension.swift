@@ -27,3 +27,19 @@ final class Strings {
     static let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     static let addImages = "Add images of your place."
 }
+
+extension String {
+    var isNotEmptyString: Bool {
+        if self == "" {
+            return false
+        }
+        return true
+    }
+
+    var isEmptyString: Bool {
+        if self == "" {
+            return true
+        }
+        return false
+    }
+}

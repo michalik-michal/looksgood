@@ -44,6 +44,7 @@ class PlaceService: ObservableObject {
                     "lat": place.lat ?? "",
                     "phoneNumber": place.phoneNumber ?? "",
                     "website": place.website ?? "",
+                    "imageURL": "",
                     "placeCategory": place.placeCategory.rawValue] as [String : Any]
         do {
             try await Firestore.firestore().collection("places").document()
@@ -64,9 +65,10 @@ class PlaceService: ObservableObject {
             }
     }
 
-    func uploadPlacePhoto() async throws -> String? {
-        guard let item = selectedPlaceImage else { return nil }
-        guard let photoData = try await item.loadTransferable(type: Data.self) else { return nil }
+    func uploadPlacePhoto(_ placeDocumentID: String) async throws {
+        let place = Firestore.firestore().collection("places").document(placeDocumentID)
+        guard let item = selectedPlaceImage else { return }
+        guard let photoData = try await item.loadTransferable(type: Data.self) else { return }
         let filename = NSUUID().uuidString
         let ref = Storage.storage().reference().child("/placePhotos/\(filename)")
         let metadata = StorageMetadata()
@@ -74,10 +76,10 @@ class PlaceService: ObservableObject {
         do {
             let _ = try await ref.putDataAsync(photoData, metadata: metadata)
             let url = try await ref.downloadURL()
-            return url.absoluteString
+            try await place.updateData(["imageURL": url.absoluteString])
         } catch {
             print("DEBUG: Failed to upload photo with error \(error.localizedDescription)")
-            return nil
+            return
         }
     }
 //MARK: - Menu
@@ -99,7 +101,7 @@ class PlaceService: ObservableObject {
         }
     }
 
-    func uploadPhoto() async throws -> String? {
+    func uploadmenuItemPhoto() async throws -> String? {
         guard let item = selectedMenuImage else { return nil }
         guard let photoData = try await item.loadTransferable(type: Data.self) else { return nil }
         let filename = NSUUID().uuidString
@@ -142,6 +144,22 @@ class PlaceService: ObservableObject {
             placeMenuCategories?.insert(.All, at: 0)
         }
     }
+
+    func deleteMenuItem(_ item: MenuItem) async throws {
+        if let id = item.id {
+            try await deleteImage(for: item)
+            try await Firestore.firestore().collection("menuItems").document(id).delete()
+        }
+    }
+    
+    private func deleteImage(for item: MenuItem) async throws {
+        if let url = item.imageURL {
+            if url.isNotEmptyString {
+                try await Storage.storage().reference().storage.reference(forURL: url).delete()
+            }
+        }
+    }
+    
     //MARK: - Image
 
     private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {

@@ -62,6 +62,8 @@
 		6B90DE322A35BB630093DBA7 /* CategoryNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE312A35BB630093DBA7 /* CategoryNameConverter.swift */; };
 		6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */; };
 		6B91B9402A4B18DF00FB06C2 /* ImageStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */; };
+		6B979E3C2A4DC067007051FB /* MenuItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */; };
+		6B979E3E2A4DC7DD007051FB /* ButtonStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */; };
 		6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94622A1F7CA20001B07E /* HomeView.swift */; };
 		6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */; };
 		6B9D94732A1F877F0001B07E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94722A1F877F0001B07E /* Color+Extension.swift */; };
@@ -168,6 +170,8 @@
 		6B90DE312A35BB630093DBA7 /* CategoryNameConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameConverter.swift; sourceTree = "<group>"; };
 		6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStateEnum.swift; sourceTree = "<group>"; };
+		6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailsView.swift; sourceTree = "<group>"; };
+		6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extension.swift"; sourceTree = "<group>"; };
 		6B9D94622A1F7CA20001B07E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6B9D94652A1F7D0D0001B07E /* HomePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePublisher.swift; sourceTree = "<group>"; };
 		6B9D94722A1F877F0001B07E /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				6B2FA6102A48AB0F00B0E589 /* MenuView.swift */,
+				6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				6B40B45F2A21078B004E4A21 /* UINavigationController+Extension.swift */,
 				6B8604F82A2B9C360095B796 /* App+Impact.swift */,
 				6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */,
+				6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -941,6 +947,7 @@
 				6B40B45E2A210272004E4A21 /* NavigationModalBarView.swift in Sources */,
 				6B43F0002A3DDC2D00F746A5 /* CurrencyEnum.swift in Sources */,
 				6B40B4652A210B7B004E4A21 /* PlainLabel.swift in Sources */,
+				6B979E3E2A4DC7DD007051FB /* ButtonStyle+Extension.swift in Sources */,
 				6B90DE2D2A34C0B40093DBA7 /* AddPlacePublisher.swift in Sources */,
 				6B43EFFE2A3DC24800F746A5 /* MenuItemModel.swift in Sources */,
 				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
@@ -966,6 +973,7 @@
 				6B90DE2B2A34C0AB0093DBA7 /* AddPlaceView.swift in Sources */,
 				6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */,
 				6BD7445A2A33952800A5343D /* OpeningHoursPickerView.swift in Sources */,
+				6B979E3C2A4DC067007051FB /* MenuItemDetailsView.swift in Sources */,
 				6B40B4732A21F342004E4A21 /* ProfileView.swift in Sources */,
 				6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */,
 				6B43F0042A3EEDEA00F746A5 /* PhotosService.swift in Sources */,

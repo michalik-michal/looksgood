@@ -9,6 +9,7 @@ class PlaceService: ObservableObject {
     @Published var menuItems: [MenuItem]?
     @Published var placeMenuCategories: [FoodCategory]?
     @Published var imageState: ImageState = .empty
+    @Published var markers: [CustomMarker] = []
     @Published var selectedMenuImage: PhotosPickerItem? {
         didSet {
             if let selectedMenuImage {
@@ -176,5 +177,22 @@ class PlaceService: ObservableObject {
             }
         }
     }
+    
+    //MARK: - Places
+    
+    func fetchPlaces() async throws  {
+        var fetchedMarkers: [CustomMarker] = []
+        let snapshot = try await Firestore.firestore().collection("places").getDocuments()
+        let documents = snapshot.documents
+        let places = documents.compactMap({try? $0.data(as: Place.self)})
+        for place in places {
+            let marker = CustomMarker(lat: Double(place.lat ?? "") ?? 0.0,
+                                      long: Double(place.long ?? "") ?? 0.0,
+                                      title: place.name)
+            fetchedMarkers.append(marker)
+        }
+        DispatchQueue.main.sync {
+            self.markers = fetchedMarkers
+        }
+    }
 }
-

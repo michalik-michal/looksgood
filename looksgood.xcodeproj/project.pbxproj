@@ -49,6 +49,9 @@
 		6B43F0002A3DDC2D00F746A5 /* CurrencyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43EFFF2A3DDC2D00F746A5 /* CurrencyEnum.swift */; };
 		6B43F0022A3DE37800F746A5 /* FoodCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43F0012A3DE37800F746A5 /* FoodCategoryCell.swift */; };
 		6B43F0042A3EEDEA00F746A5 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43F0032A3EEDEA00F746A5 /* PhotosService.swift */; };
+		6B68219B2A62A28E00F004C4 /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B68219A2A62A28E00F004C4 /* MapStyle.json */; };
+		6B68219D2A62A39600F004C4 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */; };
+		6B68219F2A62ACD800F004C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */; };
 		6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */; };
 		6B8604EF2A2B24CA0095B796 /* SearchPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */; };
 		6B8604F12A2B78E20095B796 /* AddRestaruantMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604F02A2B78E20095B796 /* AddRestaruantMethod.swift */; };
@@ -157,6 +160,9 @@
 		6B43EFFF2A3DDC2D00F746A5 /* CurrencyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyEnum.swift; sourceTree = "<group>"; };
 		6B43F0012A3DE37800F746A5 /* FoodCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryCell.swift; sourceTree = "<group>"; };
 		6B43F0032A3EEDEA00F746A5 /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		6B68219A2A62A28E00F004C4 /* MapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
+		6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
+		6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
 		6B8604F02A2B78E20095B796 /* AddRestaruantMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaruantMethod.swift; sourceTree = "<group>"; };
@@ -459,8 +465,10 @@
 		6B9D946C2A1F84640001B07E /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				6B68219A2A62A28E00F004C4 /* MapStyle.json */,
 				6B29269D2A2497AF00A50C35 /* LocationManager.swift */,
 				6B29269B2A24966300A50C35 /* GoogleMapView.swift */,
+				6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 				6B8604F82A2B9C360095B796 /* App+Impact.swift */,
 				6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */,
 				6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */,
+				6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -814,6 +823,7 @@
 				6B9D94862A1F8ECF0001B07E /* bunchOfFood.json in Resources */,
 				6B40B4862A23C852004E4A21 /* hello.json in Resources */,
 				6B40B44B2A20C745004E4A21 /* GoogleService-Info.plist in Resources */,
+				6B68219B2A62A28E00F004C4 /* MapStyle.json in Resources */,
 				6BA3E0922A1F4E9D008A034E /* Preview Assets.xcassets in Resources */,
 				6B40B46C2A21114C004E4A21 /* confirmingOrder.json in Resources */,
 				6BA3E08F2A1F4E9D008A034E /* Assets.xcassets in Resources */,
@@ -974,12 +984,14 @@
 				6B9D94662A1F7D0D0001B07E /* HomePublisher.swift in Sources */,
 				6BD7445A2A33952800A5343D /* OpeningHoursPickerView.swift in Sources */,
 				6B979E3C2A4DC067007051FB /* MenuItemDetailsView.swift in Sources */,
+				6B68219F2A62ACD800F004C4 /* UIView+Extension.swift in Sources */,
 				6B40B4732A21F342004E4A21 /* ProfileView.swift in Sources */,
 				6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */,
 				6B43F0042A3EEDEA00F746A5 /* PhotosService.swift in Sources */,
 				6B40B4682A210D53004E4A21 /* PlainButtonStyle.swift in Sources */,
 				6B40B4592A20DAFC004E4A21 /* AuthenticationFormProtocol.swift in Sources */,
 				6B8604F12A2B78E20095B796 /* AddRestaruantMethod.swift in Sources */,
+				6B68219D2A62A39600F004C4 /* CustomMarkerView.swift in Sources */,
 				6B2FA6112A48AB0F00B0E589 /* MenuView.swift in Sources */,
 				6B3E96872A39C1A0001E2F52 /* OwnerPlaceView.swift in Sources */,
 				6B8604F32A2B7CB70095B796 /* SearchAddPlaceView.swift in Sources */,

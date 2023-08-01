@@ -13,7 +13,7 @@ class LocationManager: NSObject, ObservableObject {
     }
     @Published var pickedMarker: CustomMarker?
     @Published var customMarkers: [CustomMarker] = []
-    
+    @Published var shouldReloadMap = false
     
     var latitude: CLLocationDegrees {
         return location?.coordinate.latitude ?? 50.059683

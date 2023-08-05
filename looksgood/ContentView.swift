@@ -14,3 +14,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 //TODO: - Fetch restaurant photo, add multiple photos
+//TODO: Handle ingredients and possibly description

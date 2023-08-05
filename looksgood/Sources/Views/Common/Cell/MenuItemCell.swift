@@ -1,5 +1,4 @@
 import SwiftUI
-//TODO: Handle ingredients and possibly description
 struct MenuItemCell: View {
     
     var menuItem: MenuItem

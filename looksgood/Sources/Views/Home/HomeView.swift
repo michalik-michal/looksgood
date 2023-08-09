@@ -27,7 +27,6 @@ struct HomeView: View {
                         .ignoresSafeArea()
                         .onAppear {
                             locationManager.shouldUpdateLocation = false
-                            
                         }
                 }
                 VStack {

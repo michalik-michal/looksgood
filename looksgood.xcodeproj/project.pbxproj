@@ -53,6 +53,7 @@
 		6B68219D2A62A39600F004C4 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */; };
 		6B68219F2A62ACD800F004C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */; };
 		6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */; };
+		6B7C3D252A90D7E200863816 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C3D242A90D7E200863816 /* Image+Extension.swift */; };
 		6B8604EF2A2B24CA0095B796 /* SearchPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */; };
 		6B8604F12A2B78E20095B796 /* AddRestaruantMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604F02A2B78E20095B796 /* AddRestaruantMethod.swift */; };
 		6B8604F32A2B7CB70095B796 /* SearchAddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604F22A2B7CB70095B796 /* SearchAddPlaceView.swift */; };
@@ -164,6 +165,7 @@
 		6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		6B7C3D242A90D7E200863816 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
 		6B8604F02A2B78E20095B796 /* AddRestaruantMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaruantMethod.swift; sourceTree = "<group>"; };
 		6B8604F22A2B7CB70095B796 /* SearchAddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddPlaceView.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */,
 				6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */,
 				6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */,
+				6B7C3D242A90D7E200863816 /* Image+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				6B40B4652A210B7B004E4A21 /* PlainLabel.swift in Sources */,
 				6B979E3E2A4DC7DD007051FB /* ButtonStyle+Extension.swift in Sources */,
 				6B90DE2D2A34C0B40093DBA7 /* AddPlacePublisher.swift in Sources */,
+				6B7C3D252A90D7E200863816 /* Image+Extension.swift in Sources */,
 				6B43EFFE2A3DC24800F746A5 /* MenuItemModel.swift in Sources */,
 				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
 				6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */,

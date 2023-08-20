@@ -110,7 +110,7 @@ struct AddMenuItemSheet: View {
                 if selectedCategory == nil {
                     HStack {
                         Text("Select category")
-                        SystemImage(.plus)
+                        Image(.plus)
                             .frame(width: 15, height: 15)
                     }
                     .onTapGesture {

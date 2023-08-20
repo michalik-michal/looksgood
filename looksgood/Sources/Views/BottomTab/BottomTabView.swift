@@ -21,7 +21,7 @@ struct BottomTabView: View {
                             self.selectedIndex = 0
                         }
                         .tabItem {
-                            SystemImage(.map)
+                            Image(.map)
                             Text("Map")
                         }.tag(0)
                     PlacePanelView()
@@ -29,7 +29,7 @@ struct BottomTabView: View {
                             self.selectedIndex = 1
                         }
                         .tabItem {
-                            SystemImage(.house)
+                            Image(.house)
                             Text("Panel")
                         }.tag(1)
                 }

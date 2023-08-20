@@ -11,7 +11,7 @@ struct MapSearchField: View {
                 .padding(.leading)
             Divider()
                 .frame(height: 22)
-            SystemImage(.person)
+            Image(.person)
                 .frame(width: 15, height: 15)
                 .foregroundColor(.gray)
                 .padding(.horizontal, 10)

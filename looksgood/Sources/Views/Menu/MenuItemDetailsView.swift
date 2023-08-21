@@ -44,7 +44,7 @@ struct MenuItemDetailsView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Image(systemName: "trash")
+                Image(.trash)
                     .foregroundColor(.blackWhite)
                     .onTapGesture { showDeleteItemAlert.toggle() }
             }
@@ -70,7 +70,7 @@ struct MenuItemDetailsView: View {
                                          .not(.videos)])) {
                                              if placeService.selectedMenuImage == nil {
                                                  VStack {
-                                                     Image(systemName: "plus")
+                                                     Image(.plus)
                                                          .resizable()
                                                          .frame(width: 25, height: 25)
                                                      Text("Add image for this item.")

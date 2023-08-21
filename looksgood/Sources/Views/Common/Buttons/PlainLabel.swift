@@ -82,6 +82,6 @@ struct PlainLabel: View {
 
 struct PlainLabel_Previews: PreviewProvider {
     static var previews: some View {
-        PlainLabel(title: "Hello", alignment: .leading, image: Image(systemName: "phone"))
+        PlainLabel(title: "Hello", alignment: .leading, image: Image(.phone))
     }
 }

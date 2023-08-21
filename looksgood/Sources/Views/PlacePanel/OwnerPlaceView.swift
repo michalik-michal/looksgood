@@ -35,17 +35,17 @@ struct OwnerPlaceView: View {
                                 VStack(spacing: 10) {
                                     PlainLabel(title: place.phoneNumber ?? "Add phone number",
                                                alignment: .leading,
-                                               image: Image(systemName: "phone"))
+                                               image: Image(.phone))
                                     PlainLabel(title: place.website ?? "Add website",
                                                alignment: .leading,
-                                               image: Image(systemName: "globe"))
+                                               image: Image(.globe))
                                     NavigationLink {
                                         MenuView()
                                             .backNavigationButton()
                                     } label: {
                                         PlainLabel(title: "Menu",
                                                    alignment: .leading,
-                                                   image: Image(systemName: "book"))
+                                                   image: Image(.book))
                                     }
                                     
                                 }
@@ -79,7 +79,7 @@ struct OwnerPlaceView: View {
                                              .not(.videos)])) {
                                                  if placeService.selectedPlaceImage == nil {
                                                      VStack {
-                                                         Image(systemName: "plus")
+                                                         Image(.plus)
                                                              .resizable()
                                                              .frame(width: 25, height: 25)
                                                          Text(Strings.addImages)
@@ -145,7 +145,7 @@ struct OwnerPlaceView: View {
              Spacer()
              if let rating = placeService.usersPlace?.rating {
                  HStack {
-                     Image(systemName: "star.fill")
+                     Image(.starFill)
                          .resizable()
                          .foregroundColor(.yellow)
                          .frame(width: 15, height: 15)

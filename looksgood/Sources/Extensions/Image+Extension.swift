@@ -15,6 +15,9 @@ extension Image {
         case xmark
         case eye
         case eyeSlash = "eye.slash"
+        case trash
+        case phone
+        case book
     }
     
     init(_ symbol: SFSymbol) {

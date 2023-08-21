@@ -53,7 +53,7 @@ struct AddMenuItemSheet: View {
                                          .not(.videos)])) {
                                              if service.selectedMenuImage == nil {
                                                  VStack {
-                                                     Image(systemName: "plus")
+                                                     Image(.plus)
                                                          .resizable()
                                                          .frame(width: 25, height: 25)
                                                      Text("Add Image")

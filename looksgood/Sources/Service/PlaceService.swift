@@ -83,6 +83,18 @@ class PlaceService: ObservableObject {
             return
         }
     }
+
+    /// Fetch place by placeID
+    func fetchPlace(with id: String) async throws -> Place? {
+        let snapshot = try await Firestore.firestore()
+            .collection("places")
+            .whereField("id", isEqualTo: id)
+            .getDocuments()
+        let documets = snapshot.documents
+        let place = documets.compactMap({try? $0.data(as: Place.self)}).last
+        return place
+    }
+
 //MARK: - Menu
 
     func uploadMenuItem(menuItem: MenuItem) async throws {
@@ -188,7 +200,8 @@ class PlaceService: ObservableObject {
         for place in places {
             let marker = CustomMarker(lat: Double(place.lat ?? "") ?? 0.0,
                                       long: Double(place.long ?? "") ?? 0.0,
-                                      title: place.name)
+                                      title: place.name,
+                                      id: place.id ?? "")
             fetchedMarkers.append(marker)
         }
         DispatchQueue.main.sync {

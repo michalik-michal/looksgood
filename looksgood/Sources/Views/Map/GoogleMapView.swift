@@ -5,6 +5,7 @@ struct CustomMarker: Equatable {
     var lat: Double
     var long: Double
     var title: String
+    var id: String
 }
 
 struct GoogleMapsView: UIViewRepresentable {
@@ -83,6 +84,6 @@ class Coordinator: NSObject, GMSMapViewDelegate {
 
 struct GoogleMapsView_Previews: PreviewProvider {
     static var previews: some View {
-        GoogleMapsView(tappedMarker: .constant(CustomMarker(lat: 0, long: 0, title: "")))
+        GoogleMapsView(tappedMarker: .constant(CustomMarker(lat: 0, long: 0, title: "", id: "")))
     }
 }

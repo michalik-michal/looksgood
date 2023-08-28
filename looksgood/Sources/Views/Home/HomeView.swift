@@ -42,11 +42,7 @@ struct HomeView: View {
                 }
                 .sheet(isPresented: $showPlaceSheet) {
                     if let marker = tappedMarker {
-                        VStack {
-                            Text(marker.title)
-                            Text(marker.lat.debugDescription)
-                            Text(marker.long.description)
-                        }
+                        PlaceView(placeID: tappedMarker?.id ?? ")
                         .onDisappear {
                             tappedMarker = nil
                         }

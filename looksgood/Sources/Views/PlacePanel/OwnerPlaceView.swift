@@ -40,7 +40,7 @@ struct OwnerPlaceView: View {
                                                alignment: .leading,
                                                image: Image(.globe))
                                     NavigationLink {
-                                        MenuView()
+                                        OwnerMenuView()
                                             .backNavigationButton()
                                     } label: {
                                         PlainLabel(title: "Menu",

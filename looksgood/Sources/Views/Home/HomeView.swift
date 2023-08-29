@@ -42,10 +42,10 @@ struct HomeView: View {
                 }
                 .sheet(isPresented: $showPlaceSheet) {
                     if let marker = tappedMarker {
-                        PlaceView(placeID: tappedMarker?.id ?? ")
-                        .onDisappear {
-                            tappedMarker = nil
-                        }
+                        PlaceView(placeID: marker.id)
+                            .onDisappear {
+                                tappedMarker = nil
+                            }
                     }
                 }
             }

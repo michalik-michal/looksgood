@@ -140,8 +140,18 @@ class PlaceService: ObservableObject {
                 let menuItems = documents.compactMap({try? $0.data(as: MenuItem.self)})
                 self.menuItems = menuItems
                 self.retreiveCategories(from: menuItems)
-                print(menuItems)
             }
+    }
+
+    ///Fetch menu items with placeID
+    func fetchMenuItems(with placeID: String) async throws -> [MenuItem]? {
+       let snapshot = try await Firestore.firestore()
+            .collection("menuItems")
+            .whereField("placeID", isEqualTo: placeID)
+            .getDocuments()
+        let documents = snapshot.documents
+        let menuItems = documents.compactMap({try? $0.data(as: MenuItem.self)})
+        return menuItems
     }
 
     private func retreiveCategories(from menuItems: [MenuItem]) {
@@ -156,6 +166,20 @@ class PlaceService: ObservableObject {
         if !(placeMenuCategories?.contains(.All) ?? true) {
             placeMenuCategories?.insert(.All, at: 0)
         }
+    }
+    
+    func retreiveCategories(for menuItems: [MenuItem]) -> [FoodCategory] {
+        var categories: [FoodCategory] = []
+        for menuItem in menuItems {
+            if categories.contains(menuItem.category) {
+                continue
+            }
+            categories.append(menuItem.category)
+        }
+        if !(categories.contains(.All)) {
+            categories.insert(.All, at: 0)
+        }
+        return categories.sorted()
     }
 
     func deleteMenuItem(_ item: MenuItem) async throws {

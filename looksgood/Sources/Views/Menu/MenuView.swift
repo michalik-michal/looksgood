@@ -2,64 +2,48 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @EnvironmentObject private var service: PlaceService
-    @State private var showAddMenuItem = false
+    var placeID: String
+    @EnvironmentObject private var placeService: PlaceService
+
+    @State private var menuItems: [MenuItem] = []
+    @State private var menuCategories: [FoodCategory] = []
     @State private var selectedCategory: FoodCategory?
     
     var body: some View {
         VStack {
-            if let categories = service.placeMenuCategories,
-               let menuItems = service.menuItems {
-                if !categories.isEmpty, !menuItems.isEmpty {
-                    MenuItemCategoryStack(menuItemsCategories: categories,
-                                          selectedCategory: $selectedCategory.safe(.All))
-                    TabView(selection: $selectedCategory.safe(.All)) {
-                        ForEach(categories, id: \.rawValue) { category in
-                            ScrollView(showsIndicators: false) {
-                                VStack(spacing: 0) {
-                                    ForEach(menuItems, id: \.title) { item in
-                                        NavigationLink {
-                                            MenuItemDetailsView(menuItem: item)
-                                                .backNavigationButton()
-                                        } label: {
-                                            if category == .All {
-                                                MenuItemCell(menuItem: item)
-                                            } else if item.category == category {
-                                                MenuItemCell(menuItem: item)
-                                            }
+            if !menuCategories.isEmpty, !menuItems.isEmpty {
+                MenuItemCategoryStack(menuItemsCategories: menuCategories,
+                                      selectedCategory: $selectedCategory.safe(.All))
+                TabView(selection: $selectedCategory.safe(.All)) {
+                    ForEach(menuCategories, id: \.rawValue) { category in
+                        ScrollView(showsIndicators: false) {
+                            VStack(spacing: 0) {
+                                ForEach(menuItems, id: \.title) { item in
+                                    NavigationLink {
+                                        MenuItemDetailsView(menuItem: item, ownerView: false)
+                                            .backNavigationButton()
+                                    } label: {
+                                        if category == .All {
+                                            MenuItemCell(menuItem: item)
+                                        } else if item.category == category {
+                                            MenuItemCell(menuItem: item)
                                         }
-                                        .buttonStyle(FullOpacity())
                                     }
+                                    .buttonStyle(FullOpacity())
                                 }
                             }
-                            .tag(category)
                         }
-                        
+                        .tag(category)
                     }
-                    .frame(height: UIScreen.main.bounds.height - 250)
-                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
+                .frame(height: UIScreen.main.bounds.height - 250)
+                .tabViewStyle(.page(indexDisplayMode: .never))
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Image(.plus)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .onTapGesture {
-                        showAddMenuItem.toggle()
-                    }
-            }
-        }
-        .sheet(isPresented: $showAddMenuItem) {
-            AddMenuItemSheet(isShowing: $showAddMenuItem)
-                .presentationDetents([.height(600)])
-        }
-        .task {
+        .onAppear {
             Task {
-                try await service.fetchMenuItems()
-                selectedCategory = service.placeMenuCategories?.first
+                menuItems = try await placeService.fetchMenuItems(with: placeID) ?? []
+                menuCategories = placeService.retreiveCategories(for: menuItems)
             }
         }
     }
@@ -67,19 +51,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
-            .environmentObject( { () -> PlaceService in
-                let object = PlaceService()
-                object.usersPlace = Place(name: "Portobello",
-                                          address: "Ul. Pod Wawelem 3b",
-                                          rating: "4.2",
-                                          phoneNumber: "123 456 789",
-                                          website: "www.apple.com",
-                                          placeCategory: .restaurant)
-                object.menuItems = [
-                    MenuItem(placeID: "", title: "Burger", price: "34USD", category: .Burger)
-                ]
-                return object
-            }())
+        MenuView(placeID: "")
     }
 }

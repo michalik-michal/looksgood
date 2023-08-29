@@ -4,9 +4,15 @@ import PhotosUI
 struct MenuItemDetailsView: View {
     
     var menuItem: MenuItem
+    var ownerView: Bool
     @State private var showDeleteItemAlert = false
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject private var placeService: PlaceService
+    
+    init(menuItem: MenuItem, ownerView: Bool = true) {
+        self.menuItem = menuItem
+        self.ownerView = ownerView
+    }
     
     var body: some View {
         VStack {
@@ -47,6 +53,7 @@ struct MenuItemDetailsView: View {
                 Image(.trash)
                     .foregroundColor(.blackWhite)
                     .onTapGesture { showDeleteItemAlert.toggle() }
+                    .hide(if: !ownerView)
             }
         }
         .alert(isPresented: $showDeleteItemAlert) {

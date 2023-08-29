@@ -15,7 +15,7 @@
 		6B29269E2A2497AF00A50C35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269D2A2497AF00A50C35 /* LocationManager.swift */; };
 		6B2926A02A24988D00A50C35 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269F2A24988D00A50C35 /* PlacesService.swift */; };
 		6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2FA60B2A45EC5200B0E589 /* MenuItemCategoryStack.swift */; };
-		6B2FA6112A48AB0F00B0E589 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2FA6102A48AB0F00B0E589 /* MenuView.swift */; };
+		6B2FA6112A48AB0F00B0E589 /* OwnerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2FA6102A48AB0F00B0E589 /* OwnerMenuView.swift */; };
 		6B3E96852A38C585001E2F52 /* NoUserPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E96842A38C585001E2F52 /* NoUserPlacesView.swift */; };
 		6B3E96872A39C1A0001E2F52 /* OwnerPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */; };
 		6B40B44B2A20C745004E4A21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B40B44A2A20C745004E4A21 /* GoogleService-Info.plist */; };
@@ -51,6 +51,7 @@
 		6B68219D2A62A39600F004C4 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */; };
 		6B68219F2A62ACD800F004C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */; };
 		6B6C6D8C2A9D122C0082E586 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C6D8B2A9D122C0082E586 /* PlaceView.swift */; };
+		6B6C6D982A9E4DEC0082E586 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C6D972A9E4DEC0082E586 /* MenuView.swift */; };
 		6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */; };
 		6B7C3D252A90D7E200863816 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C3D242A90D7E200863816 /* Image+Extension.swift */; };
 		6B8604EF2A2B24CA0095B796 /* SearchPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */; };
@@ -130,7 +131,7 @@
 		6B29269D2A2497AF00A50C35 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6B29269F2A24988D00A50C35 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		6B2FA60B2A45EC5200B0E589 /* MenuItemCategoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCategoryStack.swift; sourceTree = "<group>"; };
-		6B2FA6102A48AB0F00B0E589 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		6B2FA6102A48AB0F00B0E589 /* OwnerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMenuView.swift; sourceTree = "<group>"; };
 		6B3E96842A38C585001E2F52 /* NoUserPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserPlacesView.swift; sourceTree = "<group>"; };
 		6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPlaceView.swift; sourceTree = "<group>"; };
 		6B40B44A2A20C745004E4A21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		6B68219C2A62A39600F004C4 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		6B68219E2A62ACD800F004C4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6B6C6D8B2A9D122C0082E586 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		6B6C6D972A9E4DEC0082E586 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		6B7A3EDF2A40B13B0002EC34 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		6B7C3D242A90D7E200863816 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		6B8604EE2A2B24CA0095B796 /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
@@ -284,8 +286,9 @@
 		6B2FA60F2A48AB0700B0E589 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				6B2FA6102A48AB0F00B0E589 /* MenuView.swift */,
+				6B2FA6102A48AB0F00B0E589 /* OwnerMenuView.swift */,
 				6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */,
+				6B6C6D972A9E4DEC0082E586 /* MenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
 				6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */,
 				6B9D949B2A1FD0430001B07E /* RegisterPublisher.swift in Sources */,
+				6B6C6D982A9E4DEC0082E586 /* MenuView.swift in Sources */,
 				6BD744572A3392EC00A5343D /* DayOpeningCell.swift in Sources */,
 				6B8604FB2A2C8BF80095B796 /* SearchedPlaceModel.swift in Sources */,
 				6B40B4702A21EE8D004E4A21 /* AccountTypePublisher.swift in Sources */,
@@ -1001,7 +1005,7 @@
 				6B40B4592A20DAFC004E4A21 /* AuthenticationFormProtocol.swift in Sources */,
 				6B8604F12A2B78E20095B796 /* AddRestaruantMethod.swift in Sources */,
 				6B68219D2A62A39600F004C4 /* CustomMarkerView.swift in Sources */,
-				6B2FA6112A48AB0F00B0E589 /* MenuView.swift in Sources */,
+				6B2FA6112A48AB0F00B0E589 /* OwnerMenuView.swift in Sources */,
 				6B3E96872A39C1A0001E2F52 /* OwnerPlaceView.swift in Sources */,
 				6B8604F32A2B7CB70095B796 /* SearchAddPlaceView.swift in Sources */,
 				6B29269E2A2497AF00A50C35 /* LocationManager.swift in Sources */,

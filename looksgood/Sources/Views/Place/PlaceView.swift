@@ -5,6 +5,7 @@ struct PlaceView: View {
     @EnvironmentObject private var placeService: PlaceService
     var placeID: String
     @State private var place = Place(name: "", placeCategory: .restaurant)
+    @State private var showMenu = false
 
     var body: some View {
         NavigationStack {
@@ -16,17 +17,20 @@ struct PlaceView: View {
                     titleStack
                     adressStack
                     secondaryStack
-                    NavigationLink {
-                        MenuView(placeID: placeID)
-                            .backNavigationButton()
-                    } label: {
-                        PlainLabel(title: "Menu",
-                                   alignment: .leading,
-                                   image: Image(.book))
+                    PlainLabel(title: "Menu",
+                               alignment: .leading,
+                               image: Image(.book))
+                    .onTapGesture {
+                        showMenu.toggle()
                     }
+                    Spacer()
                 }
                 .padding(.horizontal)
             }
+        }
+        .fullScreenCover(isPresented: $showMenu) {
+            NavigationModalBarView(showModal: $showMenu,
+                                   content: MenuView(placeID: placeID))
         }
         .onAppear {
             Task {

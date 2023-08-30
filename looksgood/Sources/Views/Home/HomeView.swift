@@ -46,6 +46,7 @@ struct HomeView: View {
                             .onDisappear {
                                 tappedMarker = nil
                             }
+                            .presentationDetents([.medium])
                     }
                 }
             }

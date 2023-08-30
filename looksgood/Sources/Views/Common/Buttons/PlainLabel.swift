@@ -33,6 +33,7 @@ struct PlainLabel: View {
                 HStack {
                     image
                     Text(title)
+                        .contentShape(Rectangle())
                 }
                 .foregroundColor(.blackWhite)
                 .frame(height: 50)
@@ -66,7 +67,6 @@ struct PlainLabel: View {
                 Text(title)
                     .foregroundColor(.blackWhite)
                     .frame(height: 50)
-                    .contentShape(Rectangle())
                     .lineLimit(1)
                 Spacer()
             }
@@ -76,6 +76,7 @@ struct PlainLabel: View {
                     .stroke(lineWidth: 1)
                     .foregroundColor(.blackWhite)
             }
+            .contentShape(Rectangle())
         }
     }
 }

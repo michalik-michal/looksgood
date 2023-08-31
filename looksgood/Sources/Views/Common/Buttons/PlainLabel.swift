@@ -41,7 +41,7 @@ struct PlainLabel: View {
                 .contentShape(Rectangle())
                 .lineLimit(1)
                 .overlay {
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: 12)
                         .stroke(lineWidth: 1)
                         .foregroundColor(.blackWhite)
                 }
@@ -56,7 +56,7 @@ struct PlainLabel: View {
                 .contentShape(Rectangle())
                 .lineLimit(1)
                 .overlay {
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: 12)
                         .stroke(lineWidth: 1)
                         .foregroundColor(.blackWhite)
                 }
@@ -72,7 +72,7 @@ struct PlainLabel: View {
             }
             .padding(.horizontal)
             .overlay {
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 12)
                     .stroke(lineWidth: 1)
                     .foregroundColor(.blackWhite)
             }

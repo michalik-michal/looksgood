@@ -16,6 +16,7 @@
 		6B2926A02A24988D00A50C35 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269F2A24988D00A50C35 /* PlacesService.swift */; };
 		6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2FA60B2A45EC5200B0E589 /* MenuItemCategoryStack.swift */; };
 		6B2FA6112A48AB0F00B0E589 /* OwnerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2FA6102A48AB0F00B0E589 /* OwnerMenuView.swift */; };
+		6B3400FA2AA0A3450045FF5C /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3400F92AA0A3450045FF5C /* GoogleMapsService.swift */; };
 		6B3E96852A38C585001E2F52 /* NoUserPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E96842A38C585001E2F52 /* NoUserPlacesView.swift */; };
 		6B3E96872A39C1A0001E2F52 /* OwnerPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */; };
 		6B40B44B2A20C745004E4A21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B40B44A2A20C745004E4A21 /* GoogleService-Info.plist */; };
@@ -132,6 +133,7 @@
 		6B29269F2A24988D00A50C35 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		6B2FA60B2A45EC5200B0E589 /* MenuItemCategoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCategoryStack.swift; sourceTree = "<group>"; };
 		6B2FA6102A48AB0F00B0E589 /* OwnerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMenuView.swift; sourceTree = "<group>"; };
+		6B3400F92AA0A3450045FF5C /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
 		6B3E96842A38C585001E2F52 /* NoUserPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserPlacesView.swift; sourceTree = "<group>"; };
 		6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPlaceView.swift; sourceTree = "<group>"; };
 		6B40B44A2A20C745004E4A21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				6B29269F2A24988D00A50C35 /* PlacesService.swift */,
 				6B90DE2E2A35B6380093DBA7 /* PlaceService.swift */,
 				6B43F0032A3EEDEA00F746A5 /* PhotosService.swift */,
+				6B3400F92AA0A3450045FF5C /* GoogleMapsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				6B43EFFE2A3DC24800F746A5 /* MenuItemModel.swift in Sources */,
 				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
 				6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */,
+				6B3400FA2AA0A3450045FF5C /* GoogleMapsService.swift in Sources */,
 				6B9D949B2A1FD0430001B07E /* RegisterPublisher.swift in Sources */,
 				6B6C6D982A9E4DEC0082E586 /* MenuView.swift in Sources */,
 				6BD744572A3392EC00A5343D /* DayOpeningCell.swift in Sources */,

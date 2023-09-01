@@ -11,11 +11,12 @@ struct PlaceView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                if let imageURL = place.imageURL {
+                if let imageURL = place.imageURL, imageURL.isNotEmptyString {
                     asyncImage(url: imageURL)
                 }
                 VStack {
                     titleStack
+                        .padding(.top, place.imageURL == "" ? 10 : 0)
                     adressStack
                     secondaryStack
                     buttonStack
@@ -45,7 +46,7 @@ struct PlaceView: View {
     }
     
     private func asyncImage(url: String) -> some View {
-        AsyncImage(url: URL(string: url)) { image in
+        return AsyncImage(url: URL(string: url)) { image in
             image
                 .resizable()
                 .frame(height: 180)

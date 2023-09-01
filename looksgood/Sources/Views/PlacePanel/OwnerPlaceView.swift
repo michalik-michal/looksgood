@@ -14,7 +14,7 @@ struct OwnerPlaceView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
                     if let place = placeService.usersPlace {
-                        if let imageURL = placeService.usersPlace?.imageURL {
+                        if let imageURL = placeService.usersPlace?.imageURL, imageURL.isNotEmptyString {
                             AsyncImage(url: URL(string: imageURL)) { image in
                                 image
                                     .resizable()

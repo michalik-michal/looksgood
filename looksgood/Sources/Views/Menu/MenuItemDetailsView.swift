@@ -29,10 +29,14 @@ struct MenuItemDetailsView: View {
                             .frame(height: 180)
                     }
                 } else {
-                    photoPicker
+                    if ownerView {
+                        photoPicker
+                    }
                 }
             } else {
-                photoPicker
+                if ownerView {
+                    photoPicker
+                }
             }
             VStack(alignment: .leading) {
                 HStack {

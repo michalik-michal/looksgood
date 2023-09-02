@@ -61,7 +61,7 @@ struct PlaceView: View {
         HStack {
             Text(place.name)
                 .font(.title.bold())
-                .foregroundColor(.black)
+                .foregroundColor(.blackWhite)
             Spacer()
             if let rating = place.rating {
                 HStack {
@@ -129,7 +129,7 @@ struct PlaceView: View {
             .frame(maxWidth: .infinity)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(.black, lineWidth: 1))
+                    .stroke(Color.blackWhite, lineWidth: 1))
             if let phone = place.phoneNumber, phone.isNotEmptyString {
                 Link(destination: URL(string: "tel://\(phone.filter{!$0.isWhitespace})")!, label: {
                     HStack {
@@ -137,12 +137,11 @@ struct PlaceView: View {
                         Text("Call")
                     }
                 })
-                .foregroundColor(.black)
                 .padding()
                 .frame(maxWidth: .infinity)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(.black, lineWidth: 1))
+                        .stroke(Color.blackWhite, lineWidth: 1))
             }
         }
     }

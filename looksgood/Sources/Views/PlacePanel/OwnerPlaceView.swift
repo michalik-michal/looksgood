@@ -141,7 +141,6 @@ struct OwnerPlaceView: View {
          HStack {
              Text(placeService.usersPlace?.name ?? "")
                  .font(.title.bold())
-                 .foregroundColor(.black)
              Spacer()
              if let rating = placeService.usersPlace?.rating {
                  HStack {

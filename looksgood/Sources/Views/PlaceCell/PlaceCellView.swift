@@ -82,9 +82,7 @@ struct PlaceCellView: View {
 
     private var secondaryStack: some View {
         HStack {
-            PlaceCategoryCell(placeCategory: PlaceCategory(category: "Restaurant",
-                                                           image: "house",
-                                                           type: .restaurant))
+            PlaceCategoryCell(placeCategory: PlaceCategory(type: .restaurant))
             Spacer()
             Text("10:00 - 23:00")
                 .foregroundColor(.gray)

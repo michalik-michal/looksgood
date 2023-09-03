@@ -20,8 +20,6 @@ struct PlaceCategoryCell: View {
 
 struct PlaceCategoryCell_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceCategoryCell(placeCategory: PlaceCategory(category: "Drinks",
-                                                       image: "wineglass",
-                                                       type: .drinks))
+        PlaceCategoryCell(placeCategory: PlaceCategory(type: .drinks))
     }
 }

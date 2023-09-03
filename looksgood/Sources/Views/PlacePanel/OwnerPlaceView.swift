@@ -177,9 +177,7 @@ struct OwnerPlaceView: View {
      
      private var secondaryStack: some View {
          HStack {
-             PlaceCategoryCell(placeCategory: PlaceCategory(category: "Restaurant",
-                                                            image: "house",
-                                                            type: .restaurant))
+             PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
              .onTapGesture {
                  showCategorySheet.toggle()
              }

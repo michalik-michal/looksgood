@@ -172,9 +172,6 @@ struct OwnerPlaceView: View {
              Text(placeService.usersPlace?.address ?? "Add address")
                  .foregroundColor(.gray)
              Spacer()
-             Text("10:00 - 23:00")
-                 .foregroundColor(.gray)
-                 .bold()
          }
      }
      
@@ -187,22 +184,12 @@ struct OwnerPlaceView: View {
                  showCategorySheet.toggle()
              }
              Spacer()
+             Text("10:00 - 23:00")
+                 .foregroundColor(.gray)
+                 .bold()
          }
          .padding(.bottom)
      }
-     
-     private func navigateOnGoogleMap(sourceLatitude : Double, sourceLongitude : Double, destinationLatitude : Double, destinationLongitude : Double) {
-             let urlGoogleMap : URL = URL(string: "comgooglemaps://?saddr=\(sourceLatitude),\(sourceLongitude)&daddr=\(destinationLatitude),\(destinationLongitude)&directionsmode=driving")!
-             
-             if UIApplication.shared.canOpenURL(urlGoogleMap) {
-                 UIApplication.shared.open(urlGoogleMap, options: [:], completionHandler: nil)
-                 
-             } else {
-                 let urlString = URL(string:"http://maps.google.com/?saddr=\(sourceLatitude),\(sourceLongitude)&daddr=\(destinationLatitude),\(destinationLongitude)&directionsmode=driving")
-                 
-                 UIApplication.shared.open(urlString!, options: [:], completionHandler: nil)
-             }
-         }
  }
 
 

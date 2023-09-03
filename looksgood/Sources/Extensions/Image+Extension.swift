@@ -18,6 +18,7 @@ extension Image {
         case trash
         case phone
         case book
+        case squareStack3dUp = "square.stack.3d.up"
     }
     
     init(_ symbol: SFSymbol) {

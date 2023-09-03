@@ -93,9 +93,6 @@ struct PlaceView: View {
             Text(place.address ?? "")
                 .foregroundColor(.gray)
             Spacer()
-            Text("10:00 - 23:00")
-                .foregroundColor(.gray)
-                .bold()
         }
     }
 
@@ -105,6 +102,9 @@ struct PlaceView: View {
                                                            image: "house",
                                                            type: .restaurant))
             Spacer()
+            Text("10:00 - 23:00")
+                .foregroundColor(.gray)
+                .bold()
         }
         .padding(.bottom)
     }

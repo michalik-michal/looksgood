@@ -2,7 +2,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-struct Place: Equatable, Identifiable, Decodable {
+struct Place: Equatable, Identifiable, Decodable, Hashable {
     
     @DocumentID var documentID: String?
 

@@ -6,6 +6,7 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var tappedMarker: CustomMarker?
     @State private var showPlaceSheet = false
+    @State private var showListView = false
     @EnvironmentObject private var locationManager: LocationManager
     @EnvironmentObject private var placeService: PlaceService
     
@@ -15,7 +16,7 @@ struct HomeView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         Task {
-                            try await placeService.fetchPlaces()
+                            try await placeService.fetchMarkers()
                         }
                     }
                 }
@@ -32,6 +33,7 @@ struct HomeView: View {
                 VStack {
                     MapSearchField(text: $searchText)
                     Spacer()
+                    listButton
                 }
                 .padding()
                 .zIndex(10)
@@ -49,7 +51,24 @@ struct HomeView: View {
                             .presentationDetents([.medium])
                     }
                 }
+                .fullScreenCover(isPresented: $showListView) {
+                    NavigationModalBarView(showModal: $showListView, content: PlaceListView())
+                }
             }
+        }
+    }
+
+    private var listButton: some View {
+        HStack {
+            Image(.squareStack3dUp)
+            Text("List")
+        }
+        .padding()
+        .frame(width: 100, height: 40)
+        .background(Color.whiteBlack)
+        .cornerRadius(15)
+        .onTapGesture {
+            showListView.toggle()
         }
     }
 }

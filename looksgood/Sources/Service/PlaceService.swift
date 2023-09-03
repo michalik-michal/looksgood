@@ -10,6 +10,7 @@ class PlaceService: ObservableObject {
     @Published var placeMenuCategories: [FoodCategory]?
     @Published var imageState: ImageState = .empty
     @Published var markers: [CustomMarker] = []
+    @Published var places: [Place] = []
     @Published var selectedMenuImage: PhotosPickerItem? {
         didSet {
             if let selectedMenuImage {
@@ -214,14 +215,14 @@ class PlaceService: ObservableObject {
         }
     }
     
-    //MARK: - Places
+    //MARK: - Markers
     
-    func fetchPlaces() async throws  {
+    func fetchMarkers() async throws  {
         var fetchedMarkers: [CustomMarker] = []
         let snapshot = try await Firestore.firestore().collection("places").getDocuments()
         let documents = snapshot.documents
-        let places = documents.compactMap({try? $0.data(as: Place.self)})
-        for place in places {
+        let fetchedPlaces = documents.compactMap({try? $0.data(as: Place.self)})
+        for place in fetchedPlaces {
             let marker = CustomMarker(lat: Double(place.lat ?? "") ?? 0.0,
                                       long: Double(place.long ?? "") ?? 0.0,
                                       title: place.name,
@@ -230,6 +231,18 @@ class PlaceService: ObservableObject {
         }
         DispatchQueue.main.sync {
             self.markers = fetchedMarkers
+        }
+    }
+    
+    //MARK: - Places
+    
+    //TODO: - It should be also done by nearest location
+    func fetchPlaces() async throws {
+        let snapshot = try await Firestore.firestore().collection("places").getDocuments()
+        let documents = snapshot.documents
+        let fetchedPlaces = documents.compactMap({try? $0.data(as: Place.self)})
+        DispatchQueue.main.async {
+            self.places = fetchedPlaces
         }
     }
 }

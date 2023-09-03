@@ -91,6 +91,8 @@
 		6BA3E09C2A1F4E9D008A034E /* looksgoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3E09B2A1F4E9D008A034E /* looksgoodTests.swift */; };
 		6BA3E0A62A1F4E9D008A034E /* looksgoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3E0A52A1F4E9D008A034E /* looksgoodUITests.swift */; };
 		6BA3E0A82A1F4E9D008A034E /* looksgoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3E0A72A1F4E9D008A034E /* looksgoodUITestsLaunchTests.swift */; };
+		6BC187B22AA3704900E76364 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC187B12AA3704900E76364 /* PlaceListView.swift */; };
+		6BC187B62AA488C900E76364 /* PlaceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC187B52AA488C900E76364 /* PlaceCellView.swift */; };
 		6BC9AA8C2A3CA90200A015A8 /* EditPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9AA8B2A3CA90200A015A8 /* EditPlaceView.swift */; };
 		6BD744542A321F1F00A5343D /* OpeningHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD744532A321F1F00A5343D /* OpeningHourCell.swift */; };
 		6BD744572A3392EC00A5343D /* DayOpeningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD744562A3392EC00A5343D /* DayOpeningCell.swift */; };
@@ -206,6 +208,8 @@
 		6BA3E0A12A1F4E9D008A034E /* looksgoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = looksgoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA3E0A52A1F4E9D008A034E /* looksgoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = looksgoodUITests.swift; sourceTree = "<group>"; };
 		6BA3E0A72A1F4E9D008A034E /* looksgoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = looksgoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6BC187B12AA3704900E76364 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
+		6BC187B52AA488C900E76364 /* PlaceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellView.swift; sourceTree = "<group>"; };
 		6BC9AA8B2A3CA90200A015A8 /* EditPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceView.swift; sourceTree = "<group>"; };
 		6BD744532A321F1F00A5343D /* OpeningHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourCell.swift; sourceTree = "<group>"; };
 		6BD744562A3392EC00A5343D /* DayOpeningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOpeningCell.swift; sourceTree = "<group>"; };
@@ -448,6 +452,7 @@
 		6B9D94682A1F842B0001B07E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BC187B42AA488C000E76364 /* PlaceCell */,
 				6B6C6D8A2A9D120A0082E586 /* Place */,
 				6B2FA60F2A48AB0700B0E589 /* Menu */,
 				6B8604EB2A2B1CEC0095B796 /* AddPlace */,
@@ -460,6 +465,7 @@
 				6B9D946C2A1F84640001B07E /* Map */,
 				6B9D94642A1F7CF60001B07E /* Home */,
 				6BC9AA8D2A3CA90700A015A8 /* EditPlace */,
+				6BC187B32AA3704E00E76364 /* PlaceList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -657,6 +663,22 @@
 				6BA3E0A72A1F4E9D008A034E /* looksgoodUITestsLaunchTests.swift */,
 			);
 			path = looksgoodUITests;
+			sourceTree = "<group>";
+		};
+		6BC187B32AA3704E00E76364 /* PlaceList */ = {
+			isa = PBXGroup;
+			children = (
+				6BC187B12AA3704900E76364 /* PlaceListView.swift */,
+			);
+			path = PlaceList;
+			sourceTree = "<group>";
+		};
+		6BC187B42AA488C000E76364 /* PlaceCell */ = {
+			isa = PBXGroup;
+			children = (
+				6BC187B52AA488C900E76364 /* PlaceCellView.swift */,
+			);
+			path = PlaceCell;
 			sourceTree = "<group>";
 		};
 		6BC9AA8D2A3CA90700A015A8 /* EditPlace */ = {
@@ -976,6 +998,7 @@
 				6B7C3D252A90D7E200863816 /* Image+Extension.swift in Sources */,
 				6B43EFFE2A3DC24800F746A5 /* MenuItemModel.swift in Sources */,
 				6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */,
+				6BC187B22AA3704900E76364 /* PlaceListView.swift in Sources */,
 				6B2FA60C2A45EC5200B0E589 /* MenuItemCategoryStack.swift in Sources */,
 				6B3400FA2AA0A3450045FF5C /* GoogleMapsService.swift in Sources */,
 				6B9D949B2A1FD0430001B07E /* RegisterPublisher.swift in Sources */,
@@ -1027,6 +1050,7 @@
 				6BA3E08D2A1F4E9C008A034E /* ContentView.swift in Sources */,
 				6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */,
 				6B9D94802A1F8D300001B07E /* LoginView.swift in Sources */,
+				6BC187B62AA488C900E76364 /* PlaceCellView.swift in Sources */,
 				6B43EFFC2A3DC1D100F746A5 /* AddMenuItemSheet.swift in Sources */,
 				6B40B45B2A20E83B004E4A21 /* MapSearchField.swift in Sources */,
 				6BA3E08B2A1F4E9C008A034E /* looksgoodApp.swift in Sources */,

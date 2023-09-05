@@ -2,7 +2,7 @@ import Combine
 import CoreLocation
 
 @MainActor
-class LocationManager: NSObject, ObservableObject {
+class LocationService: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
     
     @Published var shouldUpdateLocation = true
@@ -54,7 +54,7 @@ class LocationManager: NSObject, ObservableObject {
     }
 }
 
-extension LocationManager: CLLocationManagerDelegate {
+extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if shouldUpdateLocation {

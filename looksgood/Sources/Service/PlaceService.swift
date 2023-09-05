@@ -36,7 +36,7 @@ class PlaceService: ObservableObject {
 
     func uploadPlace(place: Place) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let data = ["uid": uid,
+        var data = ["uid": uid,
                     "id": UUID().uuidString,
                     "name": place.name,
                     "address": place.address ?? "",
@@ -49,6 +49,11 @@ class PlaceService: ObservableObject {
                     "imageURL": "",
                     "placeCategory": place.placeCategory.rawValue] as [String : Any]
         do {
+            if data["long"] as! String == "" || data["lat"] as! String == "" {
+                let coordinates = await LocationHelper().getCoordinates(from: data["address"] as! String)
+                data["long"] = coordinates["long"]
+                data["lat"] = coordinates["lat"]
+            }
             try await Firestore.firestore().collection("places").document()
                 .setData(data)
         } catch {

@@ -7,7 +7,7 @@ struct HomeView: View {
     @State private var tappedMarker: CustomMarker?
     @State private var showPlaceSheet = false
     @State private var showListView = false
-    @EnvironmentObject private var locationManager: LocationManager
+    @EnvironmentObject private var locationManager: LocationService
     @EnvironmentObject private var placeService: PlaceService
     
     var body: some View {

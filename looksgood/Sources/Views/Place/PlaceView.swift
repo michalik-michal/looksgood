@@ -3,7 +3,7 @@ import SwiftUI
 struct PlaceView: View {
     
     @EnvironmentObject private var placeService: PlaceService
-    @EnvironmentObject private var locationManager: LocationManager
+    @EnvironmentObject private var locationManager: LocationService
     var placeID: String
     @State private var place = Place(name: "", placeCategory: .restaurant)
     @State private var showMenu = false

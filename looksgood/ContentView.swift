@@ -18,3 +18,4 @@ struct ContentView_Previews: PreviewProvider {
 //TODO: - Handle ratings
 //TODO: - Handle adding place manually
 //TODO: - Add place to favourites
+//TODO: - Login after creating account

@@ -10,7 +10,7 @@ struct CustomMarker: Equatable {
 
 struct GoogleMapsView: UIViewRepresentable {
 
-    @EnvironmentObject fileprivate var locationManager: LocationManager
+    @EnvironmentObject fileprivate var locationManager: LocationService
     @EnvironmentObject fileprivate var placeService: PlaceService
     @Binding var tappedMarker: CustomMarker?
     //This will be published or binding
@@ -65,7 +65,7 @@ struct GoogleMapsView: UIViewRepresentable {
 
 class Coordinator: NSObject, GMSMapViewDelegate {
     let parent: GoogleMapsView
-    @EnvironmentObject private var locationManager: LocationManager
+    @EnvironmentObject private var locationManager: LocationService
     @EnvironmentObject private var placeService: PlaceService
 
     init(_ parent: GoogleMapsView) {

@@ -22,7 +22,6 @@ struct PlaceView: View {
                     buttonStack
                         .padding(.bottom, 10)
                     PlainLabel(title: "Menu",
-                               alignment: .leading,
                                image: Image(.book))
                     .onTapGesture {
                         showMenu.toggle()
@@ -63,28 +62,6 @@ struct PlaceView: View {
                 .font(.title.bold())
                 .foregroundColor(.blackWhite)
             Spacer()
-            if let rating = place.rating {
-                HStack {
-                    Image(.starFill)
-                        .resizable()
-                        .foregroundColor(.yellow)
-                        .frame(width: 15, height: 15)
-                    Text(rating)
-                        .foregroundColor(.gray)
-                        .bold()
-                    Text("(149)")
-                        .foregroundColor(.gray)
-                    Image("google")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-                .padding(.top, 3)
-                .onTapGesture {
-                    let link = "https://goo.gl/maps/bJMtrxCDRBzPYjPH7"
-                    UIApplication.shared.open(URL(string: link)!, options: [:], completionHandler: nil)
-                }
-            }
-            
         }
     }
 

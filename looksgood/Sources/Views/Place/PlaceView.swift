@@ -7,6 +7,7 @@ struct PlaceView: View {
     var placeID: String
     @State private var place = Place(name: "", placeCategory: .restaurant)
     @State private var showMenu = false
+    @State private var showOpeningHours =  false
 
     var body: some View {
         NavigationStack {
@@ -24,7 +25,9 @@ struct PlaceView: View {
                     PlainLabel(title: "Menu",
                                image: Image(.book))
                     .onTapGesture {
-                        showMenu.toggle()
+                        if !showOpeningHours {
+                            showMenu.toggle()
+                        }
                     }
                     Spacer()
                 }
@@ -77,9 +80,23 @@ struct PlaceView: View {
         HStack {
             PlaceCategoryCell(placeCategory: PlaceCategory(type: place.placeCategory))
             Spacer()
-            Text("10:00 - 23:00")
-                .foregroundColor(.gray)
-                .bold()
+            if let openingHours = place.openingHours {
+                HStack {
+                    Text("10:00 - 23:00")
+                        .foregroundColor(.gray)
+                        .bold()
+                    Image(.infoCircle)
+                        .foregroundColor(.gray)
+                        .popover(isPresented: $showOpeningHours) {
+                            OpeningHoursView(openingHours: openingHours)
+                                .presentationCompactAdaptation(.popover)
+                                .foregroundStyle(.gray)
+                        }
+                }
+                .onTapGesture {
+                    showOpeningHours.toggle()
+                }
+            }
         }
         .padding(.bottom)
     }

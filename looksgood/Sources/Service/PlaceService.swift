@@ -47,6 +47,7 @@ class PlaceService: ObservableObject {
                     "phoneNumber": place.phoneNumber ?? "",
                     "website": place.website ?? "",
                     "imageURL": "",
+                    "openingHours":  place.openingHours as Any,
                     "placeCategory": place.placeCategory.rawValue] as [String : Any]
         do {
             if data["long"] as! String == "" || data["lat"] as! String == "" {

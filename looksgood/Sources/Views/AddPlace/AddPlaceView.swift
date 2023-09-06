@@ -108,6 +108,7 @@ struct AddPlaceView: View {
         place.rating = fetchedPlace.rating ?? ""
         place.phoneNumber = fetchedPlace.phoneNumber?.description ?? ""
         place.website = fetchedPlace.website?.description ?? ""
+        place.openingHours = fetchedPlace.openingHours
     }
     
     private func uploadPlace() {

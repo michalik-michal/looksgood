@@ -66,6 +66,7 @@
 		6B90DE2F2A35B6380093DBA7 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE2E2A35B6380093DBA7 /* PlaceService.swift */; };
 		6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */; };
 		6B91B9402A4B18DF00FB06C2 /* ImageStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */; };
+		6B9203F32AA88588002E6EE3 /* OpeningHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */; };
 		6B979E3C2A4DC067007051FB /* MenuItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */; };
 		6B979E3E2A4DC7DD007051FB /* ButtonStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */; };
 		6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94622A1F7CA20001B07E /* HomeView.swift */; };
@@ -181,6 +182,7 @@
 		6B90DE2E2A35B6380093DBA7 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
 		6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStateEnum.swift; sourceTree = "<group>"; };
+		6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHoursView.swift; sourceTree = "<group>"; };
 		6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailsView.swift; sourceTree = "<group>"; };
 		6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extension.swift"; sourceTree = "<group>"; };
 		6B9D94622A1F7CA20001B07E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				6B40B45C2A210266004E4A21 /* Navigation */,
 				6B9D94902A1FCA750001B07E /* Buttons */,
 				6B9D94882A1F8FFB0001B07E /* TextFields */,
+				6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				6B8604FB2A2C8BF80095B796 /* SearchedPlaceModel.swift in Sources */,
 				6B40B4702A21EE8D004E4A21 /* AccountTypePublisher.swift in Sources */,
 				6B2926A02A24988D00A50C35 /* PlacesService.swift in Sources */,
+				6B9203F32AA88588002E6EE3 /* OpeningHoursView.swift in Sources */,
 				6B9D948A2A1F900C0001B07E /* CustomTextField.swift in Sources */,
 				6B9D94732A1F877F0001B07E /* Color+Extension.swift in Sources */,
 				6B40B46E2A21123E004E4A21 /* BackNavigationButton.swift in Sources */,
@@ -1235,7 +1239,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1269,7 +1273,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

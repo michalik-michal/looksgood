@@ -8,6 +8,7 @@ struct OwnerPlaceView: View {
     @State private var showCategorySheet = false
     @State private var tabViewHeight = 0.0
     @State private var showSelectedImage = false
+    @State private var showOpeningHours =  false
     
     var body: some View {
         NavigationStack {
@@ -175,19 +176,30 @@ struct OwnerPlaceView: View {
          }
      }
      
-     private var secondaryStack: some View {
-         HStack {
-             PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
-             .onTapGesture {
-                 showCategorySheet.toggle()
-             }
-             Spacer()
-             Text("10:00 - 23:00")
-                 .foregroundColor(.gray)
-                 .bold()
-         }
-         .padding(.bottom)
-     }
+    private var secondaryStack: some View {
+        HStack {
+            PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
+            Spacer()
+            if let openingHours = placeService.usersPlace?.openingHours {
+                HStack {
+                    Text("10:00 - 23:00")
+                        .foregroundColor(.gray)
+                        .bold()
+                    Image(.infoCircle)
+                        .foregroundColor(.gray)
+                        .popover(isPresented: $showOpeningHours) {
+                            OpeningHoursView(openingHours: openingHours)
+                                .presentationCompactAdaptation(.popover)
+                                .foregroundStyle(.gray)
+                        }
+                }
+                .onTapGesture {
+                    showOpeningHours.toggle()
+                }
+            }
+        }
+        .padding(.bottom)
+    }
  }
 
 

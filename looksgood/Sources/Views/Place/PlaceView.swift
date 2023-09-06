@@ -82,7 +82,7 @@ struct PlaceView: View {
             Spacer()
             if let openingHours = place.openingHours {
                 HStack {
-                    Text("10:00 - 23:00")
+                    Text(DateHelper().getTodaysOpeningHours(for: openingHours))
                         .foregroundColor(.gray)
                         .bold()
                     Image(.infoCircle)

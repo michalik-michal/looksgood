@@ -67,6 +67,8 @@
 		6B90DE342A35C8890093DBA7 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */; };
 		6B91B9402A4B18DF00FB06C2 /* ImageStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */; };
 		6B9203F32AA88588002E6EE3 /* OpeningHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */; };
+		6B9203F62AA89D15002E6EE3 /* OpeningHoursService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9203F52AA89D15002E6EE3 /* OpeningHoursService.swift */; };
+		6B9203F82AA89F06002E6EE3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9203F72AA89F06002E6EE3 /* DateHelper.swift */; };
 		6B979E3C2A4DC067007051FB /* MenuItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */; };
 		6B979E3E2A4DC7DD007051FB /* ButtonStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */; };
 		6B9D94632A1F7CA20001B07E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D94622A1F7CA20001B07E /* HomeView.swift */; };
@@ -183,6 +185,8 @@
 		6B90DE332A35C8890093DBA7 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStateEnum.swift; sourceTree = "<group>"; };
 		6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHoursView.swift; sourceTree = "<group>"; };
+		6B9203F52AA89D15002E6EE3 /* OpeningHoursService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHoursService.swift; sourceTree = "<group>"; };
+		6B9203F72AA89F06002E6EE3 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		6B979E3B2A4DC067007051FB /* MenuItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailsView.swift; sourceTree = "<group>"; };
 		6B979E3D2A4DC7DD007051FB /* ButtonStyle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extension.swift"; sourceTree = "<group>"; };
 		6B9D94622A1F7CA20001B07E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -423,8 +427,18 @@
 			isa = PBXGroup;
 			children = (
 				6BFEF4132AA7201900284E78 /* LocationHelper.swift */,
+				6B9203F72AA89F06002E6EE3 /* DateHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6B9203F42AA89D05002E6EE3 /* OpeningHours */ = {
+			isa = PBXGroup;
+			children = (
+				6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */,
+				6B9203F52AA89D15002E6EE3 /* OpeningHoursService.swift */,
+			);
+			path = OpeningHours;
 			sourceTree = "<group>";
 		};
 		6B9D94642A1F7CF60001B07E /* Home */ = {
@@ -562,7 +576,7 @@
 				6B40B45C2A210266004E4A21 /* Navigation */,
 				6B9D94902A1FCA750001B07E /* Buttons */,
 				6B9D94882A1F8FFB0001B07E /* TextFields */,
-				6B9203F22AA88588002E6EE3 /* OpeningHoursView.swift */,
+				6B9203F42AA89D05002E6EE3 /* OpeningHours */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1063,6 +1077,7 @@
 				6B20B8A32A39E691004971DC /* ImageView.swift in Sources */,
 				6BD744652A347F5E00A5343D /* PlaceCategories.swift in Sources */,
 				6B8604F92A2B9C360095B796 /* App+Impact.swift in Sources */,
+				6B9203F62AA89D15002E6EE3 /* OpeningHoursService.swift in Sources */,
 				6B1792432A2511F7007965FE /* AppState.swift in Sources */,
 				6BD744672A34810900A5343D /* PlaceCategoriesEnum.swift in Sources */,
 				6BD7445D2A347D8400A5343D /* PlaceCategoryPicker.swift in Sources */,
@@ -1070,6 +1085,7 @@
 				6B40B4562A20C901004E4A21 /* AuthService.swift in Sources */,
 				6BD744622A347E0400A5343D /* PlaceCategory.swift in Sources */,
 				6BD7446B2A3484FA00A5343D /* PlaceCategoryCell.swift in Sources */,
+				6B9203F82AA89F06002E6EE3 /* DateHelper.swift in Sources */,
 				6B43EFF92A3DBE9900F746A5 /* FoodCategoryEnum.swift in Sources */,
 				6B9D94922A1FCA7F0001B07E /* PlainButton.swift in Sources */,
 			);

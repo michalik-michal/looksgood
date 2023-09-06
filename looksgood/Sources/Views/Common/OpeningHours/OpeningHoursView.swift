@@ -3,6 +3,7 @@ import SwiftUI
 struct OpeningHoursView: View {
     
     var openingHours: [String]
+    @ObservedObject private var service = OpeningHoursService()
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -14,6 +15,8 @@ struct OpeningHoursView: View {
                         Text(day)
                     }
                     .font(.title3)
+                    .bold(service.isDayToday(day: day))
+                    .foregroundColor(service.isDayToday(day: day) ? .orange : .gray)
                 }
             }
             .padding()

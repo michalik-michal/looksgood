@@ -26,6 +26,8 @@ final class Strings {
     static let categoryInfo = "This will appear as main place category associated with your place. You can change it later in the settings."
     static let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     static let addImages = "Add images of your place."
+    static let cancel = "Cancel"
+    static let upload = "Upload"
 }
 
 extension String {

@@ -60,7 +60,9 @@ struct OwnerPlaceView: View {
         }
         .onChange(of: placeService.imageState) { newValue in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                showSelectedImage = true
+                if placeService.selectedPlaceImage != nil {
+                    showSelectedImage = true
+                }
             }
         }
         .sheet(isPresented: $showSelectedImage) {
@@ -105,23 +107,25 @@ struct OwnerPlaceView: View {
     private var uploadPhotoSheet: some View {
         VStack {
             HStack {
+                Button(Strings.cancel) {
+                    showSelectedImage = false
+                    placeService.selectedPlaceImage = nil
+                }
                 Spacer()
-                Text("Upload")
-                    .onTapGesture {
-                        Task {
-                            if let placeDocumentID = placeService.usersPlace?.documentID {
-                                try await placeService.uploadPlacePhoto(placeDocumentID)
-                                showSelectedImage = false
-                            }
+                Button(Strings.upload) {
+                    Task {
+                        if let placeDocumentID = placeService.usersPlace?.documentID {
+                            try await placeService.uploadPlacePhoto(placeDocumentID)
+                            showSelectedImage = false
                         }
                     }
+                }
             }
             Spacer()
             switch placeService.imageState {
             case .success(let image):
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
                     .frame(height: 180)
                     .clipped()
                     .cornerRadius(12)

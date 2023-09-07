@@ -8,16 +8,17 @@ struct PlaceView: View {
     @State private var place = Place(name: "", placeCategory: .restaurant)
     @State private var showMenu = false
     @State private var showOpeningHours =  false
+    @State private var showImages = false
 
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                if let imageURL = place.imageURL, imageURL.isNotEmptyString {
+                if let imageURL = place.imageURLs?.first, imageURL.isNotEmptyString {
                     asyncImage(url: imageURL)
                 }
                 VStack {
                     titleStack
-                        .padding(.top, place.imageURL == "" ? 10 : 0)
+                        .padding(.top, place.imageURLs?.first == "" ? 10 : 0)
                     adressStack
                     secondaryStack
                     buttonStack
@@ -38,6 +39,11 @@ struct PlaceView: View {
             NavigationModalBarView(showModal: $showMenu,
                                    content: MenuView(placeID: placeID))
         }
+        .fullScreenCover(isPresented: $showImages) {
+            NavigationModalBarView(showModal: $showImages,
+                                   content: ImageGridView(isOwnerView: false,
+                                                          placeID: placeID))
+        }
         .onAppear {
             Task {
                 if let fetchedPlace = try await placeService.fetchPlace(with: placeID) {
@@ -52,6 +58,9 @@ struct PlaceView: View {
             image
                 .resizable()
                 .frame(height: 180)
+                .onTapGesture {
+                    showImages.toggle()
+                }
         } placeholder: {
             ProgressView()
                 .frame(width: UIScreen.main.bounds.width,

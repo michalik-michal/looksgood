@@ -15,16 +15,8 @@ struct OwnerPlaceView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
                     if let place = placeService.usersPlace {
-                        if let imageURL = placeService.usersPlace?.imageURL, imageURL.isNotEmptyString {
-                            AsyncImage(url: URL(string: imageURL)) { image in
-                                image
-                                    .resizable()
-                                    .frame(height: 180)
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: UIScreen.main.bounds.width,
-                                           height: 180)
-                            }
+                        if let imageURL = placeService.usersPlace?.imageURLs?.first, imageURL.isNotEmptyString {
+                            imageView(imageURL: imageURL)
                         } else {
                             addImage()
                         }
@@ -67,6 +59,23 @@ struct OwnerPlaceView: View {
         }
         .sheet(isPresented: $showSelectedImage) {
             uploadPhotoSheet
+        }
+    }
+    
+    private func imageView(imageURL: String) ->  some View {
+        NavigationLink {
+            ImageGridView(isOwnerView: true,
+                          placeID: placeService.usersPlace?.id ?? "")
+        } label: {
+            AsyncImage(url: URL(string: imageURL)) { image in
+                image
+                    .resizable()
+                    .frame(height: 180)
+            } placeholder: {
+                ProgressView()
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: 180)
+            }
         }
     }
 

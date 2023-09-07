@@ -12,12 +12,12 @@ struct PlaceCellView: View {
                 }
             } label: {
                 VStack(alignment: .leading) {
-                    if let imageURL = place.imageURL, imageURL.isNotEmptyString {
+                    if let imageURL = place.imageURLs?.first, imageURL.isNotEmptyString {
                         asyncImage(url: imageURL)
                     }
                     VStack {
                         titleStack
-                            .padding(.top, place.imageURL == "" ? 10 : 0)
+                            .padding(.top, place.imageURLs?.first == "" ? 10 : 0)
                         adressStack
                         secondaryStack
                             .padding(.bottom, 10)

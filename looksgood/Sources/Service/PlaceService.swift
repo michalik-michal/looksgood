@@ -46,7 +46,7 @@ class PlaceService: ObservableObject {
                     "lat": place.lat ?? "",
                     "phoneNumber": place.phoneNumber ?? "",
                     "website": place.website ?? "",
-                    "imageURL": "",
+                    "imageURLs": [""],
                     "openingHours":  place.openingHours as Any,
                     "placeCategory": place.placeCategory.rawValue] as [String : Any]
         do {
@@ -84,7 +84,7 @@ class PlaceService: ObservableObject {
         do {
             let _ = try await ref.putDataAsync(photoData, metadata: metadata)
             let url = try await ref.downloadURL()
-            try await place.updateData(["imageURL": url.absoluteString])
+            try await place.updateData(["imageURLs":  FieldValue.arrayUnion([url.absoluteString])])
         } catch {
             print("DEBUG: Failed to upload photo with error \(error.localizedDescription)")
             return
@@ -196,6 +196,7 @@ class PlaceService: ObservableObject {
         }
     }
     
+    ///Delete menu image from storage
     private func deleteImage(for item: MenuItem) async throws {
         if let url = item.imageURL {
             if url.isNotEmptyString {
@@ -221,6 +222,26 @@ class PlaceService: ObservableObject {
         }
     }
     
+    func fetchImages(with placeID: String) async throws -> [String] {
+        let snapshot = try await Firestore.firestore()
+            .collection("places")
+            .whereField("id", isEqualTo: placeID)
+            .getDocuments()
+        let documents = snapshot.documents
+        let place = documents.compactMap({try? $0.data(as: Place.self)})
+        return place.first?.imageURLs ?? []
+    }
+    
+    ///Delete Image from database
+    func deletePlaceImage(for placeDocumentID: String, url: String) async throws {
+        // Delete image from storage
+        try await Storage.storage().reference().storage.reference(forURL: url).delete()
+        
+        let place = Firestore.firestore().collection("places").document(placeDocumentID)
+        try await place.updateData(["imageURLs":  FieldValue.arrayRemove([url])])
+
+    }
+
     //MARK: - Markers
     
     func fetchMarkers() async throws  {

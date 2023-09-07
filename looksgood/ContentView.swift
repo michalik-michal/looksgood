@@ -13,7 +13,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-//TODO: - Add Working Hours!
+//TODO: - Handle adding opeing hours manually
 //TODO: - add multiple photos for restaurant
 //TODO: - Handle ingredients and possibly description
 //TODO: - Handle ratings

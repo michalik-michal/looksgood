@@ -19,6 +19,7 @@ extension Image {
         case phone
         case book
         case squareStack3dUp = "square.stack.3d.up"
+        case magnifyingGlass = "magnifyingglass"
     }
     
     init(_ symbol: SFSymbol) {

@@ -52,7 +52,8 @@ struct HomeView: View {
                     }
                 }
                 .fullScreenCover(isPresented: $showListView) {
-                    NavigationModalBarView(showModal: $showListView, content: PlaceListView())
+                    NavigationModalBarView(showModal: $showListView,
+                                           content: PlaceListView())
                 }
             }
         }

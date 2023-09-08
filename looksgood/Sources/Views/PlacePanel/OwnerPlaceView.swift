@@ -9,6 +9,7 @@ struct OwnerPlaceView: View {
     @State private var tabViewHeight = 0.0
     @State private var showSelectedImage = false
     @State private var showOpeningHours =  false
+    @State private var showAddSubCategorySheet = false
     
     var body: some View {
         NavigationStack {
@@ -25,6 +26,7 @@ struct OwnerPlaceView: View {
                                 titleStack
                                 adressStack
                                 secondaryStack
+                                categories
                                 VStack(spacing: 10) {
                                     PlainLabel(title: place.phoneNumber ?? "Add phone number",
                                                alignment: .leading,
@@ -59,6 +61,10 @@ struct OwnerPlaceView: View {
         }
         .sheet(isPresented: $showSelectedImage) {
             uploadPhotoSheet
+        }
+        .sheet(isPresented: $showAddSubCategorySheet) {
+            AddSubCategorySheet(showSheet: $showAddSubCategorySheet)
+                .presentationDetents([.height(200)])
         }
     }
     
@@ -191,11 +197,9 @@ struct OwnerPlaceView: View {
      
     private var secondaryStack: some View {
         HStack {
-            PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
-            Spacer()
             if let openingHours = placeService.usersPlace?.openingHours {
                 HStack {
-                    Text("10:00 - 23:00")
+                    Text(DateHelper().getTodaysOpeningHours(for: openingHours))
                         .foregroundColor(.gray)
                         .bold()
                     Image(.infoCircle)
@@ -210,10 +214,31 @@ struct OwnerPlaceView: View {
                     showOpeningHours.toggle()
                 }
             }
+            Spacer()
+        }
+    }
+    
+    private var categories: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
+                Divider()
+                    .overlay(.black)
+                if let subCategories = placeService.usersPlace?.subCategories {
+                    ForEach(subCategories, id: \.self) { category in
+                        PlaceCategoryCell(placeCategory: PlaceCategory(type: category))
+                    }
+                }
+                Image(.plusCircle)
+                    .foregroundColor(.gray)
+                    .onTapGesture {
+                        showAddSubCategorySheet.toggle()
+                    }
+            }
         }
         .padding(.bottom)
     }
- }
+}
 
 
 struct OwnerPlaceView_Previews: PreviewProvider {

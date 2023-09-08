@@ -19,4 +19,5 @@ struct Place: Equatable, Identifiable, Decodable, Hashable {
     var openingHours: [String]?
     var imageURLs: [String]?
     var placeCategory: PlaceCategoriesEnum
+    var subCategories: [PlaceCategoriesEnum]?
 }

@@ -13,14 +13,15 @@ struct PlaceView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                if let imageURL = place.imageURLs?.first, imageURL.isNotEmptyString {
-                    asyncImage(url: imageURL)
+                if let imageURLs = place.imageURLs, ((imageURLs.first?.isNotEmptyString) != nil) {
+                    imageCarousel(urls: imageURLs)
                 }
                 VStack {
                     titleStack
                         .padding(.top, place.imageURLs?.first == "" ? 10 : 0)
                     adressStack
                     secondaryStack
+                    categories
                     buttonStack
                         .padding(.bottom, 10)
                     PlainLabel(title: "Menu",
@@ -67,6 +68,27 @@ struct PlaceView: View {
                        height: 180)
         }
     }
+    
+    private func imageCarousel(urls: [String]) -> some View {
+        TabView {
+            ForEach(urls, id: \.self) { url in
+                AsyncImage(url: URL(string: url)) { image in
+                    image
+                        .resizable()
+                        .frame(height: 180)
+                        .onTapGesture {
+                            showImages.toggle()
+                        }
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: UIScreen.main.bounds.width,
+                               height: 180)
+                }
+            }
+        }
+        .frame(height: 180)
+        .tabViewStyle(.page(indexDisplayMode: .never))
+    }
 
     private var titleStack: some View {
         HStack {
@@ -87,8 +109,6 @@ struct PlaceView: View {
 
     private var secondaryStack: some View {
         HStack {
-            PlaceCategoryCell(placeCategory: PlaceCategory(type: place.placeCategory))
-            Spacer()
             if let openingHours = place.openingHours {
                 HStack {
                     Text(DateHelper().getTodaysOpeningHours(for: openingHours))
@@ -106,8 +126,8 @@ struct PlaceView: View {
                     showOpeningHours.toggle()
                 }
             }
+            Spacer()
         }
-        .padding(.bottom)
     }
 
     private var buttonStack: some View {
@@ -145,6 +165,23 @@ struct PlaceView: View {
                         .stroke(Color.blackWhite, lineWidth: 1))
             }
         }
+    }
+    
+    private var categories: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                PlaceCategoryCell(placeCategory: PlaceCategory(type: place.placeCategory))
+                Divider()
+                    .overlay(.black)
+                    .frame(height: 35)
+                if let subCategories = place.subCategories {
+                    ForEach(subCategories, id: \.self) { category in
+                        PlaceCategoryCell(placeCategory: PlaceCategory(type: category))
+                    }
+                }
+            }
+        }
+        .frame(height: 50)
     }
 }
 

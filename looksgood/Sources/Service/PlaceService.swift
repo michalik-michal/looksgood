@@ -48,7 +48,8 @@ class PlaceService: ObservableObject {
                     "website": place.website ?? "",
                     "imageURLs": [""],
                     "openingHours":  place.openingHours as Any,
-                    "placeCategory": place.placeCategory.rawValue] as [String : Any]
+                    "placeCategory": place.placeCategory.rawValue,
+                    "subCategories": [""]] as [String : Any]
         do {
             if data["long"] as! String == "" || data["lat"] as! String == "" {
                 let coordinates = await LocationHelper().getCoordinates(from: data["address"] as! String)
@@ -100,6 +101,13 @@ class PlaceService: ObservableObject {
         let documets = snapshot.documents
         let place = documets.compactMap({try? $0.data(as: Place.self)}).last
         return place
+    }
+    
+    func uploadSubCategory(_ category: PlaceCategoriesEnum) async throws {
+        if let placeDocumentID = usersPlace?.documentID {
+            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+            try await place.updateData(["subCategories":  FieldValue.arrayUnion([category.rawValue])])
+        }
     }
 
 //MARK: - Menu
@@ -239,7 +247,6 @@ class PlaceService: ObservableObject {
         
         let place = Firestore.firestore().collection("places").document(placeDocumentID)
         try await place.updateData(["imageURLs":  FieldValue.arrayRemove([url])])
-
     }
 
     //MARK: - Markers

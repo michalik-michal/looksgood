@@ -14,7 +14,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 //TODO: - Handle adding opeing hours manually
-//TODO: - add multiple photos for restaurant
 //TODO: - Handle ingredients and possibly description
 //TODO: - Handle ratings
 //TODO: - Handle adding place manually

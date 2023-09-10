@@ -109,6 +109,14 @@ class PlaceService: ObservableObject {
             try await place.updateData(["subCategories":  FieldValue.arrayUnion([category.rawValue])])
         }
     }
+    
+    /// Delete sub category
+    func deleteSubSategory(_ category: PlaceCategoriesEnum) async throws {
+        if let placeDocumentID = usersPlace?.documentID {
+            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+            try await place.updateData(["subCategories":  FieldValue.arrayRemove([category.rawValue])])
+        }
+    }
 
 //MARK: - Menu
 

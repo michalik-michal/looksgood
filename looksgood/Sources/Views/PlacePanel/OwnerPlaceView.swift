@@ -10,6 +10,8 @@ struct OwnerPlaceView: View {
     @State private var showSelectedImage = false
     @State private var showOpeningHours =  false
     @State private var showAddSubCategorySheet = false
+    @State private var showDeleteSubCategorySheet = false
+    @State private var selectedSubCategory: PlaceCategoriesEnum?
     
     var body: some View {
         NavigationStack {
@@ -65,6 +67,16 @@ struct OwnerPlaceView: View {
         .sheet(isPresented: $showAddSubCategorySheet) {
             AddSubCategorySheet(showSheet: $showAddSubCategorySheet)
                 .presentationDetents([.height(200)])
+        }
+        .sheet(isPresented: $showDeleteSubCategorySheet) {
+            if let selectedSubCategory = selectedSubCategory {
+                DeleteSubCategorySheet(category: selectedSubCategory,
+                                       showSheet: $showDeleteSubCategorySheet)
+            } else {
+                //TODO: - First open
+                Text("Something went wrong")
+                    .presentationDetents([.height(100)])
+            }
         }
     }
     
@@ -227,6 +239,12 @@ struct OwnerPlaceView: View {
                 if let subCategories = placeService.usersPlace?.subCategories {
                     ForEach(subCategories, id: \.self) { category in
                         PlaceCategoryCell(placeCategory: PlaceCategory(type: category))
+                            .onTapGesture {
+                                Task {
+                                    selectedSubCategory = category
+                                    showDeleteSubCategorySheet.toggle()
+                                }
+                            }
                     }
                 }
                 Image(.plusCircle)

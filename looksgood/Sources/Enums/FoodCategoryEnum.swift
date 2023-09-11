@@ -18,4 +18,5 @@ enum FoodCategory: String, CaseIterable, Codable, Comparable {
     case Lunch
     case Desert
     case All
+    case specialOffer = "Special Offer"
 }

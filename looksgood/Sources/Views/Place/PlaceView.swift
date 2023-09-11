@@ -171,10 +171,10 @@ struct PlaceView: View {
         ScrollView(.horizontal) {
             HStack {
                 PlaceCategoryCell(placeCategory: PlaceCategory(type: place.placeCategory))
-                Divider()
-                    .overlay(.black)
-                    .frame(height: 35)
                 if let subCategories = place.subCategories {
+                    Divider()
+                        .overlay(.black)
+                        .frame(height: 35)
                     ForEach(subCategories, id: \.self) { category in
                         PlaceCategoryCell(placeCategory: PlaceCategory(type: category))
                     }

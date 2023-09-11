@@ -21,3 +21,5 @@ struct ContentView_Previews: PreviewProvider {
 //TODO: - Login after creating account
 //TODO: - Edit properties (phone, website)
 //TODO: - Display Website for user ?
+//TODO: - Special offers in the menu -> Previous price
+//TODO: - Map search view

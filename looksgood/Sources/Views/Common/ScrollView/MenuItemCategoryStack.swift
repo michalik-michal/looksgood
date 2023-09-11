@@ -13,7 +13,7 @@ struct MenuItemCategoryStack: View {
                 HStack {
                     ForEach(menuItemsCategories, id: \.rawValue) { item in
                         VStack {
-                            Text(item.rawValue)
+                            Text(item == .specialOffer ? "⭐ \(item.rawValue)" : item.rawValue)
                                 .font(.subheadline)
                                 .fontWeight(selectedCategory == item ? .bold : .regular)
                                 .frame(maxWidth: .infinity)

@@ -22,7 +22,7 @@ struct OwnerMenuView: View {
                                             MenuItemDetailsView(menuItem: item)
                                                 .backNavigationButton()
                                         } label: {
-                                            if category == .All {
+                                            if category == .All && item.category != .specialOffer {
                                                 MenuItemCell(menuItem: item)
                                             } else if item.category == category {
                                                 MenuItemCell(menuItem: item)

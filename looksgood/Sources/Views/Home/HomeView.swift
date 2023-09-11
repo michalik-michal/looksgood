@@ -71,6 +71,7 @@ struct HomeView: View {
         .onTapGesture {
             showListView.toggle()
         }
+        .shadow(color: Color.black.opacity(0.3), radius: 20, y: 5)
     }
 }
 

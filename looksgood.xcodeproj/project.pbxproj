@@ -11,6 +11,8 @@
 		4B56958CBD4A808C07CD01B2 /* Pods_looksgood_looksgoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3241B0B64C3F2E5B81EE6BFB /* Pods_looksgood_looksgoodUITests.framework */; };
 		6B1792432A2511F7007965FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1792422A2511F7007965FE /* AppState.swift */; };
 		6B26BD522AADEEA20092AB03 /* DeleteSubCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26BD512AADEEA20092AB03 /* DeleteSubCategorySheet.swift */; };
+		6B26BD552AAF20170092AB03 /* OwnerPlaceSheetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26BD542AAF20170092AB03 /* OwnerPlaceSheetEnum.swift */; };
+		6B26BD572AAF20E90092AB03 /* EditPhoneNumberSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B26BD562AAF20E90092AB03 /* EditPhoneNumberSheet.swift */; };
 		6B29269C2A24966300A50C35 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269B2A24966300A50C35 /* GoogleMapView.swift */; };
 		6B29269E2A2497AF00A50C35 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269D2A2497AF00A50C35 /* LocationService.swift */; };
 		6B2926A02A24988D00A50C35 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29269F2A24988D00A50C35 /* PlacesService.swift */; };
@@ -136,6 +138,8 @@
 		385F616B3ACEE24A67B77641 /* Pods_looksgoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_looksgoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1792422A2511F7007965FE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		6B26BD512AADEEA20092AB03 /* DeleteSubCategorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSubCategorySheet.swift; sourceTree = "<group>"; };
+		6B26BD542AAF20170092AB03 /* OwnerPlaceSheetEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPlaceSheetEnum.swift; sourceTree = "<group>"; };
+		6B26BD562AAF20E90092AB03 /* EditPhoneNumberSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneNumberSheet.swift; sourceTree = "<group>"; };
 		6B29269B2A24966300A50C35 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		6B29269D2A2497AF00A50C35 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		6B29269F2A24988D00A50C35 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
@@ -293,6 +297,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		6B26BD532AAF1A6A0092AB03 /* OwnerPlace */ = {
+			isa = PBXGroup;
+			children = (
+				6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */,
+			);
+			path = OwnerPlace;
+			sourceTree = "<group>";
+		};
 		6B2FA60A2A45EC4000B0E589 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,7 +392,7 @@
 			children = (
 				6B40B47F2A23C68A004E4A21 /* PlacePanelView.swift */,
 				6B3E96842A38C585001E2F52 /* NoUserPlacesView.swift */,
-				6B3E96862A39C1A0001E2F52 /* OwnerPlaceView.swift */,
+				6B26BD532AAF1A6A0092AB03 /* OwnerPlace */,
 			);
 			path = PlacePanel;
 			sourceTree = "<group>";
@@ -391,6 +403,7 @@
 				6B43EFFB2A3DC1D100F746A5 /* AddMenuItemSheet.swift */,
 				6B9204002AAB2200002E6EE3 /* AddSubCategorySheet.swift */,
 				6B26BD512AADEEA20092AB03 /* DeleteSubCategorySheet.swift */,
+				6B26BD562AAF20E90092AB03 /* EditPhoneNumberSheet.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";
@@ -747,6 +760,7 @@
 				6BD744682A34812A00A5343D /* AccountTypeEnum.swift */,
 				6B43EFFF2A3DDC2D00F746A5 /* CurrencyEnum.swift */,
 				6B91B93F2A4B18DF00FB06C2 /* ImageStateEnum.swift */,
+				6B26BD542AAF20170092AB03 /* OwnerPlaceSheetEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1062,6 +1076,7 @@
 				6B68219F2A62ACD800F004C4 /* UIView+Extension.swift in Sources */,
 				6B40B4732A21F342004E4A21 /* ProfileView.swift in Sources */,
 				6B7A3EE02A40B13B0002EC34 /* MenuItemCell.swift in Sources */,
+				6B26BD552AAF20170092AB03 /* OwnerPlaceSheetEnum.swift in Sources */,
 				6B43F0042A3EEDEA00F746A5 /* PhotosService.swift in Sources */,
 				6B9203FD2AA9D10E002E6EE3 /* ImageGridView.swift in Sources */,
 				6B40B4682A210D53004E4A21 /* PlainButtonStyle.swift in Sources */,
@@ -1108,6 +1123,7 @@
 				6B9203F82AA89F06002E6EE3 /* DateHelper.swift in Sources */,
 				6B43EFF92A3DBE9900F746A5 /* FoodCategoryEnum.swift in Sources */,
 				6B9D94922A1FCA7F0001B07E /* PlainButton.swift in Sources */,
+				6B26BD572AAF20E90092AB03 /* EditPhoneNumberSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

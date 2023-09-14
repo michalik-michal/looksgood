@@ -28,6 +28,9 @@ final class Strings {
     static let addImages = "Add images of your place."
     static let cancel = "Cancel"
     static let upload = "Upload"
+    static let update = "Update"
+    static let phoneNumber = "Phone number"
+    static let website = "Website"
 }
 
 extension String {

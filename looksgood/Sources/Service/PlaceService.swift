@@ -117,11 +117,19 @@ class PlaceService: ObservableObject {
             try await place.updateData(["subCategories":  FieldValue.arrayRemove([category.rawValue])])
         }
     }
-    
+    /// Update place phone number
     func updatePhoneNumber(_ phoneNumber: String) async throws {
         if let placeDocumentID = usersPlace?.documentID {
             let place = Firestore.firestore().collection("places").document(placeDocumentID)
             try await place.updateData(["phoneNumber": phoneNumber])
+        }
+    }
+    
+    /// Update place website link
+    func updateWebsiteLink(_ websiteLink: String) async throws {
+        if let placeDocumentID = usersPlace?.documentID {
+            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+            try await place.updateData(["website": websiteLink])
         }
     }
 

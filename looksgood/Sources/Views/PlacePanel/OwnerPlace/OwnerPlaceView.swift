@@ -41,6 +41,14 @@ struct OwnerPlaceView: View {
                                     PlainLabel(title: place.website ?? "Add website",
                                                alignment: .leading,
                                                image: Image(.globe))
+                                    .onTapGesture {
+                                        Task {
+                                            DispatchQueue.main.async {
+                                                selectedSheet = .editWebsiteLink
+                                            }
+                                            showSheet = true
+                                        }
+                                    }
                                     NavigationLink {
                                         OwnerMenuView()
                                             .backNavigationButton()
@@ -77,6 +85,9 @@ struct OwnerPlaceView: View {
                         .presentationDetents([.height(200)])
                 case .editPhoneNumber:
                     EditPhoneNumberSheet(oldPhoneNumber: placeService.usersPlace?.phoneNumber ?? "",
+                                         showSheet: $showSheet)
+                case .editWebsiteLink:
+                    EditWebsiteLinkSheet(oldWebsiteLink: placeService.usersPlace?.website ?? "",
                                          showSheet: $showSheet)
                 case .deleteSubCategory:
                     if let selectedSubCategory = selectedSubCategory {

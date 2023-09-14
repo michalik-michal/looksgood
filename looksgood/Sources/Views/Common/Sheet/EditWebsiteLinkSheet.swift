@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct EditPhoneNumberSheet: View {
+struct EditWebsiteLinkSheet: View {
     
-    var oldPhoneNumber: String
-    @State private var phoneNumber = ""
+    var oldWebsiteLink: String
+    @State private var websiteLink = ""
     @Binding var showSheet: Bool
     @EnvironmentObject private var placeService: PlaceService
     
@@ -15,26 +15,27 @@ struct EditPhoneNumberSheet: View {
                     .bold()
                     .onTapGesture {
                         Task {
-                            try await placeService.updatePhoneNumber(phoneNumber)
+                            try await placeService.updateWebsiteLink(websiteLink)
                             showSheet = false
                         }
                     }
             }
             .padding()
-            CustomTextField(imageName: "phone",
-                            placeholderText: Strings.phoneNumber,
-                            text: $phoneNumber)
+            CustomTextField(imageName: "globe",
+                            placeholderText: Strings.website,
+                            text: $websiteLink)
             .padding(.horizontal)
         }
         .presentationDetents([.height(100)])
         .onAppear {
-            phoneNumber = oldPhoneNumber
+            websiteLink = oldWebsiteLink
         }
     }
 }
 
-struct EditPhoneNumberSheet_Previews: PreviewProvider {
+struct EditWebsiteLinkSheet_Previews: PreviewProvider {
     static var previews: some View {
-        EditPhoneNumberSheet(oldPhoneNumber: "123 456 789", showSheet: .constant(false))
+        EditWebsiteLinkSheet(oldWebsiteLink: "www.apple.com",
+                             showSheet: .constant(false))
     }
 }

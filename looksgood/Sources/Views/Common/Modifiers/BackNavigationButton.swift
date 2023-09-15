@@ -15,7 +15,7 @@ struct BackNavigationButton: ViewModifier {
                         Image(.chevronLeft)
                             .scaledToFit()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.blackWhite)
                     }
                 }
             })

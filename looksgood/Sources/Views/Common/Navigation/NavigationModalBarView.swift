@@ -15,7 +15,7 @@ struct NavigationModalBarView<Content>: View where Content: View {
                         }, label: {
                             Image(.xmark)
                                 .frame(width: 24, height: 24, alignment: .center)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.blackWhite)
                         })
                     }
                 })

@@ -2,10 +2,14 @@ import Foundation
 
 enum FoodCategory: String, CaseIterable, Codable, Comparable {
     static func < (lhs: FoodCategory, rhs: FoodCategory) -> Bool {
-        if lhs == .All || rhs == .All {
+        if lhs == .specialOffer || rhs == .specialOffer {
             return false
         } else {
-            return lhs.rawValue < rhs.rawValue
+            if lhs == .All || rhs == .All {
+                return false
+            } else {
+                return lhs.rawValue < rhs.rawValue
+            }
         }
     }
     

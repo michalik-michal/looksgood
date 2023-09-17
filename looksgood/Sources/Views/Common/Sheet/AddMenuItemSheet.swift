@@ -18,13 +18,13 @@ struct AddMenuItemSheet: View {
     var body: some View {
         VStack {
             addImage()
-            CustomTextField(imageName: "fork.knife", placeholderText: "Name", text: $menuItem.title)
+            CustomTextField(imageName: "fork.knife", placeholderText: Strings.name, text: $menuItem.title)
             HStack {
-                CustomTextField(imageName: "dollarsign", placeholderText: "Price", text: $menuItem.price)
+                CustomTextField(imageName: "dollarsign", placeholderText: Strings.price, text: $menuItem.price)
                     .keyboardType(.numberPad)
                 currencyMenu
             }
-            CustomTextField(imageName: "pencil", placeholderText: "Description (optional)", text: $menuItem.description.safe(""))
+            CustomTextField(imageName: "pencil", placeholderText: Strings.descriptionOptional, text: $menuItem.description.safe(""))
             selectedCategoriesStack
             addCategoryStack
             Spacer()
@@ -56,7 +56,7 @@ struct AddMenuItemSheet: View {
                                                      Image(.plus)
                                                          .resizable()
                                                          .frame(width: 25, height: 25)
-                                                     Text("Add Image")
+                                                     Text(Strings.addImage)
                                                  }
                                                  .foregroundColor(.blackWhite)
                                                  .frame(maxWidth: .infinity)
@@ -73,7 +73,7 @@ struct AddMenuItemSheet: View {
                                                          .clipped()
                                                          .cornerRadius(12)
                                                  default:
-                                                     Text("Unable to preview photo")
+                                                     Text(Strings.unableToPreviewPhoto)
                                                          .foregroundColor(.blackWhite)
                                                          .frame(maxWidth: .infinity)
                                                          .frame(height: 180)
@@ -109,7 +109,7 @@ struct AddMenuItemSheet: View {
             HStack {
                 if selectedCategory == nil {
                     HStack {
-                        Text("Select category")
+                        Text(Strings.selectCategory)
                         Image(.plus)
                             .frame(width: 15, height: 15)
                     }

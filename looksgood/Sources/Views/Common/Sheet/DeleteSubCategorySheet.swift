@@ -10,7 +10,7 @@ struct DeleteSubCategorySheet: View {
         VStack {
             HStack {
                 Spacer()
-                Text("Delete")
+                Text(Strings.delete)
                     .bold()
                     .onTapGesture {
                         Task {

@@ -31,6 +31,14 @@ final class Strings {
     static let update = "Update"
     static let phoneNumber = "Phone number"
     static let website = "Website"
+    static let price = "Price"
+    static let name = "Name"
+    static let descriptionOptional = "Description (optional)"
+    static let addImage = "Add Image"
+    static let unableToPreviewPhoto = "Unable to preview photo"
+    static let selectCategory = "Select category"
+    static let subCategory = "Sub category"
+    static let delete = "Delete"
 }
 
 extension String {

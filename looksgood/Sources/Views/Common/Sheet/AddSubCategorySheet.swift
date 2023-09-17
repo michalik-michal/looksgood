@@ -9,7 +9,7 @@ struct AddSubCategorySheet: View {
     var body: some View {
         VStack() {
             HStack {
-                Text("Sub category")
+                Text(Strings.subCategory)
                     .font(.title2)
                 Spacer()
             }

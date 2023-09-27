@@ -21,6 +21,7 @@ extension Image {
         case squareStack3dUp = "square.stack.3d.up"
         case magnifyingGlass = "magnifyingglass"
         case plusCircle = "plus.circle"
+        case iphone
     }
     
     init(_ symbol: SFSymbol) {

@@ -13,7 +13,7 @@ struct NoUserPlacesView: View {
                 LottieView(type: .hello)
                     .frame(width: 350, height: 350)
                 HStack {
-                    Text("Start adding place")
+                    Text(Strings.startAddingPlace)
                         .font(.title.bold())
                     Spacer()
                 }

@@ -50,11 +50,11 @@ struct AddPlaceView: View {
                 }
                 .padding(.horizontal)
                 HStack {
-                    Text("Select category")
+                    Text(Strings.selectCategory)
                         .font(.title2)
                         .bold()
                     Spacer()
-                    Image(systemName: "info.circle")
+                    Image(.infoCircle)
                         .foregroundColor(.gray)
                         .onTapGesture {
                             showInfoSheet.toggle()

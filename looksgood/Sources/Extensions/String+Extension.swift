@@ -39,6 +39,9 @@ final class Strings {
     static let selectCategory = "Select category"
     static let subCategory = "Sub category"
     static let delete = "Delete"
+    static let navigate = "Navigate"
+    static let call = "Call"
+    static let startAddingPlace = "Start adding place"
 }
 
 extension String {

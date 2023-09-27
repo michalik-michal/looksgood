@@ -136,7 +136,7 @@ struct PlaceView: View {
                 Image("googlemaps")
                     .resizable()
                     .frame(width: 20, height: 20)
-                Text("Navigate")
+                Text(Strings.navigate)
             }
             .onTapGesture {
                 if let destinationLat = Double(place.lat ?? ""), let destinationLong = Double(place.long ?? "") {
@@ -154,8 +154,8 @@ struct PlaceView: View {
             if let phone = place.phoneNumber, phone.isNotEmptyString {
                 Link(destination: URL(string: "tel://\(phone.filter{!$0.isWhitespace})")!, label: {
                     HStack {
-                        Image(systemName: "iphone")
-                        Text("Call")
+                        Image(.iphone)
+                        Text(Strings.call)
                     }
                 })
                 .padding()

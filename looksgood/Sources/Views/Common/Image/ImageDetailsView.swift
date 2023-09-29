@@ -27,8 +27,8 @@ struct ImageDetailsView: View {
                         }
                         .alert(isPresented: $showConfirmation) {
                             Alert(
-                                title: Text("Are you sure?"),
-                                primaryButton: .destructive(Text("Delete")) {
+                                title: Text(Strings.areYouSure),
+                                primaryButton: .destructive(Text(Strings.delete)) {
                                     Task {
                                         if let placeDocumentID = placeService.usersPlace?.documentID {
                                             try await placeService.deletePlaceImage(for: placeDocumentID, url: url)

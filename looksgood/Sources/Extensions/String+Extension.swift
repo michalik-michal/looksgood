@@ -42,6 +42,8 @@ final class Strings {
     static let navigate = "Navigate"
     static let call = "Call"
     static let startAddingPlace = "Start adding place"
+    static let deleteItem = "Delete item?"
+    static let thisMenuItemWillBeDeletedForever = "This menu item will be deleted forever."
 }
 
 extension String {

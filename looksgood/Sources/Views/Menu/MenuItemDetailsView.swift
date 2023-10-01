@@ -62,9 +62,9 @@ struct MenuItemDetailsView: View {
         }
         .alert(isPresented: $showDeleteItemAlert) {
             Alert(
-                title: Text("Delete item?"),
-                message: Text("This menu item will be deleted forever."),
-                primaryButton: .destructive(Text("Delete")) {
+                title: Text(Strings.deleteItem),
+                message: Text(Strings.thisMenuItemWillBeDeletedForever),
+                primaryButton: .destructive(Text(Strings.delete)) {
                     Task {
                         try await placeService.deleteMenuItem(menuItem)
                         presentationMode.wrappedValue.dismiss()

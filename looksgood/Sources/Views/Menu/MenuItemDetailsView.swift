@@ -84,14 +84,14 @@ struct MenuItemDetailsView: View {
                                                      Image(.plus)
                                                          .resizable()
                                                          .frame(width: 25, height: 25)
-                                                     Text("Add image for this item.")
+                                                     Text(Strings.addImageForThisItem)
                                                  }
                                                  .foregroundColor(.blackWhite)
                                                  .frame(maxWidth: .infinity)
                                                  .frame(height: 180)
                                                  .background(Color(.systemGray6))
                                              } else {
-                                                 Text("Photo added")
+                                                 Text(Strings.photoAdded)
                                                      .foregroundColor(.blackWhite)
                                                      .frame(maxWidth: .infinity)
                                                      .frame(height: 180)

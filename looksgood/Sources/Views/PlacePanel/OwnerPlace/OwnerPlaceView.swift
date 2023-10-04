@@ -95,7 +95,7 @@ struct OwnerPlaceView: View {
                                                showSheet: $showSheet)
                     } else {
                         //TODO: - First open
-                        Text("Something went wrong")
+                        Text(Strings.somethingWentWrong)
                             .presentationDetents([.height(100)])
                     }
                 }
@@ -142,7 +142,7 @@ struct OwnerPlaceView: View {
                                                      .frame(height: 180)
                                                      .background(Color(.systemGray6))
                                                  } else {
-                                                     Text("Photo added")
+                                                     Text(Strings.photoAdded)
                                                          .foregroundColor(.blackWhite)
                                                          .frame(maxWidth: .infinity)
                                                          .frame(height: 180)
@@ -180,7 +180,7 @@ struct OwnerPlaceView: View {
                     .clipped()
                     .cornerRadius(12)
             default:
-                Text("Unable to preview photo")
+                Text(Strings.unableToPreviewPhoto)
             }
             Spacer()
         }

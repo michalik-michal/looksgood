@@ -46,6 +46,7 @@ final class Strings {
     static let thisMenuItemWillBeDeletedForever = "This menu item will be deleted forever."
     static let addImageForThisItem = "Add image for this item."
     static let photoAdded = "Photo added"
+    static let somethingWentWrong = "Something went wrong"
 }
 
 extension String {

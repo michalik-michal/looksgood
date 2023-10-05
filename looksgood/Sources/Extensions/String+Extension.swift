@@ -47,6 +47,8 @@ final class Strings {
     static let addImageForThisItem = "Add image for this item."
     static let photoAdded = "Photo added"
     static let somethingWentWrong = "Something went wrong"
+    static let map = "Map"
+    static let panel = "Panel"
 }
 
 extension String {

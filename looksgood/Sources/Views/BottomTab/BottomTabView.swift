@@ -22,7 +22,7 @@ struct BottomTabView: View {
                         }
                         .tabItem {
                             Image(.map)
-                            Text("Map")
+                            Text(Strings.map)
                         }.tag(0)
                     PlacePanelView()
                         .onAppear {
@@ -30,7 +30,7 @@ struct BottomTabView: View {
                         }
                         .tabItem {
                             Image(.house)
-                            Text("Panel")
+                            Text(Strings.panel)
                         }.tag(1)
                 }
                 .zIndex(20)

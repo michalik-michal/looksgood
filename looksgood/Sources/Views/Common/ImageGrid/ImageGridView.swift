@@ -95,7 +95,7 @@ struct ImageGridView: View {
                     .clipped()
                     .cornerRadius(12)
             default:
-                Text("Unable to preview photo")
+                Text(Strings.unableToPreviewPhoto)
             }
             Spacer()
         }

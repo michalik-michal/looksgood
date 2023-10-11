@@ -49,6 +49,7 @@ final class Strings {
     static let somethingWentWrong = "Something went wrong"
     static let map = "Map"
     static let panel = "Panel"
+    static let list = "List"
 }
 
 extension String {

@@ -62,7 +62,7 @@ struct HomeView: View {
     private var listButton: some View {
         HStack {
             Image(.squareStack3dUp)
-            Text("List")
+            Text(Strings.list)
         }
         .padding()
         .frame(width: 100, height: 40)

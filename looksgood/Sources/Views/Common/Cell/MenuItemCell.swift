@@ -13,7 +13,7 @@ struct MenuItemCell: View {
                         .scaledToFit()
                         .clipped()
                 } placeholder: {
-                    Image(systemName: "fork.knife")
+                    Image(.forkKnife)
                         .resizable()
                         .frame(width: 130, height: 130)
                         .foregroundColor(.gray)

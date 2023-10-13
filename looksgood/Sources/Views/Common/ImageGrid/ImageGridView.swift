@@ -2,14 +2,14 @@ import SwiftUI
 import PhotosUI
 
 struct ImageGridView: View {
-    
+
     var isOwnerView: Bool
     var placeID: String
     @State private var showAddPlaceImage = false
     @State private var showSelectedImage = false
     @State private var images: [String] = []
     @EnvironmentObject private var placeService: PlaceService
-    
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
@@ -48,7 +48,7 @@ struct ImageGridView: View {
             }
         }
     }
-    
+
     private func imageView(imageURL: String) ->  some View {
         AsyncImage(url: URL(string: imageURL)) { image in
             NavigationLink {

@@ -22,6 +22,7 @@ extension Image {
         case magnifyingGlass = "magnifyingglass"
         case plusCircle = "plus.circle"
         case iphone
+        case forkKnife = "fork.knife"
     }
     
     init(_ symbol: SFSymbol) {

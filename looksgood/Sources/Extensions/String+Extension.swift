@@ -50,6 +50,7 @@ final class Strings {
     static let map = "Map"
     static let panel = "Panel"
     static let list = "List"
+    static let addAddress = "Add address"
 }
 
 extension String {

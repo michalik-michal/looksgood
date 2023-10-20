@@ -224,7 +224,7 @@ struct OwnerPlaceView: View {
      
      private var adressStack: some View {
          HStack {
-             Text(placeService.usersPlace?.address ?? "Add address")
+             Text(placeService.usersPlace?.address ?? Strings.addAddress)
                  .foregroundColor(.gray)
              Spacer()
          }

@@ -7,6 +7,7 @@ struct HomeView: View {
     @State private var tappedMarker: CustomMarker?
     @State private var showPlaceSheet = false
     @State private var showListView = false
+    @State private var showDealsView = false
     @EnvironmentObject private var locationManager: LocationService
     @EnvironmentObject private var placeService: PlaceService
     
@@ -32,19 +33,7 @@ struct HomeView: View {
                 }
                 VStack {
                     MapSearchField(text: $searchText)
-                    HStack {
-                        Spacer()
-                        ZStack {
-                            Circle()
-                                .frame(width: 45, height: 45)
-                                .foregroundColor(.whiteBlack)
-                            Image(systemName: "gift.circle.fill")
-                                .resizable()
-                                .frame(width: 45, height: 45)
-                                .foregroundColor(.green)
-                        }
-                        .padding(.top, 5)
-                    }
+                    dealsIcon
                     Spacer()
                     listButton
                 }
@@ -68,6 +57,10 @@ struct HomeView: View {
                     NavigationModalBarView(showModal: $showListView,
                                            content: PlaceListView())
                 }
+                .fullScreenCover(isPresented: $showDealsView) {
+                    NavigationModalBarView(showModal: $showDealsView,
+                                           content: DealsView())
+                }
             }
         }
     }
@@ -85,6 +78,25 @@ struct HomeView: View {
             showListView.toggle()
         }
         .shadow(color: Color.black.opacity(0.3), radius: 20, y: 5)
+    }
+    
+    private var dealsIcon: some View {
+        HStack {
+            Spacer()
+            ZStack {
+                Circle()
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(.whiteBlack)
+                Image(systemName: "gift.circle.fill")
+                    .resizable()
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(.green)
+            }
+            .padding(.top, 5)
+            .onTapGesture {
+                showDealsView.toggle()
+            }
+        }
     }
 }
 

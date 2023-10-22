@@ -32,6 +32,19 @@ struct HomeView: View {
                 }
                 VStack {
                     MapSearchField(text: $searchText)
+                    HStack {
+                        Spacer()
+                        ZStack {
+                            Circle()
+                                .frame(width: 45, height: 45)
+                                .foregroundColor(.whiteBlack)
+                            Image(systemName: "gift.circle.fill")
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                                .foregroundColor(.green)
+                        }
+                        .padding(.top, 5)
+                    }
                     Spacer()
                     listButton
                 }

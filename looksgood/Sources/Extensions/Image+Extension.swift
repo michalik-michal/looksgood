@@ -23,6 +23,8 @@ extension Image {
         case plusCircle = "plus.circle"
         case iphone
         case forkKnife = "fork.knife"
+        case starCircleFill = "star.circle.fill"
+        case starSquareFill = "star.square.fill"
     }
     
     init(_ symbol: SFSymbol) {

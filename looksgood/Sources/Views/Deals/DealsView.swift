@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct DealsView: View {
+    
+    @ObservedObject private var publisher = SpecialOffersPublisher()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Special Offers")
+                .font(.largeTitle).bold()
+                .padding(.horizontal)
+            ScrollView {
+                VStack{
+                    ForEach(publisher.specialOffers, id: \.self) { item in
+                        NavigationLink {
+                            PlaceView(placeID: item.placeID)
+                                .backNavigationButton()
+                        } label: {
+                            MenuItemCell(menuItem: item)
+                        }
+                    }
+                }
+            }
+        }
+        .onAppear {
+            Task {
+                try await publisher.fetchSpecialOffers()
+            }
+        }
     }
 }
 

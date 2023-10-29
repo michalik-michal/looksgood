@@ -13,7 +13,7 @@ struct DealsView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Special Offers")
+            Text(Strings.specialOffers)
                 .font(.largeTitle).bold()
                 .padding(.horizontal)
             ScrollView {

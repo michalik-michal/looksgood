@@ -51,6 +51,7 @@ final class Strings {
     static let panel = "Panel"
     static let list = "List"
     static let addAddress = "Add address"
+    static let specialOffers = "Special Offers"
 }
 
 extension String {

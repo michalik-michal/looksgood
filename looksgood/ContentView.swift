@@ -19,7 +19,6 @@ struct ContentView_Previews: PreviewProvider {
 //TODO: - Handle adding place manually
 //TODO: - Add place to favourites
 //TODO: - Login after creating account
-//TODO: - Edit properties (phone, website)
 //TODO: - Display Website for user ?
 //TODO: - Special offers in the menu -> Previous price
 //TODO: - Map search view

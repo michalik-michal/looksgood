@@ -1,10 +1,3 @@
-//
-//  DealsView.swift
-//  looksgood
-//
-//  Created by Michal Michalik on 22/10/2023.
-//
-
 import SwiftUI
 
 struct DealsView: View {

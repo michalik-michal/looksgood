@@ -171,7 +171,7 @@ struct PlaceView: View {
         ScrollView(.horizontal) {
             HStack {
                 PlaceCategoryCell(placeCategory: PlaceCategory(type: place.placeCategory))
-                if let subCategories = place.subCategories {
+                if let subCategories = place.subCategories, !subCategories.isEmpty {
                     Divider()
                         .overlay(.black)
                         .frame(height: 35)

@@ -18,6 +18,7 @@ struct DealsView: View {
                         } label: {
                             MenuItemCell(menuItem: item)
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }

@@ -6,7 +6,7 @@ struct PlaceListView: View {
     @State private var searchText = ""
     
     var body: some View {
-        if !placeSercive.places.isEmpty {
+        if placeSercive.places.isNotEmpty {
             VStack {
                 ScrollView {
                     VStack(spacing: 0) {

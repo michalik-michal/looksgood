@@ -11,7 +11,7 @@ struct MenuView: View {
     
     var body: some View {
         VStack {
-            if !menuCategories.isEmpty, !menuItems.isEmpty {
+            if menuCategories.isNotEmpty, menuItems.isNotEmpty {
                 MenuItemCategoryStack(menuItemsCategories: menuCategories,
                                       selectedCategory: $selectedCategory.safe(.All))
                 TabView(selection: $selectedCategory.safe(.All)) {

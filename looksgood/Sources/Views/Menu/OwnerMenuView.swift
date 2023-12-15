@@ -10,7 +10,7 @@ struct OwnerMenuView: View {
         VStack {
             if let categories = service.placeMenuCategories,
                let menuItems = service.menuItems {
-                if !categories.isEmpty, !menuItems.isEmpty {
+                if categories.isNotEmpty, menuItems.isNotEmpty {
                     MenuItemCategoryStack(menuItemsCategories: categories,
                                           selectedCategory: $selectedCategory.safe(.All))
                     TabView(selection: $selectedCategory.safe(.All)) {

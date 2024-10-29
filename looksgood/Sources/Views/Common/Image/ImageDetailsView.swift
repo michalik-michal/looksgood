@@ -25,20 +25,20 @@ struct ImageDetailsView: View {
                                 .resizable()
                                 .frame(width: 22, height: 25)
                         }
-                        .alert(isPresented: $showConfirmation) {
-                            Alert(
-                                title: Text(Strings.areYouSure),
-                                primaryButton: .destructive(Text(Strings.delete)) {
-                                    Task {
-                                        if let placeDocumentID = placeService.usersPlace?.documentID {
-                                            try await placeService.deletePlaceImage(for: placeDocumentID, url: url)
-                                            presentationMode.wrappedValue.dismiss()
-                                        }
-                                    }
-                                },
-                                secondaryButton: .cancel()
-                            )
-                        }
+                      //  .alert(isPresented: $showConfirmation) {
+//                            Alert(
+//                                title: Text(Strings.areYouSure),
+//                                primaryButton: .destructive(Text(Strings.delete)) {
+//                                    Task {
+//                                        if let placeDocumentID = placeService.usersPlace?.documentID {
+//                                            try await placeService.deletePlaceImage(for: placeDocumentID, url: url)
+//                                            presentationMode.wrappedValue.dismiss()
+//                                        }
+//                                    }
+//                                },
+//                                secondaryButton: .cancel()
+//                            )
+                      //  }
                     }
                 }
             }

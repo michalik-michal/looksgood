@@ -94,44 +94,54 @@ class PlaceService: ObservableObject {
 
     /// Fetch place by placeID
     func fetchPlace(with id: String) async throws -> Place? {
-        let snapshot = try await Firestore.firestore()
-            .collection("places")
-            .whereField("id", isEqualTo: id)
-            .getDocuments()
-        let documets = snapshot.documents
-        let place = documets.compactMap({try? $0.data(as: Place.self)}).last
+        // Load the places.json file from the app bundle
+        guard let fileURL = Bundle.main.url(forResource: "places", withExtension: "json") else {
+            print("places.json file not found.")
+            return nil
+        }
+
+        // Load the data from the file
+        let jsonData = try Data(contentsOf: fileURL)
+
+        // Decode the JSON data into an array of Place objects
+        let decoder = JSONDecoder()
+        let fetchedPlaces = try decoder.decode([Place].self, from: jsonData)
+
+        // Find and return the place with the matching id
+        let place = fetchedPlaces.first(where: { $0.id == id })
+        
         return place
     }
     
-    func uploadSubCategory(_ category: PlaceCategoriesEnum) async throws {
-        if let placeDocumentID = usersPlace?.documentID {
-            let place = Firestore.firestore().collection("places").document(placeDocumentID)
-            try await place.updateData(["subCategories":  FieldValue.arrayUnion([category.rawValue])])
-        }
-    }
-    
-    /// Delete sub category
-    func deleteSubSategory(_ category: PlaceCategoriesEnum) async throws {
-        if let placeDocumentID = usersPlace?.documentID {
-            let place = Firestore.firestore().collection("places").document(placeDocumentID)
-            try await place.updateData(["subCategories":  FieldValue.arrayRemove([category.rawValue])])
-        }
-    }
-    /// Update place phone number
-    func updatePhoneNumber(_ phoneNumber: String) async throws {
-        if let placeDocumentID = usersPlace?.documentID {
-            let place = Firestore.firestore().collection("places").document(placeDocumentID)
-            try await place.updateData(["phoneNumber": phoneNumber])
-        }
-    }
-    
-    /// Update place website link
-    func updateWebsiteLink(_ websiteLink: String) async throws {
-        if let placeDocumentID = usersPlace?.documentID {
-            let place = Firestore.firestore().collection("places").document(placeDocumentID)
-            try await place.updateData(["website": websiteLink])
-        }
-    }
+//    func uploadSubCategory(_ category: PlaceCategoriesEnum) async throws {
+//        if let placeDocumentID = usersPlace?.documentID {
+//            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+//            try await place.updateData(["subCategories":  FieldValue.arrayUnion([category.rawValue])])
+//        }
+//    }
+//    
+//    /// Delete sub category
+//    func deleteSubSategory(_ category: PlaceCategoriesEnum) async throws {
+//        if let placeDocumentID = usersPlace?.documentID {
+//            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+//            try await place.updateData(["subCategories":  FieldValue.arrayRemove([category.rawValue])])
+//        }
+//    }
+//    /// Update place phone number
+//    func updatePhoneNumber(_ phoneNumber: String) async throws {
+//        if let placeDocumentID = usersPlace?.documentID {
+//            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+//            try await place.updateData(["phoneNumber": phoneNumber])
+//        }
+//    }
+//    
+//    /// Update place website link
+//    func updateWebsiteLink(_ websiteLink: String) async throws {
+//        if let placeDocumentID = usersPlace?.documentID {
+//            let place = Firestore.firestore().collection("places").document(placeDocumentID)
+//            try await place.updateData(["website": websiteLink])
+//        }
+//    }
 
 //MARK: - Menu
 
@@ -274,18 +284,27 @@ class PlaceService: ObservableObject {
 
     //MARK: - Markers
     
-    func fetchMarkers() async throws  {
+    func fetchMarkers() async throws {
         var fetchedMarkers: [CustomMarker] = []
-        let snapshot = try await Firestore.firestore().collection("places").getDocuments()
-        let documents = snapshot.documents
-        let fetchedPlaces = documents.compactMap({try? $0.data(as: Place.self)})
+
+        guard let fileURL = Bundle.main.url(forResource: "places", withExtension: "json") else {
+            print("places.json file not found.")
+            return
+        }
+        
+        let jsonData = try Data(contentsOf: fileURL)
+
+        let decoder = JSONDecoder()
+        let fetchedPlaces = try decoder.decode([Place].self, from: jsonData)
+
         for place in fetchedPlaces {
             let marker = CustomMarker(lat: Double(place.lat ?? "") ?? 0.0,
                                       long: Double(place.long ?? "") ?? 0.0,
                                       title: place.name,
-                                      id: place.id ?? "")
+                                      id: place.id?.isEmpty == false ? place.id! : UUID().uuidString) // Generate ID if missing
             fetchedMarkers.append(marker)
         }
+
         DispatchQueue.main.sync {
             self.markers = fetchedMarkers
         }
@@ -295,9 +314,15 @@ class PlaceService: ObservableObject {
     
     //TODO: - It should be also done by nearest location
     func fetchPlaces() async throws {
-        let snapshot = try await Firestore.firestore().collection("places").getDocuments()
-        let documents = snapshot.documents
-        let fetchedPlaces = documents.compactMap({try? $0.data(as: Place.self)})
+        guard let fileURL = Bundle.main.url(forResource: "places", withExtension: "json") else {
+            print("places.json file not found.")
+            return
+        }
+        
+        let jsonData = try Data(contentsOf: fileURL)
+
+        let decoder = JSONDecoder()
+        let fetchedPlaces = try decoder.decode([Place].self, from: jsonData)
         DispatchQueue.main.async {
             self.places = fetchedPlaces
         }

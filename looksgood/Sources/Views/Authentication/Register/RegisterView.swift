@@ -12,13 +12,13 @@ struct RegisterView: View {
         VStack(alignment: .leading) {
             LottieView(type: .confirmingOrder)
                 .frame(width: 350, height: 350)
-            Text(publisher.convertUserType(accountType))
+            Text("Załóż Konto")
                 .font(.title.bold())
             CustomTextField(imageName: "envelope", placeholderText: Strings.email, text: $publisher.email)
-            CustomTextField(imageName: "person", placeholderText: Strings.username, text: $publisher.username)
-            CustomTextField(imageName: "lock", placeholderText: Strings.password, isSecureField: true, text: $publisher.password)
+            CustomTextField(imageName: "person", placeholderText: "Nazwa Użytkownika", text: $publisher.username)
+            CustomTextField(imageName: "lock", placeholderText: "Hasło", isSecureField: true, text: $publisher.password)
             Spacer()
-            PlainButton(title: Strings.createAccount) {
+            PlainButton(title: "Załóż Konto") {
                 Task { try await authService.register(email: publisher.email,
                                                       password: publisher.password,
                                                       username: publisher.username,

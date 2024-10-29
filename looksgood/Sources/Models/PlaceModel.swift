@@ -3,9 +3,6 @@ import Firebase
 import FirebaseFirestoreSwift
 
 struct Place: Equatable, Identifiable, Decodable, Hashable {
-    
-    @DocumentID var documentID: String?
-
     var id: String?
     var name: String
     var address: String?

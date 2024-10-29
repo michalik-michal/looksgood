@@ -75,7 +75,7 @@ struct OwnerMenuView_Previews: PreviewProvider {
                                           rating: "4.2",
                                           phoneNumber: "123 456 789",
                                           website: "www.apple.com",
-                                          placeCategory: .restaurant)
+                                          placeCategory: .salaZabaw)
                 object.menuItems = [
                     MenuItem(placeID: "", title: "Burger", price: "34USD", category: .Burger)
                 ]

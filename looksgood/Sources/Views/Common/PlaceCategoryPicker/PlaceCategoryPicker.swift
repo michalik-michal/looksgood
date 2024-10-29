@@ -27,6 +27,6 @@ struct PlaceCategoryPicker: View {
 
 struct PlaceCategoryPicker_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceCategoryPicker(selectedCategory: .constant(.drinks))
+        PlaceCategoryPicker(selectedCategory: .constant(.salaZabaw))
     }
 }

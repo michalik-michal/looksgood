@@ -15,7 +15,7 @@ struct EditPhoneNumberSheet: View {
                     .bold()
                     .onTapGesture {
                         Task {
-                            try await placeService.updatePhoneNumber(phoneNumber)
+                     //       try await placeService.updatePhoneNumber(phoneNumber)
                             showSheet = false
                         }
                     }

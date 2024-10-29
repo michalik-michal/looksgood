@@ -18,7 +18,7 @@ struct AddSubCategorySheet: View {
             PlainButton(title: Strings.upload) {
                 Task {
                     if let selectedCategory = selectedSubCategory {
-                        try await placeService.uploadSubCategory(selectedCategory)
+                    //    try await placeService.uploadSubCategory(selectedCategory)
                         showSheet = false
                     }
                 }

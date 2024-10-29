@@ -3,28 +3,22 @@ import SwiftUI
 class PlaceCategories {
 
     let placeCategories: [PlaceCategory] = [
-        PlaceCategory(type: .cafe),
-        PlaceCategory(type: .foodTruck),
-        PlaceCategory(type: .restaurant),
-        PlaceCategory(type: .breakfast),
-        PlaceCategory(type: .vege),
-        PlaceCategory(type: .drinks)
+        PlaceCategory(type: .salaZabaw),
+        PlaceCategory(type: .taniec),
+        PlaceCategory(type: .warsztatyEdukacyjne),
+        PlaceCategory(type: .warsztatyMuzyczne),
     ]
     
     func colorProvider(_ item: PlaceCategoriesEnum) -> Color {
         switch item {
-        case .cafe:
+        case .salaZabaw:
             return Color.red
-        case .foodTruck:
+        case .taniec:
             return Color.blue
-        case .restaurant:
+        case .warsztatyEdukacyjne:
             return Color.orange
-        case .breakfast:
+        case .warsztatyMuzyczne:
             return Color.pink
-        case .vege:
-            return Color.purple
-        case .drinks:
-            return Color.yellow
         }
     }
 }

@@ -26,6 +26,7 @@ struct looksgoodApp: App {
                 .environmentObject(placesService)
                 .environmentObject(appState)
                 .environmentObject(placeService)
+                .preferredColorScheme(.light)
         }
     }
 }

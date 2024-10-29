@@ -78,12 +78,12 @@ struct ImageGridView: View {
                 }
                 Spacer()
                 Button(Strings.upload) {
-                    Task {
-                        if let placeDocumentID = placeService.usersPlace?.documentID {
-                            try await placeService.uploadPlacePhoto(placeDocumentID)
-                            showSelectedImage = false
-                        }
-                    }
+//                    Task {
+//                        if let placeDocumentID = placeService.usersPlace?.documentID {
+//                            try await placeService.uploadPlacePhoto(placeDocumentID)
+//                            showSelectedImage = false
+//                        }
+//                    }
                 }
             }
             Spacer()

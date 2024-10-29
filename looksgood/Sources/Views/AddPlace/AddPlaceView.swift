@@ -8,7 +8,7 @@ struct AddPlaceView: View {
     @ObservedObject private var addRestaurantPublisher = AddPlacePublisher()
 
     @State private var place = Place(name: "",
-                                     placeCategory: .restaurant)
+                                     placeCategory: .salaZabaw)
     @State private var rating: String = ""
     @State private var searchedPlace: SearchedPlace
     @State private var showRatingField: Bool
@@ -71,7 +71,7 @@ struct AddPlaceView: View {
             updatePlaceDetails()
         }
         .onDisappear {
-            placesService.fetchedPlace = Place(name: "", placeCategory: .restaurant)
+            placesService.fetchedPlace = Place(name: "", placeCategory: .salaZabaw)
         }
         .onChange(of: placesService.fetchedPlace) { _ in
             updatePlaceDetails()
@@ -112,7 +112,7 @@ struct AddPlaceView: View {
     }
     
     private func uploadPlace() {
-        place.placeCategory = selectedCategory ?? .restaurant
+        place.placeCategory = selectedCategory ?? .salaZabaw
         Task { try await placeService.uploadPlace(place: place) }
         appState.didUploadPlace = true
     }

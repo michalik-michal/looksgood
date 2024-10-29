@@ -164,10 +164,10 @@ struct OwnerPlaceView: View {
                 Spacer()
                 Button(Strings.upload) {
                     Task {
-                        if let placeDocumentID = placeService.usersPlace?.documentID {
-                            try await placeService.uploadPlacePhoto(placeDocumentID)
-                            showSheet = false
-                        }
+//                        if let placeDocumentID = placeService.usersPlace?.documentID {
+//                            try await placeService.uploadPlacePhoto(placeDocumentID)
+//                            showSheet = false
+//                        }
                     }
                 }
             }
@@ -256,7 +256,7 @@ struct OwnerPlaceView: View {
     private var categories: some View {
         ScrollView(.horizontal) {
             HStack {
-                PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .restaurant))
+                PlaceCategoryCell(placeCategory: PlaceCategory(type: placeService.usersPlace?.placeCategory ?? .salaZabaw))
                 if let subCategories = placeService.usersPlace?.subCategories {
                     Divider()
                         .overlay(.black)
@@ -302,7 +302,7 @@ struct OwnerPlaceView_Previews: PreviewProvider {
                                           rating: "4.2",
                                           phoneNumber: "123 456 789",
                                           website: "www.apple.com",
-                                          placeCategory: .restaurant)
+                                          placeCategory: .salaZabaw)
                 return object
             }())
     }

@@ -95,6 +95,6 @@ struct PlaceCellView_Previews: PreviewProvider {
     static var previews: some View {
         PlaceCellView(place: Place(name: "Portobello",
                                    address: "Juliusza Lea 16A",
-                                   placeCategory: .restaurant))
+                                   placeCategory: .salaZabaw))
     }
 }

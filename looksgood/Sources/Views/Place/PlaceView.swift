@@ -5,7 +5,7 @@ struct PlaceView: View {
     @EnvironmentObject private var placeService: PlaceService
     @EnvironmentObject private var locationManager: LocationService
     var placeID: String
-    @State private var place = Place(name: "", placeCategory: .restaurant)
+    @State private var place = Place(name: "", placeCategory: .salaZabaw)
     @State private var showMenu = false
     @State private var showOpeningHours =  false
     @State private var showImages = false
@@ -13,9 +13,9 @@ struct PlaceView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                if let imageURLs = place.imageURLs, ((imageURLs.first?.isNotEmptyString) != nil) {
-                    imageCarousel(urls: imageURLs)
-                }
+                //if let imageURLs = place.imageURLs, ((imageURLs.first?.isNotEmptyString) != nil) {
+                    imageCarousel(urls: place.imageURLs ?? [])
+              //  }
                 VStack {
                     titleStack
                         .padding(.top, place.imageURLs?.first == "" ? 10 : 0)
@@ -24,8 +24,8 @@ struct PlaceView: View {
                     categories
                     buttonStack
                         .padding(.bottom, 10)
-                    PlainLabel(title: "Menu",
-                               image: Image(.book))
+                    PlainLabel(title: "Rezerwuj",
+                               image: Image(systemName: "calendar"))
                     .onTapGesture {
                         if !showOpeningHours {
                             showMenu.toggle()
@@ -136,7 +136,7 @@ struct PlaceView: View {
                 Image("googlemaps")
                     .resizable()
                     .frame(width: 20, height: 20)
-                Text(Strings.navigate)
+                Text("Nawiguj")
             }
             .onTapGesture {
                 if let destinationLat = Double(place.lat ?? ""), let destinationLong = Double(place.long ?? "") {
@@ -155,7 +155,7 @@ struct PlaceView: View {
                 Link(destination: URL(string: "tel://\(phone.filter{!$0.isWhitespace})")!, label: {
                     HStack {
                         Image(.iphone)
-                        Text(Strings.call)
+                        Text("Zadzwoń")
                     }
                 })
                 .padding()

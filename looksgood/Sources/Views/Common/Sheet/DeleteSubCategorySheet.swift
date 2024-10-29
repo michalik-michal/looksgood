@@ -14,7 +14,7 @@ struct DeleteSubCategorySheet: View {
                     .bold()
                     .onTapGesture {
                         Task {
-                            try await placeService.deleteSubSategory(category)
+                    //        try await placeService.deleteSubSategory(category)
                             showSheet = false
                         }
                     }
@@ -28,7 +28,7 @@ struct DeleteSubCategorySheet: View {
 
 struct DeleteSubCategorySheet_Previews: PreviewProvider {
     static var previews: some View {
-        DeleteSubCategorySheet(category: .restaurant,
+        DeleteSubCategorySheet(category: .salaZabaw,
                                showSheet: .constant(false))
     }
 }

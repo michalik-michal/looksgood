@@ -13,35 +13,27 @@ struct PlaceCategory: Hashable {
     
     func getCategoryName(_ category: PlaceCategoriesEnum) -> String {
         switch category {
-        case .cafe:
-            return "Cafe"
-        case .foodTruck:
-            return "Food Truck"
-        case .restaurant:
-            return "Restaurant"
-        case .breakfast:
-            return "Breakfast"
-        case .vege:
-            return "Vege"
-        case .drinks:
-            return "Drinks"
+        case .salaZabaw:
+            return "Sale Zabaw"
+        case .taniec:
+            return "Taniec"
+        case .warsztatyEdukacyjne:
+            return "Warsztaty Edukacyjne"
+        case .warsztatyMuzyczne:
+            return "Warsztaty Muzyczne"
         }
     }
     
     func getCategoryImage(_ category: PlaceCategoriesEnum) -> String {
         switch category {
-        case .cafe:
-            return "cup.and.saucer"
-        case .foodTruck:
-            return "box.truck"
-        case .restaurant:
-            return "fork.knife"
-        case .breakfast:
-            return "sun.max"
-        case .vege:
-            return "leaf"
-        case .drinks:
-            return "wineglass"
+        case .salaZabaw:
+            return "batteryblock"
+        case .taniec:
+            return "figure.dance"
+        case .warsztatyEdukacyjne:
+            return "lightbulb.min"
+        case .warsztatyMuzyczne:
+            return "music.mic"
         }
     }
 }

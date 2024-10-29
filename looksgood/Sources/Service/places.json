@@ -1,0 +1,289 @@
+[
+    {
+        "address": "Wał Miedzeszyński 646, 03-994 Warszawa, Polska",
+        "googleMapsID": "ChIJATOVBfPNHkcRbWUWBl-UBt0",
+        "googleMapsURL": "https://g.co/kgs/e2uq6xL",
+        "id": "1",
+        "imageURLs": ["https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Fjungle-academy-23-1920x1080-resize.jpg?alt=media&token=bab3df46-a06a-40fd-90a5-db33d2e62967"
+            
+        ],
+        "lat": "52.22184855053782",
+        "long": "21.085239696761356",
+        "name": "JUNGLE ACADEMY",
+        "phoneNumber": "+48 519 300 246",
+        "placeCategory": "salaZabaw",
+        "uid": "2",
+        "website": "https://jungleacademy.pl"
+    },
+    {
+        "address": "Głębocka 3/lok 19, 03-287 Warszawa, Polska",
+        "googleMapsID": "ChIJ78DEugnPHkcRmFE8btD2C1s",
+        "googleMapsURL": "https://maps.app.goo.gl/Mc1ohWzrceUzg8nH7",
+        "id": "3",
+        "imageURLs": ["https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2F2024-10-17.jpg?alt=media&token=d2a41e31-1241-4659-98f2-fd56bc4c46dd"
+            
+        ],
+        "lat": "52.29815109714523",
+        "long": "21.05496125443614",
+        "name": "JU-HU Sala Zabaw",
+        "phoneNumber": "+48 536 300 320",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://ju-hu.pl"
+    },
+    {
+        "address": "Marcina Kasprzaka 7/U12, 01-211 Warszawa, Polska",
+        "googleMapsID": "ChIJVfSFdHPNHkcRc7ZrNZ6xq2s",
+        "googleMapsURL": "https://g.co/kgs/jFicgyx",
+        "id": "4",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2F2024-05-17.jpg?alt=media&token=b61e7f30-f9f9-44cd-bfaf-c546c29ad78d"
+        ],
+        "lat": "52.228898230014025",
+        "long": "20.974907680170375",
+        "name": "Bawialnia i kawiarnia Learn&Play",
+        "phoneNumber": "+48 602 435 763",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://learnandplay.pl"
+    },
+    {
+        "address": "Powstańców Śląskich 10, 01-392 Warszawa, Polska",
+        "googleMapsID": "ChIJhe4Mk0XLHkcRgdgcHNxuozQ",
+        "googleMapsURL": "https://maps.app.goo.gl/jrFkgt7FYPNCP6A47",
+        "id": "5",
+        "imageURLs": ["https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2FKlub-Nowoursynowska.jpg?alt=media&token=c164ba6b-79f6-414c-82e4-5061e6491619"
+        ],
+        "lat": "52.22501778581911",
+        "long": "20.91735516977198",
+        "name": "KALEJDOSKOP Bemowo - urodziny dla dzieci",
+        "phoneNumber": "+48 508 066 014",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://klub-kalejdoskop.pl"
+    },
+    {
+        "address": "Generała Tadeusza Bora-Komorowskiego 56A/lok U8, 03-982 Warszawa, Polska",
+        "googleMapsID": "ChIJXYRPn5_NHkcRGABlC11OAB8",
+        "googleMapsURL": "https://maps.app.goo.gl/H8PdYP14oafzKuHs9",
+        "id": "",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Funnamed.jpg?alt=media&token=312e47c5-d447-47a0-b5b1-e6e78e7a1bd4"
+        ],
+        "lat": "52.22779714886739",
+        "long": "21.077803896761704",
+        "name": "Hopsaska",
+        "phoneNumber": "+48 660 392 244",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "http://hopsaska.pl/"
+    },
+    {
+        "address": "Czumy 3e, 01-355 Warszawa, Polska",
+        "googleMapsID": "ChIJC6buXHrLHkcR1GiO6ld1VMk",
+        "googleMapsURL": "https://maps.app.goo.gl/gQqXmFzHoobhdzYd7",
+        "id": "6",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2FIMG-20230327-WA00061-1024x461.jpg?alt=media&token=82075d4b-2e01-45a9-9281-c71e3f927019"
+        ],
+        "lat": "52.23686121935211",
+        "long": "20.91124973909214",
+        "name": "Dobra Strefa. Strefa Zabaw",
+        "phoneNumber": "+48 797 282 797",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "http://dobrastrefa.com/"
+    },
+    {
+        "address": "gen. Emila Fieldorfa 41/102, 04-125 Warszawa, Polska",
+        "googleMapsID": "ChIJm3hcjprNHkcREn4E_rjrG6Q",
+        "googleMapsURL": "https://maps.app.goo.gl/8Un1amYheJan4Lsv5",
+        "id": "7",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Ffiku-miku_f.JPG?alt=media&token=29e216ef-e0eb-4a86-b5a1-087ab45948da"
+        ],
+        "lat": "52.233194960403516",
+        "long": "21.09472519676207",
+        "name": "SALA ZABAW FIKU-MIKU",
+        "phoneNumber": "+48 22 243 29 26",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://salafikumiku.pl"
+    },
+    {
+        "address": "Zamiejska 5, 03-580 Warszawa, Polska",
+        "googleMapsID": "ChIJCxITHJbPHkcRGGx4EjhGqXc",
+        "googleMapsURL": "https://maps.app.goo.gl/jSAuCPNfZVFstCY66",
+        "id": "8",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Fimages.jpeg?alt=media&token=54747ab1-d88f-4e55-a8b1-f20b212ff12a"
+        ],
+        "lat": "52.27567096374062",
+        "long": "21.061276483269808",
+        "name": "Zabawy z Sensem - klubokawiarnia, zajęcia edukacyjne, warsztaty, urodziny",
+        "phoneNumber": "+48 668 884 627",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://www.facebook.com/zabawyzsensem/"
+    },
+    {
+        "address": "Bobrowiecka 10, 00-728 Warszawa, Polska",
+        "googleMapsID": "ChIJ5-86WyzNHkcR2ghX1gHxxBc",
+        "googleMapsURL": "https://maps.app.goo.gl/fMFE2x1uSbZ1Ztoz6",
+        "id": "9",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2FBBB_8246-scaled.jpg?alt=media&token=7d919bb4-bd3f-4882-b127-ee382d0b9246"
+        ],
+        "lat": "52.199334713832805",
+        "long": "21.046844439089835",
+        "name": "Cafe Przygoda Sala Zabaw",
+        "phoneNumber": "+48 576 543 304",
+        "placeCategory": "salaZabaw",
+        "uid": "",
+        "website": "https://cafeprzygoda.pl"
+    },
+    {
+        "address": "Aleja Rzeczypospolitej 20/U7, 02-972 Warszawa, Polska",
+        "googleMapsID": "ChIJo2dN0sotGUcRjToFWsR2NDc",
+        "googleMapsURL": "https://maps.app.goo.gl/khcHeZXVLut5r2zGA",
+        "id": "10",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Fdoodlove-35801fc2-3c48-44cb-9c83-1fc8a188e0dd.jpeg?alt=media&token=f045d5b3-446f-4afd-be28-3f5b2ee54df6"
+        ],
+        "lat": "52.16740266532926",
+        "long": "21.071038345575214",
+        "name": "Doodlove Warszawa. Warsztaty dla dzieci, świetlica",
+        "phoneNumber": "+48 661 651 905",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://doodlove.pl"
+    },
+    {
+        "address": "Drużbackiej 15, 01-622 Warszawa, Polska",
+        "googleMapsID": "ChIJa_6EI-nLHkcRafWwU8EZrYc",
+        "googleMapsURL": "https://maps.app.goo.gl/CdWyTMwr2a1b9L6r5",
+        "id": "11",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2FDSC_3256.jpg?alt=media&token=2a8e6731-29fe-45c9-b6d5-a51b78e531b1"
+        ],
+        "lat": "52.27386171181873",
+        "long": "20.9794605967645",
+        "name": "Flob a dob - klub edukacyjny dla dzieci",
+        "phoneNumber": "+48 502 970 978",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://flobadob.pl/zajecia-dla-dzieci/"
+    },
+    {
+        "address": "Ireny Kosmowskiej 6, 03-750 Warszawa, Polska",
+        "googleMapsID": "ChIJ9beN4gLNHkcRKdzkrmataVo",
+        "googleMapsURL": "https://maps.app.goo.gl/PGUKPSNKmxJU5qse7",
+        "id": "12",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2F8bda58_29f0e89af01748b1bbb2e9c877d4dcd4~mv2.jpg?alt=media&token=89600dd1-e6aa-447b-9e72-b98e84bf04b9"
+        ],
+        "lat": "52.2602730768597",
+        "long": "21.049408467928615",
+        "name": "Dzikie Dzieci - warsztaty stolarskie",
+        "phoneNumber": "+48 500 112 659",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://www.dzikiedzieci.com"
+    },
+    {
+        "address": "Obozowa 82A, 01-434 Warszawa, Polska",
+        "googleMapsID": "ChIJm1B08JzMHkcRAdb6T7HMJxY",
+        "googleMapsURL": "https://maps.app.goo.gl/ePi1Y1RCAu6MJiQj7",
+        "id": "13",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Ffe7b40_c480a3e0f2b645cd8515974fbbf2cdab~mv2.jpg.webp?alt=media&token=4708ff42-5367-41a5-a9d9-012a269ef724"
+        ],
+        "lat": "52.24741317230646",
+        "long": "20.946999625597968",
+        "name": "Kawiarnia Nutka Cafe & Klub Edukacji Muzycznej",
+        "phoneNumber": "+48 606 607 826",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://www.nutkacafe.pl"
+    },
+    {
+        "address": "Aleja Krakowska 97, 05-090 Raszyn, Polska",
+        "googleMapsID": "ChIJm1EyQ3MzGUcRF6ty0QugeUk",
+        "googleMapsURL": "https://maps.app.goo.gl/9LLAr7raXMnQkPg87",
+        "id": "14",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2F95.jpeg?alt=media&token=ebc01ad8-c59c-406b-a4ac-14e4f7d47cb2"
+        ],
+        "lat": "52.16144242031886",
+        "long": "20.92763485258235",
+        "name": "Bricks 4 Kidz",
+        "phoneNumber": "+48 730 088 000",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://bricks4kidz.pl/pruszkow/?utm_medium=organic&utm_source=google_maps&utm_campaign=google_maps&utm_content=web_url"
+    },
+    {
+        "address": "Pańska 75/31, 00-834 Warszawa, Polska",
+        "googleMapsID": "ChIJPYDXRNDMHkcRSiwq4PS6jp8",
+        "googleMapsURL": "https://maps.app.goo.gl/3c5zfzp6RCe1SoWHA",
+        "id": "15",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Fartykul-CD3D-1024x492.png?alt=media&token=bfc98e2b-c219-49e5-800c-2d6cd3bb06d6"
+        ],
+        "lat": "52.23121682419437",
+        "long": "20.992172539091822",
+        "name": "Instytut Wyobraźni",
+        "phoneNumber": "+48 606 378 165",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://www.instytutwyobrazni.pl"
+    },
+    {
+        "address": "Konstancińska 2, 02-942 Warszawa, Polska",
+        "googleMapsID": "ChIJGeq6HSTNHkcRjYMY7JyVTN4",
+        "googleMapsURL": "https://maps.app.goo.gl/rQRnqYuxkfDATomU6",
+        "id": "16",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Feduforia-obrys1.png?alt=media&token=ffbd3112-a353-4b3d-af3e-5cdc8c60d8b9"
+        ],
+        "lat": "52.18671350483595",
+        "long": "21.06200265258392",
+        "name": "EDUFORIA - zajęcia i warsztaty edukacyjne",
+        "phoneNumber": "+48 602 232 205",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://eduforia.pl"
+    },
+    {
+        "address": "Złotokwiatu 28, 03-289 Warszawa, Polska",
+        "googleMapsID": "ChIJkwm88KPIHkcRzLAsMQTVCM0",
+        "googleMapsURL": "https://maps.app.goo.gl/88mRWWLERQn12k6W8",
+        "id": "17",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2F155-warszawa-niepubliczne-przedszkole-integracyjne-nasz.jpg?alt=media&token=4497851c-2a47-47e9-99d4-5e175f64c1da"
+        ],
+        "lat": "52.357806601926896",
+        "long": "21.04746828327478",
+        "name": "Przedszkolada",
+        "phoneNumber": "+48 602 710 200",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://www.przedszkolada.pl"
+    },
+    {
+        "address": "Kłopot 4A/U5, 01-066 Warszawa, Polska",
+        "googleMapsID": "ChIJocYKq_vLHkcRVFW4Hm0-2WU",
+        "googleMapsURL": "https://maps.app.goo.gl/XuaSLu9ybMoqUTgf7",
+        "id": "18",
+        "imageURLs": [
+            "https://firebasestorage.googleapis.com/v0/b/looksgood-435e3.appspot.com/o/placePhotos%2Flogo-og.webp?alt=media&token=720f22b3-911b-4b1a-be6d-e0972bffa8d8"
+        ],
+        "lat": "52.25774784807099",
+        "long": "20.980326876491716",
+        "name": "Odskocznia - Centrum Edukacji i Rozwoju",
+        "phoneNumber": "+48 667 261 706",
+        "placeCategory": "warsztatyEdukacyjne",
+        "uid": "",
+        "website": "https://www.centrumodskocznia.pl"
+    }
+]

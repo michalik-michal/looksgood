@@ -8,6 +8,7 @@ struct HomeView: View {
     @State private var showPlaceSheet = false
     @State private var showListView = false
     @State private var showDealsView = false
+    @State private var showProfileView = false
     @EnvironmentObject private var locationManager: LocationService
     @EnvironmentObject private var placeService: PlaceService
     
@@ -32,8 +33,8 @@ struct HomeView: View {
                         }
                 }
                 VStack {
-                    MapSearchField(text: $searchText)
-                    dealsIcon
+                    profileIcon
+                 //   dealsIcon
                     Spacer()
                     listButton
                 }
@@ -61,6 +62,9 @@ struct HomeView: View {
                     NavigationModalBarView(showModal: $showDealsView,
                                            content: DealsView())
                 }
+                .fullScreenCover(isPresented: $showProfileView) {
+                    NavigationModalBarView(showModal: $showProfileView, content: ProfileView())
+                }
             }
         }
     }
@@ -68,7 +72,7 @@ struct HomeView: View {
     private var listButton: some View {
         HStack {
             Image(.squareStack3dUp)
-            Text(Strings.list)
+            Text("Lista")
         }
         .padding()
         .frame(width: 100, height: 40)
@@ -77,7 +81,7 @@ struct HomeView: View {
         .onTapGesture {
             showListView.toggle()
         }
-        .shadow(color: Color.black.opacity(0.3), radius: 20, y: 5)
+        .shadow(color: Color.blackWhite, radius: 1)
     }
     
     private var dealsIcon: some View {
@@ -96,6 +100,34 @@ struct HomeView: View {
             .onTapGesture {
                 showDealsView.toggle()
             }
+        }
+    }
+    
+    private var profileIcon: some View {
+        HStack {
+            Spacer()
+            ZStack {
+                Circle()
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(.whiteBlack)
+                    .shadow(color: Color.blackWhite, radius: 1)
+                Image(.person)
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(.blackWhite)
+                    .onTapGesture {
+                        showProfileView.toggle()
+                    }
+            }
+            .padding(.top, 5)
+            .onTapGesture {
+                showDealsView.toggle()
+            }
+        }
+        .overlay {
+            Image("parently")
+                .resizable()
+                .frame(width: 130, height: 50)
+                .cornerRadius(20)
         }
     }
 }

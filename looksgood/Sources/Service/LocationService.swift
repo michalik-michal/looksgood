@@ -16,11 +16,11 @@ class LocationService: NSObject, ObservableObject {
     @Published var shouldReloadMap = false
     
     var latitude: CLLocationDegrees {
-        return location?.coordinate.latitude ?? 50.059683
+        return location?.coordinate.latitude ?? 52.29815109714523
     }
     
     var longitude: CLLocationDegrees {
-        return location?.coordinate.longitude ?? 19.934544
+        return location?.coordinate.longitude ?? 21.04496125443614
     }
     
     override init() {

@@ -39,19 +39,13 @@ struct LoginView: View {
         VStack {
             HStack {
                 NavigationLink {
-                    AccountTypeView()
+                    RegisterView(accountType: .user)
                 } label: {
                     Text(Strings.createAccount)
                         .font(.callout.bold())
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                Text(Strings.forgotPassword)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                    .onTapGesture {
-                        // Handle Forgot Password
-                    }
             }
         }
     }

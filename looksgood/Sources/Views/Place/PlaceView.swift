@@ -38,7 +38,7 @@ struct PlaceView: View {
         }
         .fullScreenCover(isPresented: $showMenu) {
             NavigationModalBarView(showModal: $showMenu,
-                                   content: MenuView(placeID: placeID))
+                                   content: MenuView(placeID: placeID, place: place))
         }
         .fullScreenCover(isPresented: $showImages) {
             NavigationModalBarView(showModal: $showImages,

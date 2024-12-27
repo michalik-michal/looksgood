@@ -11,6 +11,9 @@ class PlaceService: ObservableObject {
     @Published var imageState: ImageState = .empty
     @Published var markers: [CustomMarker] = []
     @Published var places: [Place] = []
+    @Published var kid1: Kid?
+    @Published var kid2: Kid?
+
     @Published var selectedMenuImage: PhotosPickerItem? {
         didSet {
             if let selectedMenuImage {
@@ -325,6 +328,21 @@ class PlaceService: ObservableObject {
         let fetchedPlaces = try decoder.decode([Place].self, from: jsonData)
         DispatchQueue.main.async {
             self.places = fetchedPlaces
+        }
+    }
+
+    func fetchKid1() async throws {
+        guard let fileURL = Bundle.main.url(forResource: "kid1", withExtension: "json") else {
+            print("places.json file not found.")
+            return
+        }
+        
+        let jsonData = try Data(contentsOf: fileURL)
+
+        let decoder = JSONDecoder()
+        let kid1 = try decoder.decode(Kid.self, from: jsonData)
+        DispatchQueue.main.async {
+            self.kid1 = kid1
         }
     }
 }

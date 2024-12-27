@@ -6,6 +6,9 @@ struct MenuView: View {
     @State private var selectedDate: Date?
     @State private var selectedTimeSlot: String? // Track the selected time slot
     let todayDate = Date()
+    @State private var toast: Toast?
+    @Environment(\.dismiss) var dismiss
+    var place: Place
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -32,10 +35,10 @@ struct MenuView: View {
                         .font(.headline)
                         .padding(.vertical, 10)
                     
-                    // Display the HStack with time slots for the current date
+                    // Display the VStack with time slots for the current date
                     VStack(spacing: 5) {
                         ForEach(Array(zip(timeSlots[index], miejsca[index])), id: \.0) { timeSlot in
-                            timeSlotCell(timeSlot.0, number: timeSlot.1)
+                            timeSlotCell(timeSlot.0, number: timeSlot.1, date: date) // Pass date
                         }
                     }
                 }
@@ -43,9 +46,29 @@ struct MenuView: View {
             .padding(.horizontal)
         }
         .navigationBarTitleDisplayMode(.inline)
+        .toastView(toast: $toast)
+        .overlay {
+            if selectedTimeSlot != nil && selectedDate != nil {
+                VStack {
+                    Spacer()
+                    PlainButton(title: "Rezerwuj", image: Image(systemName: "checkmark")) {
+                        toast = Toast(message: "Miejsce Zarezerwowane",
+                                      image: "checkmark")
+                        saveReservation(Reservation(timeslot: selectedTimeSlot ?? "",
+                                                    place: place.name,
+                                                    date: selectedDate ?? Date())) // Use selectedDate here
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            dismiss()
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
     }
     
-    private func timeSlotCell(_ time: String, number: String) -> some View {
+    // Modified timeSlotCell to accept a date parameter
+    private func timeSlotCell(_ time: String, number: String, date: Date) -> some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(time)
@@ -62,18 +85,13 @@ struct MenuView: View {
         .cornerRadius(12)
         .onTapGesture {
             selectedTimeSlot = time
+            selectedDate = date // Capture the date on selection
         }
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(selectedTimeSlot == time ? Color.black : Color.clear, lineWidth: 1)
+                .stroke(selectedTimeSlot == time && selectedDate == date ? Color.black : Color.clear, lineWidth: 1)
         )
     }
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView(placeID: "")
-    }
-}
     
     // Helper function to format date in Polish
     func formattedDate(_ date: Date) -> String {
@@ -82,6 +100,14 @@ struct MenuView_Previews: PreviewProvider {
         formatter.dateStyle = .long
         return formatter.string(from: date)
     }
+}
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView(placeID: "", place: .init(name: "", placeCategory: .salaZabaw))
+    }
+}
+
 
 
     //     VStack {
@@ -113,7 +139,7 @@ struct MenuView_Previews: PreviewProvider {
  //                .frame(height: UIScreen.main.bounds.height - 250)
  //                .tabViewStyle(.page(indexDisplayMode: .never))
  //            }
-         }
+    //     }
  //        .onAppear {
  //            Task {
  //                menuItems = try await placeService.fetchMenuItems(with: placeID) ?? []

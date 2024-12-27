@@ -9,12 +9,20 @@ struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(alignment: .leading) {
-            LottieView(type: .bunchOfFood)
-                .frame(width: 350, height: 350)
-            Text(Strings.login)
-                .font(.title.bold())
-                .foregroundColor(.blackWhite)
+        VStack(alignment: .center) {
+//            LottieView(type: .bunchOfFood)
+            Image("appIconLogo")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .cornerRadius(20)
+                .shadow(color: .gray, radius: 3)
+                .padding(.bottom)
+            HStack {
+                Text(Strings.login)
+                    .font(.title.bold())
+                    .foregroundColor(.blackWhite)
+                Spacer()
+            }
             CustomTextField(imageName: "envelope", placeholderText: Strings.email, text: $email)
             CustomTextField(imageName: "lock", placeholderText: Strings.password, isSecureField: true, text: $password)
             forgotPassword
